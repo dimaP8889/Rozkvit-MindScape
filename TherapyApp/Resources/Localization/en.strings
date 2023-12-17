@@ -1,0 +1,16 @@
+/* 
+  en.strings
+  TherapyApp
+
+  Created by Dmytro Pogrebniak on 17.12.2023.
+  
+*/
+
+// Tabs
+"tab.categories" = "Categories";
+"tab.home" = "Home";
+"tab.games" = "Games";
+"tab.profile" = "Profile";
+
+// Home
+"home.motivation.text" = "Well done, your tree looks strong and flourish! Keep up the progress";

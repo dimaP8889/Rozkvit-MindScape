@@ -8,18 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		F110B75A2B2EC29100FD3B95 /* TherapyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */; };
-		F110B75C2B2EC29100FD3B95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B75B2B2EC29100FD3B95 /* ContentView.swift */; };
 		F110B75E2B2EC29400FD3B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B75D2B2EC29400FD3B95 /* Assets.xcassets */; };
 		F110B7622B2EC29400FD3B95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */; };
+		F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */; };
+		F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B76C2B2ECC1900FD3B95 /* RootDomain.swift */; };
+		F110B7712B2ECD2700FD3B95 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = F110B7702B2ECD2700FD3B95 /* en.strings */; };
+		F110B7752B2ECDB300FD3B95 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7742B2ECDB300FD3B95 /* Defaults.swift */; };
+		F110B7782B2ECDD600FD3B95 /* Defaults+Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7772B2ECDD600FD3B95 /* Defaults+Lang.swift */; };
+		F110B77B2B2ECE0800FD3B95 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B77A2B2ECE0800FD3B95 /* Localization.swift */; };
+		F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B77C2B2ECE9600FD3B95 /* RootView.swift */; };
+		F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7802B2ECF4000FD3B95 /* HomeView.swift */; };
+		F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7812B2ECF4000FD3B95 /* Home.swift */; };
+		F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */; };
+		F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */; };
+		F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */; };
+		F1DA743F2B2EDCC800A9A7F0 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743D2B2EDCC800A9A7F0 /* Games.swift */; };
+		F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74412B2EDCE500A9A7F0 /* ProfileView.swift */; };
+		F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74422B2EDCE500A9A7F0 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F110B7562B2EC29100FD3B95 /* TherapyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TherapyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyAppApp.swift; sourceTree = "<group>"; };
-		F110B75B2B2EC29100FD3B95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F110B75D2B2EC29400FD3B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F110B75F2B2EC29400FD3B95 /* TherapyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TherapyApp.entitlements; sourceTree = "<group>"; };
 		F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F110B76C2B2ECC1900FD3B95 /* RootDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDomain.swift; sourceTree = "<group>"; };
+		F110B7702B2ECD2700FD3B95 /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		F110B7742B2ECDB300FD3B95 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		F110B7772B2ECDD600FD3B95 /* Defaults+Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Lang.swift"; sourceTree = "<group>"; };
+		F110B77A2B2ECE0800FD3B95 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		F110B77C2B2ECE9600FD3B95 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F110B7802B2ECF4000FD3B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F110B7812B2ECF4000FD3B95 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		F1DA743D2B2EDCC800A9A7F0 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		F1DA74412B2EDCE500A9A7F0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F1DA74422B2EDCE500A9A7F0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,9 +80,10 @@
 		F110B7582B2EC29100FD3B95 /* TherapyApp */ = {
 			isa = PBXGroup;
 			children = (
-				F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */,
-				F110B75B2B2EC29100FD3B95 /* ContentView.swift */,
-				F110B75D2B2EC29400FD3B95 /* Assets.xcassets */,
+				F110B7682B2EC81200FD3B95 /* Root */,
+				F110B77E2B2ECF0600FD3B95 /* Modules */,
+				F110B76E2B2ECD0700FD3B95 /* Resources */,
+				F110B7722B2ECD9800FD3B95 /* Sources */,
 				F110B75F2B2EC29400FD3B95 /* TherapyApp.entitlements */,
 				F110B7602B2EC29400FD3B95 /* Preview Content */,
 			);
@@ -67,6 +96,114 @@
 				F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F110B7682B2EC81200FD3B95 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */,
+				F110B76C2B2ECC1900FD3B95 /* RootDomain.swift */,
+				F110B77C2B2ECE9600FD3B95 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F110B76E2B2ECD0700FD3B95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F110B75D2B2EC29400FD3B95 /* Assets.xcassets */,
+				F110B76F2B2ECD1400FD3B95 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F110B76F2B2ECD1400FD3B95 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7702B2ECD2700FD3B95 /* en.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		F110B7722B2ECD9800FD3B95 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7792B2ECDF800FD3B95 /* Utils */,
+				F110B7732B2ECDA300FD3B95 /* Defaults */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F110B7732B2ECDA300FD3B95 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7742B2ECDB300FD3B95 /* Defaults.swift */,
+				F110B7762B2ECDC800FD3B95 /* Extensions */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
+		F110B7762B2ECDC800FD3B95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7772B2ECDD600FD3B95 /* Defaults+Lang.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F110B7792B2ECDF800FD3B95 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F110B77A2B2ECE0800FD3B95 /* Localization.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F110B77E2B2ECF0600FD3B95 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F1DA74362B2EDBBA00A9A7F0 /* Categories */,
+				F110B77F2B2ECF3000FD3B95 /* Home */,
+				F1DA743B2B2EDCB800A9A7F0 /* Games */,
+				F1DA74402B2EDCD200A9A7F0 /* Profile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F110B77F2B2ECF3000FD3B95 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F110B7802B2ECF4000FD3B95 /* HomeView.swift */,
+				F110B7812B2ECF4000FD3B95 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F1DA74362B2EDBBA00A9A7F0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */,
+				F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F1DA743B2B2EDCB800A9A7F0 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */,
+				F1DA743D2B2EDCC800A9A7F0 /* Games.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		F1DA74402B2EDCD200A9A7F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F1DA74412B2EDCE500A9A7F0 /* ProfileView.swift */,
+				F1DA74422B2EDCE500A9A7F0 /* Profile.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +222,9 @@
 			dependencies = (
 			);
 			name = TherapyApp;
+			packageProductDependencies = (
+				F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */,
+			);
 			productName = TherapyApp;
 			productReference = F110B7562B2EC29100FD3B95 /* TherapyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +253,9 @@
 				Base,
 			);
 			mainGroup = F110B74D2B2EC29100FD3B95;
+			packageReferences = (
+				F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = F110B7572B2EC29100FD3B95 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F110B7712B2ECD2700FD3B95 /* en.strings in Resources */,
 				F110B7622B2EC29400FD3B95 /* Preview Assets.xcassets in Resources */,
 				F110B75E2B2EC29400FD3B95 /* Assets.xcassets in Resources */,
 			);
@@ -139,8 +283,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F110B75C2B2EC29100FD3B95 /* ContentView.swift in Sources */,
+				F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */,
+				F110B7752B2ECDB300FD3B95 /* Defaults.swift in Sources */,
+				F1DA743F2B2EDCC800A9A7F0 /* Games.swift in Sources */,
+				F110B77B2B2ECE0800FD3B95 /* Localization.swift in Sources */,
+				F110B7782B2ECDD600FD3B95 /* Defaults+Lang.swift in Sources */,
+				F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */,
+				F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */,
+				F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */,
+				F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */,
+				F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */,
 				F110B75A2B2EC29100FD3B95 /* TherapyAppApp.swift in Sources */,
+				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
+				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
+				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +436,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -292,7 +449,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.TherapyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +476,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -330,7 +489,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.TherapyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -359,6 +519,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F110B74E2B2EC29100FD3B95 /* Project object */;
 }

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TherapyAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(
+                store: Store(initialState: RootDomain.State(), reducer: { RootDomain() })
+            )
         }
     }
 }

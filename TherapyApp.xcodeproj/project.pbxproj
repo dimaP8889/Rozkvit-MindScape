@@ -19,6 +19,8 @@
 		F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B77C2B2ECE9600FD3B95 /* RootView.swift */; };
 		F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7802B2ECF4000FD3B95 /* HomeView.swift */; };
 		F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7812B2ECF4000FD3B95 /* Home.swift */; };
+		F16356C82B31EFF600890D3C /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16356C72B31EFF600890D3C /* Statistic.swift */; };
+		F16356CA2B3207AF00890D3C /* StatisticClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16356C92B3207AF00890D3C /* StatisticClient.swift */; };
 		F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */; };
 		F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */; };
 		F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */; };
@@ -41,6 +43,8 @@
 		F110B77C2B2ECE9600FD3B95 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F110B7802B2ECF4000FD3B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F110B7812B2ECF4000FD3B95 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F16356C72B31EFF600890D3C /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		F16356C92B3207AF00890D3C /* StatisticClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticClient.swift; sourceTree = "<group>"; };
 		F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F110B7682B2EC81200FD3B95 /* Root */,
+				F16356CB2B32B90B00890D3C /* Models */,
 				F110B77E2B2ECF0600FD3B95 /* Modules */,
 				F110B76E2B2ECD0700FD3B95 /* Resources */,
 				F110B7722B2ECD9800FD3B95 /* Sources */,
@@ -177,6 +182,23 @@
 				F110B7812B2ECF4000FD3B95 /* Home.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F16356C62B31EF9F00890D3C /* Statistic  */ = {
+			isa = PBXGroup;
+			children = (
+				F16356C72B31EFF600890D3C /* Statistic.swift */,
+				F16356C92B3207AF00890D3C /* StatisticClient.swift */,
+			);
+			path = "Statistic ";
+			sourceTree = "<group>";
+		};
+		F16356CB2B32B90B00890D3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F16356C62B31EF9F00890D3C /* Statistic  */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F1DA74362B2EDBBA00A9A7F0 /* Categories */ = {
@@ -286,9 +308,11 @@
 				F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */,
 				F110B7752B2ECDB300FD3B95 /* Defaults.swift in Sources */,
 				F1DA743F2B2EDCC800A9A7F0 /* Games.swift in Sources */,
+				F16356C82B31EFF600890D3C /* Statistic.swift in Sources */,
 				F110B77B2B2ECE0800FD3B95 /* Localization.swift in Sources */,
 				F110B7782B2ECDD600FD3B95 /* Defaults+Lang.swift in Sources */,
 				F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */,
+				F16356CA2B3207AF00890D3C /* StatisticClient.swift in Sources */,
 				F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */,
 				F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */,
 				F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */,

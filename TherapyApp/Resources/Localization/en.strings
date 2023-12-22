@@ -14,3 +14,8 @@
 
 // Home
 "home.motivation.text" = "Well done, your tree looks strong and flourish! Keep up the progress";
+
+// Statistic
+"statistic.emotionalIntelect" = "Emotional Intelect";
+"statistic.criticalThinking" = "Critical Thinking";
+"statistic.description" = "Check your progress and click on a category to start a new game!";

@@ -19,14 +19,19 @@ struct Categories {
 // MARK: - State
 extension Categories {
     struct State: Equatable {
+        var charts: [StatisticData]
 
+        init() {
+            @Dependency(\.statistics) var statistics
+            self.charts = statistics.chartsData
+        }
     }
 }
 
 // MARK: - Action
 extension Categories {
     enum Action: Equatable {
-
+        case getCharts
     }
 }
 

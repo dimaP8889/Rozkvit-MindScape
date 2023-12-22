@@ -36,6 +36,10 @@ struct RootDomain {
     }
 
     var body: some Reducer<State, Action> {
+        Scope(state: \.categoriesState, action: \.categories) {
+            Categories()
+        }
+
         Reduce { state, action in
             return .none
         }

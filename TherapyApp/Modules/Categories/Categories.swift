@@ -21,7 +21,7 @@ struct Categories {
 
     enum Action: Equatable {
         case didSelectChart(angle: Double?)
-        case presentCategory(CategoryType)
+        case showGamesFor(CategoryType)
     }
 
     var body: some Reducer<State, Action> {
@@ -31,9 +31,9 @@ struct Categories {
                 guard let angle else { return .none }
                 state.selectedAngle = angle
                 guard let selected = findSelectedCategory(angle, charts: state.charts) else { return .none }
-                return .send(.presentCategory(selected))
+                return .send(.showGamesFor(selected))
 
-            case .presentCategory:
+            case .showGamesFor:
                 return .none
             }
         }

@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 @main
-struct TherapyAppApp: App {
+struct TherapyApp: App {
     var body: some Scene {
         WindowGroup {
             RootView(

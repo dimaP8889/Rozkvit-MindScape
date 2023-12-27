@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F110B75A2B2EC29100FD3B95 /* TherapyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */; };
+		F110B75A2B2EC29100FD3B95 /* TherapyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7592B2EC29100FD3B95 /* TherapyApp.swift */; };
 		F110B75E2B2EC29400FD3B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B75D2B2EC29400FD3B95 /* Assets.xcassets */; };
 		F110B7622B2EC29400FD3B95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */; };
 		F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */; };
@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		F110B7562B2EC29100FD3B95 /* TherapyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TherapyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyAppApp.swift; sourceTree = "<group>"; };
+		F110B7592B2EC29100FD3B95 /* TherapyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyApp.swift; sourceTree = "<group>"; };
 		F110B75D2B2EC29400FD3B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F110B75F2B2EC29400FD3B95 /* TherapyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TherapyApp.entitlements; sourceTree = "<group>"; };
 		F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		F110B7682B2EC81200FD3B95 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				F110B7592B2EC29100FD3B95 /* TherapyAppApp.swift */,
+				F110B7592B2EC29100FD3B95 /* TherapyApp.swift */,
 				F110B76C2B2ECC1900FD3B95 /* RootDomain.swift */,
 				F110B77C2B2ECE9600FD3B95 /* RootView.swift */,
 			);
@@ -382,7 +382,7 @@
 				F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */,
 				F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */,
 				F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */,
-				F110B75A2B2EC29100FD3B95 /* TherapyAppApp.swift in Sources */,
+				F110B75A2B2EC29100FD3B95 /* TherapyApp.swift in Sources */,
 				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
 				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,

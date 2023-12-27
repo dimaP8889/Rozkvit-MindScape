@@ -58,7 +58,7 @@ struct RootDomain {
                 state.selectedTab = tab
                 return .none
 
-            case let .categories(.presentCategory(category)):
+            case let .categories(.showGamesFor(category)):
                 state.gamesState.selectedItem = category.tabIndex
                 return .send(.tabSelected(.games))
 

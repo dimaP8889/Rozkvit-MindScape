@@ -19,41 +19,40 @@ struct CategoriesView: View {
     }
 
     var body: some View {
-        ZStack {
-            background
-            foreground
-        }
+        main
+            .background(backgroundImage)
     }
 }
 
 // MARK: - Private. Elements
 private extension CategoriesView {
-    var background: some View {
+    var backgroundImage: some View {
         Image("categories_bg")
             .resizable()
     }
 
-    var foreground: some View {
+    var main: some View {
         VStack {
             chart
+            Spacer()
             description
         }
     }
 
     var chart: some View {
-        Chart(viewStore.charts, id: \.name.localization) { data in
+        Chart(viewStore.charts, id: \.type.localization) { data in
             SectorMark(
-                angle: .value(Text(data.name.localization), data.amount),
+                angle: .value(Text(data.name), data.amount),
                 angularInset: 1
             )
             .foregroundStyle(
                 by: .value(
-                    Text(verbatim: data.name.localization),
-                    data.name.localization
+                    Text(verbatim: data.name),
+                    data.name
                 )
             )
             .annotation(position: .overlay) {
-                Text(data.name.localization)
+                Text(data.name)
                     .font(.headline)
                     .foregroundStyle(.white)
             }
@@ -61,6 +60,7 @@ private extension CategoriesView {
         .frame(height: 500)
         .padding(.horizontal, 16)
         .chartLegend(.hidden)
+        .chartAngleSelection(value: selectedAngle)
     }
 
     var description: some View {
@@ -74,13 +74,23 @@ private extension CategoriesView {
     }
 }
 
+// MARK: - Binding Value
+extension CategoriesView {
+    var selectedAngle: Binding<Double?> {
+        .init(
+            get: { viewStore.selectedAngle },
+            set: { viewStore.send(.didSelectChart(angle: $0)) }
+        )
+    }
+}
+
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesView(
             store: Store(initialState: Categories.State()) {
                 Categories()
             } withDependencies: {
-                $0.statistics = .mock
+                $0.appData = .mock
             }
         )
     }

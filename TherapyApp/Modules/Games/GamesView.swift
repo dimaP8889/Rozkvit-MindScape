@@ -10,29 +10,70 @@ import SwiftUI
 
 struct GamesView: View {
     let store: StoreOf<Games>
+    @ObservedObject var viewStore: ViewStore<Games.State, Games.Action>
+
+    init(store: StoreOf<Games>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
 
     var body: some View {
-        Text("Games Tab")
+        main
+            .background(backgroundImage)
     }
 }
 
 // MARK: - Private. Elements
 private extension GamesView {
-    
+    var backgroundImage: some View {
+        Image("categories_bg")
+            .resizable()
+    }
+
+    var main: some View {
+        VStack {
+            title
+            categories
+        }
+    }
+
+    var title: some View {
+        Text(localStr("game.pickGame"))
+            .font(.system(size: 30, weight: .bold, design: .monospaced))
+    }
+
+    var categories: some View {
+        TabView(selection: selectedItem) {
+            ForEachStore(
+                store.scope(state: \.categories, action: \.categories)
+            ) { viewStore in
+                CategoryGamesListView(store: viewStore)
+                    .tag(ViewStore(viewStore, observe: { $0 }).tabIndex)
+            }
+        }
+        .tabViewStyle(.page)
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
+    }
 }
 
-// MARK: - Private. Actions
-private extension GamesView {
-    
+// MARK: - Binding Value
+extension GamesView {
+    var selectedItem: Binding<Int> {
+        .init(
+            get: { viewStore.selectedItem },
+            set: { viewStore.send(.didSelectItem($0)) }
+        )
+    }
 }
 
 struct GamesView_Previews: PreviewProvider {
     static var previews: some View {
         GamesView(
             store: .init(
-                initialState: .init(),
-                reducer: { }
-            )
+                initialState: Games.State()
+            ) {
+                Games()
+            }
         )
     }
 }

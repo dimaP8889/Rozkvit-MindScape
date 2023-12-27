@@ -19,3 +19,7 @@
 "statistic.emotionalIntelect" = "Emotional Intelect";
 "statistic.criticalThinking" = "Critical Thinking";
 "statistic.description" = "Check your progress and click on a category to start a new game!";
+
+// Game
+"game.pickGame" = "Pick Game";
+"game.pickEmotion.title" = "Pick Emotion";

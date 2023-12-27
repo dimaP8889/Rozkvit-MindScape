@@ -1,0 +1,51 @@
+//
+//  Statistic.swift
+//  TherapyApp
+//
+//  Created by Dmytro Pogrebniak on 19.12.2023.
+//
+
+import ComposableArchitecture
+import Charts
+
+struct AppData {
+    static var mock: AppData = AppData(
+        gameStatistic: [
+            .criticalThinking0: 80, .criticalThinking1: 0, .criticalThinking2: 0, .criticalThinking3: 0,
+            .pickEmotion: 80, .emotionalIntelect1: 0, .emotionalIntelect2: 0, .emotionalIntelect3: 0
+        ]
+    )
+
+    private var gameStatistic: [GameType: Int] = [:]
+    private var availabilityChecker = AvailabilityChecker()
+
+    var chartsData: [StatisticData] {
+        CategoryType.allCases.map { type in
+            StatisticData(type: type, amount: (1 / Double(CategoryType.allCases.count)))
+        }
+    }
+
+    var categoriesData: IdentifiedArrayOf<CategoryGamesList.State>  {
+        [
+            .init(category: .init(type: .emotionalIntelect)),
+            .init(category: .init(type: .criticalThinking))
+        ]
+    }
+
+    func gamesData(for category: CategoryData) -> [GameData] {
+        category.games.map {
+            GameData(
+                type: $0,
+                progress: gameStatistic[$0] ?? 0,
+                isAvailable: availabilityChecker.isGameAvailable($0, gameStatistic: gameStatistic)
+            )
+        }
+    }
+}
+
+// MARK: - Model
+struct StatisticData: Equatable {
+    var type: CategoryType
+    var name: String { type.localization }
+    var amount: Double
+}

@@ -12,21 +12,19 @@ struct HomeView: View {
     let store: StoreOf<Home>
 
     var body: some View {
-        ZStack {
-            background
-            foreground
-        }
+        main
+            .background(backgroundImage)
     }
 }
 
 // MARK: - Private. Elements
 private extension HomeView {
-    var background: some View {
+    var backgroundImage: some View {
         Image("tree_6")
             .resizable()
     }
 
-    var foreground: some View {
+    var main: some View {
         VStack {
             daysSteak
             Spacer()
@@ -49,11 +47,6 @@ private extension HomeView {
             .padding(.horizontal, 50)
             .multilineTextAlignment(.center)
     }
-}
-
-// MARK: - Private. Actions
-private extension HomeView {
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

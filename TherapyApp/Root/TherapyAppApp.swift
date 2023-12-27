@@ -13,7 +13,10 @@ struct TherapyAppApp: App {
     var body: some Scene {
         WindowGroup {
             RootView(
-                store: Store(initialState: RootDomain.State(), reducer: { RootDomain() })
+                store: Store(initialState: RootDomain.State()) {
+                    RootDomain()
+                        ._printChanges()
+                }
             )
         }
     }

@@ -40,8 +40,31 @@ struct RootDomain {
             Categories()
         }
 
+        Scope(state: \.homeState, action: \.home) {
+            Home()
+        }
+
+        Scope(state: \.gamesState, action: \.games) {
+            Games()
+        }
+
+        Scope(state: \.profileState, action: \.profile) {
+            Profile()
+        }
+
         Reduce { state, action in
-            return .none
+            switch action {
+            case let .tabSelected(tab):
+                state.selectedTab = tab
+                return .none
+
+            case let .categories(.presentCategory(category)):
+                state.gamesState.selectedItem = category.tabIndex
+                return .send(.tabSelected(.games))
+
+            default:
+                return .none
+            }
         }
     }
 }

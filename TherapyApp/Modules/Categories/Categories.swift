@@ -9,29 +9,53 @@ import ComposableArchitecture
 
 @Reducer
 struct Categories {
-    var body: some Reducer<State, Action> {
-        Reduce { state, action in
-            return .none
-        }
-    }
-}
-
-// MARK: - State
-extension Categories {
     struct State: Equatable {
         var charts: [StatisticData]
+        var selectedAngle: Double? = nil
 
         init() {
-            @Dependency(\.statistics) var statistics
-            self.charts = statistics.chartsData
+            @Dependency(\.appData) var appData
+            self.charts = appData.chartsData
+        }
+    }
+
+    enum Action: Equatable {
+        case didSelectChart(angle: Double?)
+        case presentCategory(CategoryType)
+    }
+
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case let .didSelectChart(angle):
+                guard let angle else { return .none }
+                state.selectedAngle = angle
+                guard let selected = findSelectedCategory(angle, charts: state.charts) else { return .none }
+                return .send(.presentCategory(selected))
+
+            case .presentCategory:
+                return .none
+            }
         }
     }
 }
 
-// MARK: - Action
-extension Categories {
-    enum Action: Equatable {
-        case getCharts
+// MARK: - Middlewares
+private extension Categories {
+    func findSelectedCategory(_ selectedAngle: Double, charts: [StatisticData]) -> CategoryType? {
+        var cumulative = 0.0
+
+        let cumulativeData = charts.map {
+            let newCumulative = cumulative + Double($0.amount)
+            let result = (category: $0.type, range: cumulative ..< newCumulative)
+            cumulative = newCumulative
+            return result
+        }
+
+        if let selectedIndex = cumulativeData
+            .firstIndex(where: { $0.range.contains(selectedAngle) }) {
+            return charts[selectedIndex].type
+        }
+        return nil
     }
 }
-

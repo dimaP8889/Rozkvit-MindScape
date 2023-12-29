@@ -23,3 +23,6 @@
 // Game
 "game.pickGame" = "Pick Game";
 "game.pickEmotion.title" = "Pick Emotion";
+
+//Profile
+"profile.progress" = "Progress";

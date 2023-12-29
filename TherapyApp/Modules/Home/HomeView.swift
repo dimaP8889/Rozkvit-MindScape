@@ -10,6 +10,12 @@ import SwiftUI
 
 struct HomeView: View {
     let store: StoreOf<Home>
+    @ObservedObject var viewStore: ViewStore<Home.State, Home.Action>
+
+    init(store: StoreOf<Home>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
 
     var body: some View {
         main
@@ -54,7 +60,7 @@ struct HomeView_Previews: PreviewProvider {
         HomeView(
             store: .init(
                 initialState: .init(),
-                reducer: { }
+                reducer: { Home() }
             )
         )
     }

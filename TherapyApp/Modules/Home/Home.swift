@@ -19,7 +19,7 @@ struct Home {
 // MARK: - State
 extension Home {
     struct State: Equatable {
-
+        
     }
 }
 

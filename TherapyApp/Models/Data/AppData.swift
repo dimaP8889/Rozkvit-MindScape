@@ -16,7 +16,7 @@ struct AppData {
         ]
     )
 
-    private var gameStatistic: [GameType: Int] = [:]
+    var gameStatistic: [GameType: Int] = [:]
     private var availabilityChecker = AvailabilityChecker()
 
     var chartsData: [StatisticData] {

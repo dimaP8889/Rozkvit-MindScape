@@ -23,6 +23,9 @@
 // Game
 "game.pickGame" = "Pick Game";
 "game.pickEmotion.title" = "Pick Emotion";
+"game.result.text" = "Your result is: ";
+"game.button.finish" = "Finish";
+"game.button.continue" = "Continue";
 
 //Profile
 "profile.progress" = "Progress";

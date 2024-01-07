@@ -20,6 +20,14 @@ struct GamesView: View {
     var body: some View {
         main
             .background(backgroundImage)
+            .fullScreenCover(
+                store: self.store.scope(
+                    state: \.$destination.selectedGame,
+                    action: \.destination.selectedGame
+                )
+            ) { store in
+                GameEventView(store: store)
+            }
     }
 }
 
@@ -60,8 +68,8 @@ private extension GamesView {
 extension GamesView {
     var selectedItem: Binding<Int> {
         .init(
-            get: { viewStore.selectedItem },
-            set: { viewStore.send(.didSelectItem($0)) }
+            get: { viewStore.selectedCategoryIndex },
+            set: { viewStore.send(.didSelectCategoryIndex($0)) }
         )
     }
 }

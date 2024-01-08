@@ -32,7 +32,7 @@ struct GameEntityAnswerView: View {
 // MARK: - Private. Elements
 private extension GameEntityAnswerView {
     var image: some View {
-        Image(uiImage: answerData.image)
+        answerData.image
             .resizable()
             .padding(.all, 25)
             .frame(width: 125, height: 125)
@@ -41,7 +41,7 @@ private extension GameEntityAnswerView {
 
 struct GameEntityAnswerView_Previews: PreviewProvider {
     static var previews: some View {
-        let answer = GameAnswer(id: UUID(), image: UIImage(named: "happiness_1")!, isCorrect: true)
+        let answer = GameAnswer(id: UUID(), image: Image("happiness_1"), isCorrect: true)
         GameEntityAnswerView(answerData: answer, isSelected: false, selectAction: { _ in })
             .frame(width: 200, height: 200)
     }

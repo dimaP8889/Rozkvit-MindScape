@@ -26,6 +26,11 @@
 "game.result.text" = "Your result is: ";
 "game.button.finish" = "Finish";
 "game.button.continue" = "Continue";
+"game.emotion.fear.question" = "Pick fear emotion";
+"game.emotion.sadness.question" = "Pick sadness emotion";
+"game.emotion.happiness.question" = "Pick happiness emotion";
+"game.emotion.anger.question" = "Pick anger emotion";
+"game.emotion.surprise.question" = "Pick surprise emotion";
 
 //Profile
 "profile.progress" = "Progress";

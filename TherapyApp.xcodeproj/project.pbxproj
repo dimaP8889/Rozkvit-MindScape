@@ -34,6 +34,7 @@
 		F16D01F22B3B163C003614EE /* ScaleOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D01F12B3B163C003614EE /* ScaleOnTap.swift */; };
 		F16D01F42B3B1AD0003614EE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D01F32B3B1AD0003614EE /* GameModel.swift */; };
 		F16D01F62B3BCC2D003614EE /* AvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D01F52B3BCC2D003614EE /* AvailabilityChecker.swift */; };
+		F17382192B4B958A00B88A06 /* PickEmotionsGameFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17382182B4B958A00B88A06 /* PickEmotionsGameFabric.swift */; };
 		F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */; };
 		F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */; };
 		F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */; };
@@ -71,6 +72,7 @@
 		F16D01F12B3B163C003614EE /* ScaleOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleOnTap.swift; sourceTree = "<group>"; };
 		F16D01F32B3B1AD0003614EE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F16D01F52B3BCC2D003614EE /* AvailabilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityChecker.swift; sourceTree = "<group>"; };
+		F17382182B4B958A00B88A06 /* PickEmotionsGameFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEmotionsGameFabric.swift; sourceTree = "<group>"; };
 		F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F134F6762B4850BD00E58224 /* GameBuilder.swift */,
+				F17382172B4B953A00B88A06 /* Fabrics */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -318,6 +321,14 @@
 				F16D01F12B3B163C003614EE /* ScaleOnTap.swift */,
 			);
 			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		F17382172B4B953A00B88A06 /* Fabrics */ = {
+			isa = PBXGroup;
+			children = (
+				F17382182B4B958A00B88A06 /* PickEmotionsGameFabric.swift */,
+			);
+			path = Fabrics;
 			sourceTree = "<group>";
 		};
 		F1DA74362B2EDBBA00A9A7F0 /* Categories */ = {
@@ -446,6 +457,7 @@
 				F134F67E2B49892100E58224 /* GameEvent.swift in Sources */,
 				F134F6862B49896500E58224 /* GameEntityAnswerView.swift in Sources */,
 				F110B75A2B2EC29100FD3B95 /* TherapyApp.swift in Sources */,
+				F17382192B4B958A00B88A06 /* PickEmotionsGameFabric.swift in Sources */,
 				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
 				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,

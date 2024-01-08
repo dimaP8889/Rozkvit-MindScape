@@ -88,7 +88,7 @@ struct Games {
 // MARK: - Middlewares
 extension Games {
     func createGame(with type: GameType) -> GameEnvironment {
-        let builder = GameBuilder(gameStatistic: appData.gameStatistic)
+        let builder = GameBuilder()
         return builder.createGame(for: type)
     }
 }

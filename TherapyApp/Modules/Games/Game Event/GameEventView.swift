@@ -107,7 +107,7 @@ private extension GameEventView {
     }
 
     var gameQuestion: some View {
-        Text(viewStore.core.game.question)
+        Text(viewStore.core.currentSlide?.question ?? "")
             .font(.system(size: 25, weight: .bold, design: .monospaced))
             .padding(.top, 16)
     }
@@ -171,46 +171,7 @@ private extension GameEventView {
 
 struct GameEventView_Previews: PreviewProvider {
     static var previews: some View {
-        let sliders: [GameSlide] = {
-            [
-                .init(
-                    answers: [
-                        .init(id: UUID(), image: UIImage(named: "anger_1")!, isCorrect: true),
-                        .init(id: UUID(), image: UIImage(named: "fear_1")!, isCorrect: false),
-                        .init(id: UUID(), image: UIImage(named: "happiness_1")!, isCorrect: false),
-                        .init(id: UUID(), image: UIImage(named: "sadness_1")!, isCorrect: false)
-                    ]
-                ),
-
-                    .init(
-                        answers: [
-                            .init(id: UUID(), image: UIImage(named: "anger_2")!, isCorrect: true),
-                            .init(id: UUID(), image: UIImage(named: "fear_2")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "happiness_2")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "sadness_2")!, isCorrect: false)
-                        ]
-                    ),
-
-                    .init(
-                        answers: [
-                            .init(id: UUID(), image: UIImage(named: "anger_3")!, isCorrect: true),
-                            .init(id: UUID(), image: UIImage(named: "fear_3")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "happiness_3")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "sadness_3")!, isCorrect: false)
-                        ]
-                    ),
-
-                    .init(
-                        answers: [
-                            .init(id: UUID(), image: UIImage(named: "anger_4")!, isCorrect: true),
-                            .init(id: UUID(), image: UIImage(named: "fear_4")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "happiness_4")!, isCorrect: false),
-                            .init(id: UUID(), image: UIImage(named: "sadness_4")!, isCorrect: false)
-                        ]
-                    )
-            ]
-        }()
-        let game = GameEnvironment(gameType: .pickEmotion, question: "Pick anger emotion", sliders: sliders)
+        let game = GameBuilder().createGame(for: .pickEmotion)
         GameEventView(
             store: .init(
                 initialState: .init(game: game),

@@ -36,12 +36,12 @@ private extension ProfileView {
     }
 
     var backgroundImage: some View {
-        Image("categories_bg")
+        Image(.categoriesBg)
             .resizable()
     }
 
     var profileImage: some View {
-        Image("doggy")
+        Image(.doggy)
             .resizable()
             .frame(width: 100, height: 100)
             .clipShape(RoundedRectangle(cornerRadius: 20))

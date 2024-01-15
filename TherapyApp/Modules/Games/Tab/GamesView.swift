@@ -34,7 +34,7 @@ struct GamesView: View {
 // MARK: - Private. Elements
 private extension GamesView {
     var backgroundImage: some View {
-        Image("categories_bg")
+        Image(.categoriesBg)
             .resizable()
     }
 

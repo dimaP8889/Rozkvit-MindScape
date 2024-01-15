@@ -13,7 +13,11 @@ final class PickEmotionsGameFabric {
 
     func createGame() -> GameEnvironment {
         let slides = createSlides()
-        return GameEnvironment(gameType: .pickEmotion, sliders: slides)
+        return GameEnvironment(
+            gameType: .pickEmotion,
+            sliders: slides,
+            categoryName: localStr("statistic.emotionalIntelect").lowercased()
+        )
     }
 }
 
@@ -21,31 +25,82 @@ final class PickEmotionsGameFabric {
 private extension PickEmotionsGameFabric {
     private func createSlides() -> [GameSlide] {
         var slides = [GameSlide]()
-        while slides.count != 10 {
+        while slides.count != 3 {
             let randomEmotion = Emotion.allCases.randomElement()!
-            let answers = createAnswers(for: randomEmotion)
-            let slide = GameSlide(question: randomEmotion.question, answers: answers)
+            let answers = createImageAnswers(for: randomEmotion)
+            let slide = GameSlide(
+                question: randomEmotion.question,
+                answers: answers,
+                wrongAnswerDescription: .init(emotion: randomEmotion)
+            )
             slides.append(slide)
         }
-        return slides
+
+        while slides.count != 4 {
+            let question = GameQuestion(
+                data: .image(.init(
+                    title: localStr("game.wall.question"),
+                    image: Image(.boyAndWall))
+                ))
+            let answers = createWallTextAnswers()
+            let slide = GameSlide(
+                question: question,
+                answers: answers,
+                wrongAnswerDescription: nil
+            )
+            slides.append(slide)
+        }
+
+        while slides.count != 5 {
+            let question = GameQuestion(data: .text(.init(title: localStr("game.panic.question"))))
+            let answers = createPanicTextAnswers()
+            let slide = GameSlide(
+                question: question,
+                answers: answers,
+                wrongAnswerDescription: nil
+            )
+            slides.append(slide)
+        }
+
+        return slides.shuffled()
     }
 
-    private func createAnswers(for emotion: Emotion) -> [GameAnswer] {
-        let correctAnswer = GameAnswer(id: uuid(), image: emotion.randomImage, isCorrect: true)
+    private func createImageAnswers(for emotion: Emotion) -> GameAnswers {
+        let correctAnswer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: true), value: emotion.randomImage)
 
-        var wrongAnswers: [GameAnswer] = []
+        var wrongAnswers: [GameAnswer<Image>] = []
         while wrongAnswers.count != 3 {
             let image = randomEmotionImage(from: emotion.allEmotionsExceptCurrent, currentAnswers: wrongAnswers)
-            let answer = GameAnswer(id: uuid(), image: image, isCorrect: false)
+            let answer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: false), value: image)
             wrongAnswers.append(answer)
         }
         
         var allAnswers = wrongAnswers
         allAnswers.append(correctAnswer)
-        return allAnswers.shuffled()
+        return .init(data: .image(allAnswers.shuffled()))
     }
 
-    func randomEmotionImage(from emotions: [Emotion], currentAnswers: [GameAnswer]) -> Image {
+    private func createWallTextAnswers() -> GameAnswers {
+        var answers: [GameAnswer<String>] = []
+        while answers.count != 4 {
+            let text = localStr("game.wall.answer.\(answers.count + 1)")
+            let answer = GameAnswer<String>(metadata: .init(id: uuid(), isCorrect: true), value: text)
+            answers.append(answer)
+        }
+        return .init(data: .text(answers.shuffled()))
+    }
+
+    private func createPanicTextAnswers() -> GameAnswers {
+        var answers: [GameAnswer<String>] = []
+        while answers.count != 4 {
+            let text = localStr("game.panic.answer.\(answers.count + 1)")
+            let answer = GameAnswer<String>(metadata: .init(id: uuid(), isCorrect: true), value: text)
+            answers.append(answer)
+        }
+        return .init(data: .text(answers.shuffled()))
+    }
+
+    func randomEmotionImage(from emotions: [Emotion], currentAnswers: [GameAnswer<Image>]) -> Image {
         var images: [Image] = []
         for emotion in emotions {
             switch emotion {
@@ -57,7 +112,9 @@ private extension PickEmotionsGameFabric {
             }
         }
 
-        let currentImages = currentAnswers.map { $0.image }
+        let currentImages = currentAnswers
+            .map { $0.value }
+            .compactMap { $0 }
         var image = images.randomElement()!
         while currentImages.contains(image) {
             image = images.randomElement()!
@@ -65,60 +122,3 @@ private extension PickEmotionsGameFabric {
         return image
     }
 }
-
-// MARK: - Model
-private extension PickEmotionsGameFabric {
-    enum Emotion: CaseIterable {
-        case fear
-        case sadness
-        case surprise
-        case happiness
-        case anger
-
-        var title: String {
-            switch self {
-            case .fear:         return "fear"
-            case .sadness:      return "sadness"
-            case .surprise:     return "surprise"
-            case .happiness:    return "happiness"
-            case .anger:        return "anger"
-            }
-        }
-
-        var question: String {
-            switch self {
-            case .fear:         return localStr("game.emotion.fear.question")
-            case .sadness:      return localStr("game.emotion.sadness.question")
-            case .surprise:     return localStr("game.emotion.surprise.question")
-            case .happiness:    return localStr("game.emotion.happiness.question")
-            case .anger:        return localStr("game.emotion.anger.question")
-            }
-        }
-
-        var randomImage: Image {
-            switch self {
-            case .fear:         return Images.fear.randomElement()!
-            case .sadness:      return Images.sadness.randomElement()!
-            case .surprise:     return Images.surprise.randomElement()!
-            case .happiness:    return Images.happiness.randomElement()!
-            case .anger:        return Images.anger.randomElement()!
-            }
-        }
-
-        var allEmotionsExceptCurrent: [Emotion] {
-            var allEmotions = Emotion.allCases
-            allEmotions.removeAll { $0 == self }
-            return allEmotions.shuffled()
-        }
-    }
-
-    struct Images {
-        static var anger: [Image] = [Image("anger_1"), Image("anger_2"), Image("anger_3"), Image("anger_4")]
-        static var fear: [Image] = [Image("fear_1"), Image("fear_2"), Image("fear_3"), Image("fear_4")]
-        static var sadness: [Image] = [Image("sadness_1"), Image("sadness_2"), Image("sadness_3"), Image("sadness_4")]
-        static var surprise: [Image] = [Image("surprise_1"), Image("surprise_2"), Image("surprise_3"), Image("surprise_4")]
-        static var happiness: [Image] = [Image("happiness_1"), Image("happiness_2"), Image("happiness_3"), Image("happiness_4")]
-    }
-}
-
-

@@ -26,30 +26,38 @@ struct HomeView: View {
 // MARK: - Private. Elements
 private extension HomeView {
     var backgroundImage: some View {
-        Image("tree_6")
+        Image(.tree6)
             .resizable()
+            .ignoresSafeArea(edges: .top)
     }
 
     var main: some View {
         VStack {
-            daysSteak
+            daysStreak
             Spacer()
             motivationText
         }
+        .frame(maxWidth: .infinity)
     }
 
-    var daysSteak: some View {
-        HStack {
-            Spacer()
-            Text("30 days steak")
-                .padding(.trailing, 16)
-                .padding(.top, 16)
-        }
+    var daysStreak: some View {
+        Text("30 days streak")
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.mainText)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+            .overlay {
+                RoundedRectangle(cornerRadius: 23)
+                    .stroke(.mainText, lineWidth: 1)
+            }
+            .padding(.top, 16)
     }
 
     var motivationText: some View {
         Text(localStr("home.motivation.text"))
-            .padding(.bottom, 60)
+            .font(.main(size: 17, weight: .bold))
+            .foregroundStyle(.white)
+            .padding(.bottom, 48)
             .padding(.horizontal, 50)
             .multilineTextAlignment(.center)
     }

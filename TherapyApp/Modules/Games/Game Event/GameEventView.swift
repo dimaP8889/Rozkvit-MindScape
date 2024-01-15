@@ -11,34 +11,74 @@ import SwiftUI
 struct GameEventView: View {
     let store: StoreOf<GameEvent>
     @ObservedObject var viewStore: ViewStore<GameEvent.State, GameEvent.Action>
-    private var colums: [GridItem]
 
     init(store: StoreOf<GameEvent>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
-        let item = GridItem(.fixed(125), spacing: 25)
-        self.colums = [item, item]
     }
 
     var body: some View {
-        VStack {
-            navigationView
-            main
+        ZStack {
+            mainView
+            wrongDescriptionView
         }
-        .background(Color.peach)
     }
 }
 
 // MARK: - Element
 private extension GameEventView {
-    var main: some View {
+    var mainView: some View {
+        VStack(spacing: 0) {
+            navigationView
+            headerView
+            slideView
+        }
+        .background(PearlGradient())
+        .blur(radius: viewStore.blur)
+    }
+
+    var wrongDescriptionView: some View {
+        IfLetStore(
+            store.scope(state: \.wrongAnswerDescription, action: \.wrongAnswerDescription)
+        ) { store in
+            GameEntityWrongAnswerDescriptionView(store: store)
+        }
+    }
+
+    var slideView: some View {
         Group {
-            if viewStore.core.isFinished {
+            if viewStore.isFinished {
                 resultView
             } else {
                 gameView
             }
         }
+    }
+
+    var headerView: some View {
+        VStack {
+            categoryText
+            categoryNameText
+        }
+        .padding(.top, 32)
+    }
+
+    var categoryText: some View {
+        Text(localStr("game.category.title"))
+            .font(.main(size: 17, weight: .bold))
+            .foregroundStyle(.burnishedBrown)
+    }
+
+    var categoryNameText: some View {
+        Text(viewStore.game.categoryName)
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.pearlC)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(.burnishedBrown)
+            )
     }
 }
 
@@ -46,11 +86,8 @@ private extension GameEventView {
 private extension GameEventView {
     var navigationView: some View {
         HStack() {
-            close
             Spacer()
-            if !viewStore.core.isFinished {
-                pagesView
-            }
+            close
         }
         .padding(.horizontal, 16)
     }
@@ -65,11 +102,6 @@ private extension GameEventView {
                     .foregroundStyle(.black)
             }
         )
-    }
-
-    var pagesView: some View {
-        Text(viewStore.ui.currentPageText)
-            .font(.system(size: 18, weight: .medium, design: .monospaced))
     }
 }
 
@@ -87,46 +119,47 @@ private extension GameEventView {
     }
 
     var resultText: some View {
-        Text(localStr("game.result.text") + viewStore.ui.resultString)
-            .font(.system(size: 25, weight: .bold, design: .monospaced))
+        Text(viewStore.result)
+            .font(.main(size: 25, weight: .bold))
     }
 }
 
 // MARK: - Game
 private extension GameEventView {
     var gameView: some View {
-        VStack {
+        VStack(spacing: 0) {
             Spacer()
             gameQuestion
             Spacer()
             answers
+            pagesView
             button(type: .continue) {
                 viewStore.send(.didPressContinue)
             }
         }
     }
 
+    @ViewBuilder
     var gameQuestion: some View {
-        Text(viewStore.core.currentSlide?.question ?? "")
-            .font(.system(size: 25, weight: .bold, design: .monospaced))
-            .padding(.top, 16)
+        if let question = viewStore.question {
+            GameEntityQuestionSectionView(data: question)
+        }
     }
 
-    @ViewBuilder
     var answers: some View {
-        if let slide = viewStore.core.currentSlide {
-            LazyVGrid(columns: colums, alignment: .center, spacing: 25) {
-                ForEach(slide.answers) { answerData in
-                    GameEntityAnswerView(
-                        answerData: answerData,
-                        isSelected: viewStore.core.currentSelectedAnswer == answerData
-                    ) { answer in
-                        viewStore.send(.didSelectAnswer(answer))
-                    }
-                }
-            }
-            .padding(.bottom, 25)
+        IfLetStore(
+            store.scope(state: \.answers, action: \.answers)
+        ) { store in
+            GameEntityAnswerSectionView(store: store)
         }
+        .padding(.bottom, 16)
+    }
+
+    var pagesView: some View {
+        Text(viewStore.currentPageText)
+            .font(.main(size: 17, weight: .bold))
+            .foregroundStyle(.mainText)
+            .padding(.bottom, 32)
     }
 }
 
@@ -134,19 +167,18 @@ private extension GameEventView {
 private extension GameEventView {
     func button(type: ButtonType, completion: @escaping () -> ()) -> some View {
         Text(type.title)
-            .frame(maxWidth: .infinity, maxHeight: 50)
-            .font(.system(size: 25, weight: .bold, design: .monospaced))
+            .frame(maxWidth: .infinity, minHeight: 50, maxHeight: 70)
+            .font(.main(size: 24, weight: .bold))
             .foregroundColor(.black)
             .background(
                 RoundedRectangle(
-                    cornerRadius: 8,
+                    cornerRadius: 30,
                     style: .circular
                 )
-                .fill(Color.white)
-                .strokeBorder(Color.black, lineWidth: 1)
+                .fill(viewStore.answers?.currentSelectedAnswer == nil ? Color.white : Color.melon)
             )
             .padding(.bottom, 16)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 36)
             .onTapGesture {
                 completion()
             }

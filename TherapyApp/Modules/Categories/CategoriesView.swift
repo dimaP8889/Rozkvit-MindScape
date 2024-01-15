@@ -27,7 +27,7 @@ struct CategoriesView: View {
 // MARK: - Private. Elements
 private extension CategoriesView {
     var backgroundImage: some View {
-        Image("categories_bg")
+        Image(.categoriesBg)
             .resizable()
     }
 

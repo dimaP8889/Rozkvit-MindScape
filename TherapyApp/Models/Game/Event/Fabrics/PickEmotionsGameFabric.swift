@@ -57,7 +57,7 @@ private extension PickEmotionsGameFabric {
             let slide = GameSlide(
                 question: question,
                 answers: answers,
-                wrongAnswerDescription: nil
+                wrongAnswerDescription: .init(image: Image(.calmDown), description: localStr("game.panic.advice"))
             )
             slides.append(slide)
         }
@@ -66,18 +66,16 @@ private extension PickEmotionsGameFabric {
     }
 
     private func createImageAnswers(for emotion: Emotion) -> GameAnswers {
+        var answers: [GameAnswer<Image>] = []
         let correctAnswer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: true), value: emotion.randomImage)
+        answers.append(correctAnswer)
 
-        var wrongAnswers: [GameAnswer<Image>] = []
-        while wrongAnswers.count != 3 {
-            let image = randomEmotionImage(from: emotion.allEmotionsExceptCurrent, currentAnswers: wrongAnswers)
+        while answers.count != 4 {
+            let image = randomEmotionImage(from: emotion.allEmotionsExceptCurrent, currentAnswers: answers)
             let answer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: false), value: image)
-            wrongAnswers.append(answer)
+            answers.append(answer)
         }
-        
-        var allAnswers = wrongAnswers
-        allAnswers.append(correctAnswer)
-        return .init(data: .image(allAnswers.shuffled()))
+        return .init(data: .image(answers.shuffled()))
     }
 
     private func createWallTextAnswers() -> GameAnswers {
@@ -92,9 +90,12 @@ private extension PickEmotionsGameFabric {
 
     private func createPanicTextAnswers() -> GameAnswers {
         var answers: [GameAnswer<String>] = []
+        let correctAnswer = GameAnswer<String>(metadata: .init(id: uuid(), isCorrect: true), value: localStr("game.panic.answer.1"))
+        answers.append(correctAnswer)
+
         while answers.count != 4 {
             let text = localStr("game.panic.answer.\(answers.count + 1)")
-            let answer = GameAnswer<String>(metadata: .init(id: uuid(), isCorrect: true), value: text)
+            let answer = GameAnswer<String>(metadata: .init(id: uuid(), isCorrect: false), value: text)
             answers.append(answer)
         }
         return .init(data: .text(answers.shuffled()))

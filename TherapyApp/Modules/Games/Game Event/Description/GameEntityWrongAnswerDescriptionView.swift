@@ -52,20 +52,26 @@ extension GameEntityWrongAnswerDescriptionView {
             subtitleText
         }
     }
-
+    
+    @ViewBuilder
     var titleText: some View {
-        Text(viewStore.model.title)
-            .font(.main(size: 24, weight: .bold))
-            .foregroundStyle(.mainText)
-            .padding(.horizontal, 16)
-            .padding(.top, 16)
+        if let title = viewStore.model.title {
+            Text(title)
+                .font(.main(size: 24, weight: .bold))
+                .foregroundStyle(.mainText)
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
+        }
     }
 
+    @ViewBuilder
     var subtitleText: some View {
-        Text(viewStore.model.subtitle)
-            .font(.main(size: 40, weight: .bold))
-            .foregroundStyle(.mainText)
-            .padding(.horizontal, 16)
+        if let subtitle = viewStore.model.subtitle {
+            Text(subtitle)
+                .font(.main(size: 40, weight: .bold))
+                .foregroundStyle(.mainText)
+                .padding(.horizontal, 16)
+        }
     }
 
     var imageView: some View {

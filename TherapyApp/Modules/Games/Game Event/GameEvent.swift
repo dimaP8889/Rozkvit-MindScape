@@ -71,13 +71,14 @@ struct GameEvent {
                 guard let answer = state.answers?.currentSelectedAnswer else {
                     return .none
                 }
-                guard answer.isCorrect else {
-                    if let wrongAnswer = state.game.currentSlide?.wrongAnswerDescription  {
+                state.game.submit(result: answer.isCorrect)
+                
+                if !answer.isCorrect {
+                    if let wrongAnswer = state.game.currentSlide?.wrongAnswerDescription {
                         state.wrongAnswerDescription = .init(model: wrongAnswer)
                     }
                     return .none
                 }
-                state.game.submit(result: answer.isCorrect)
 
                 return .send(.showNextSlide)
 

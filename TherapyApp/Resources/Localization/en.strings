@@ -57,5 +57,7 @@
 "game.panic.answer.3" = "Call an ambulance";
 "game.panic.answer.4" = "Do nothing";
 
+"game.panic.advice" = "If you experience a panic attack, it's important to find a calm and safe space where you can focus on deep, controlled breathing—inhale slowly for a count of four, hold for a count of four, and then exhale for a count of four—to help stabilize your heart rate and ease anxiety. Simultaneously, engage in grounding techniques, such as gently tapping your feet on the ground or holding onto a tangible object, to help your mind refocus and regain a sense of control and calm.";
+
 //Profile
 "profile.progress" = "Progress";

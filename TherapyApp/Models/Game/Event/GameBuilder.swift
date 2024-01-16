@@ -104,12 +104,12 @@ struct GameAnswer<T: Equatable>: Equatable, Identifiable {
 
 // MARK: - Wrong answer description
 struct GameWrongAnswerDescription: Equatable {
-    var title: String
-    var subtitle: String
+    var title: String?
+    var subtitle: String?
     var image: Image
     var description: String
 
-    init(title: String, subtitle: String, image: Image, description: String) {
+    init(title: String? = nil, subtitle: String? = nil, image: Image, description: String) {
         self.title = title
         self.subtitle = subtitle
         self.image = image

@@ -1,0 +1,63 @@
+/* 
+  en.strings
+  Rozkvit
+
+  Created by Dmytro Pogrebniak on 17.12.2023.
+  
+*/
+
+// Tabs
+"tab.categories" = "Categories";
+"tab.home" = "Home";
+"tab.games" = "Games";
+"tab.profile" = "Profile";
+
+// Home
+"home.motivation.text" = "Well done, your tree looks strong and flourish! Keep up the progress";
+
+// Statistic
+"statistic.emotionalIntelect" = "Emotional Intelligence";
+"statistic.criticalThinking" = "Critical Thinking";
+"statistic.description" = "Check your progress and click on a category to start a new game!";
+
+// Game
+"game.pickGame" = "Pick Game";
+"game.pickEmotion.title" = "Pick Emotion";
+"game.result.text" = "Your result is: ";
+"game.button.finish" = "Finish";
+"game.button.continue" = "Continue";
+"game.emotion.fear.title" = "Fear";
+"game.emotion.sadness.title" = "Sadness";
+"game.emotion.happiness.title" = "Happiness";
+"game.emotion.anger.title" = "Anger";
+"game.emotion.surprise.title" = "Surprise";
+"game.category.title" = "category";
+"game.emotion.pick.question.title" = "Pick the emotion";
+"game.wrongAnswer.title" = "This is";
+
+"game.wrongAnswer.fear.description" = "Fear is a primal and often intense emotion triggered by the perception of danger, whether real or imagined. It activates the body's fight-or-flight response, leading to physiological changes like increased heart rate, rapid breathing, and heightened senses. This emotion can range from mild apprehension to paralyzing terror and serves as a protective mechanism, alerting individuals to potential threats and preparing them to respond to challenging situations.";
+
+"game.wrongAnswer.sadness.description" = "Sadness is a deep, emotional state often characterized by feelings of loss, despair, or disappointment. It's a natural response to situations involving grief, failure, or heartache, and can manifest as a sense of emptiness or a pervasive low mood. While typically associated with decreased energy and withdrawal from usual activities, sadness can also provide a pathway to empathy, reflection, and a deeper understanding of one's own values and priorities.";
+
+"game.wrongAnswer.anger.description" = "Anger is a powerful and often intense emotion characterized by feelings of displeasure, irritation, or hostility. It can arise in response to perceived threats, injustices, or frustrations, often triggering physiological responses like increased heart rate or heightened adrenaline levels. This emotion can range from mild irritation to intense rage and can impact both mental and physical health, as well as interpersonal relationships.";
+
+"game.wrongAnswer.surprise.description" = "Surprise is a sudden and often unexpected emotional response to a novel or unforeseen event or information. It can range from mild curiosity to overwhelming shock, depending on the nature and context of the surprising incident. This emotion typically triggers a quick physiological reaction, such as a gasp or a jolt, and can lead to a variety of outcomes, from joy and excitement to fear and confusion, depending on the situation.";
+
+"game.wrongAnswer.happiness.description" = "Happiness is a state of well-being and contentment, marked by feelings of joy, satisfaction, or positive fulfillment. It often arises from engaging in enjoyable activities, achieving personal goals, or through meaningful connections with others. This emotion can positively influence one’s mental and physical health, fostering a sense of purpose and overall life satisfaction.";
+
+"game.wall.question" = "What will you do with this wall?";
+"game.wall.answer.1" = "I'll break it";
+"game.wall.answer.2" = "I'll go around";
+"game.wall.answer.3" = "I'll climb over";
+"game.wall.answer.4" = "I'll stop and won't go further";
+
+"game.panic.question" = "What should you do if you have a panic attack?";
+"game.panic.answer.1" = "Calm down";
+"game.panic.answer.2" = "Start to panic";
+"game.panic.answer.3" = "Call an ambulance";
+"game.panic.answer.4" = "Do nothing";
+
+"game.panic.advice" = "If you experience a panic attack, it's important to find a calm and safe space where you can focus on deep, controlled breathing—inhale slowly for a count of four, hold for a count of four, and then exhale for a count of four—to help stabilize your heart rate and ease anxiety. Simultaneously, engage in grounding techniques, such as gently tapping your feet on the ground or holding onto a tangible object, to help your mind refocus and regain a sense of control and calm.";
+
+//Profile
+"profile.progress" = "Progress";

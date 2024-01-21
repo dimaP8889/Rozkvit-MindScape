@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import SwiftUI
 
 @Reducer
 struct Profile {
@@ -19,22 +20,43 @@ struct Profile {
 struct ProfileChartData: Equatable {
     let name: String
     let amount: Int
+    let color: Color?
+
+    internal init(name: String, amount: Int, color: Color? = nil) {
+        self.name = name
+        self.amount = amount
+        self.color = color
+    }
 
     static var moodMock: [ProfileChartData] = {
-        [.init(name: "Happy", amount: 10), .init(name: "Sad", amount: 3),
-            .init(name: "Angry", amount: 7), .init(name: "Content", amount: 12)]
+        [
+            .init(name: "Happy", amount: 10, color: .pieChart1),
+            .init(name: "Sad", amount: 3, color: .pieChart2),
+            .init(name: "Angry", amount: 7, color: .pieChart3),
+            .init(name: "Content", amount: 12, color: .pieChart4)
+        ]
     }()
 
     static var stressMock: [ProfileChartData] = {
-        [.init(name: "Work", amount: 3), .init(name: "Relationships", amount: 12),
-            .init(name: "Finance", amount: 18), .init(name: "Health", amount: 5)]
+        [
+            .init(name: "Work", amount: 3, color: .pieChart1),
+            .init(name: "Relationships", amount: 12, color: .pieChart2),
+            .init(name: "Finance", amount: 18, color: .pieChart3),
+            .init(name: "Health", amount: 5, color: .pieChart4)
+        ]
     }()
 
     static var effectivnesMock: [ProfileChartData] = {
-        [.init(name: "01.09", amount: 3), .init(name: "01.10", amount: 5),
-            .init(name: "01.11", amount: 11), .init(name: "01.12", amount: 8),
-            .init(name: "01.01", amount: 9), .init(name: "01.02", amount: 13),
-             .init(name: "01.03", amount: 17), .init(name: "01.03", amount: 17)]
+        [
+            .init(name: "01.09", amount: 3),
+            .init(name: "01.10", amount: 5),
+            .init(name: "01.11", amount: 11),
+            .init(name: "01.12", amount: 8),
+            .init(name: "01.01", amount: 9),
+            .init(name: "01.02", amount: 13),
+            .init(name: "01.03", amount: 17),
+            .init(name: "01.03", amount: 17)
+        ]
     }()
 }
 

@@ -19,7 +19,7 @@ struct GamesView: View {
 
     var body: some View {
         main
-            .background(PearlGradient())
+            .background(PearlGradient(), ignoresSafeAreaEdges: .top)
             .fullScreenCover(
                 store: self.store.scope(
                     state: \.$destination.selectedGame,

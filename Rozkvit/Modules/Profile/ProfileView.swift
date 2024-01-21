@@ -20,24 +20,18 @@ struct ProfileView: View {
 
     var body: some View {
         main
-            .background(backgroundImage)
+            .background(PearlGradient(), ignoresSafeAreaEdges: .top)
     }
 }
 
 // MARK: - Private. Elements
 private extension ProfileView {
     var main: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 0) {
             profileImage
             fullName
             progressSection
-            Spacer()
         }
-    }
-
-    var backgroundImage: some View {
-        Image(.categoriesBg)
-            .resizable()
     }
 
     var profileImage: some View {
@@ -49,7 +43,9 @@ private extension ProfileView {
 
     var fullName: some View {
         Text(viewStore.fullName)
-            .font(.system(size: 18))
+            .font(.main(size: 17, weight: .bold))
+            .foregroundStyle(.lightCoral)
+            .padding(.top, 12)
     }
 }
 
@@ -64,7 +60,9 @@ extension ProfileView {
 
     var progressTitle: some View {
         Text(localStr("profile.progress"))
-            .font(.system(size: 25, weight: .bold, design: .monospaced))
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.mainText)
+            .padding(.top, 28)
     }
 }
 
@@ -77,7 +75,9 @@ extension ProfileView {
                 stressChart
             }
             effectivnesChart
+            Spacer()
         }
+        .padding(.top, 16)
     }
 
     var moodChart: some View {
@@ -94,7 +94,9 @@ extension ProfileView {
                     )
                 )
             }
+            .chartForegroundStyleScale(range: graphColors(for: viewStore.moodData))
         }
+        .foregroundStyle(.mainText)
         .padding(.leading, 16)
         .frame(height: 250)
     }
@@ -113,7 +115,9 @@ extension ProfileView {
                     )
                 )
             }
+            .chartForegroundStyleScale(range: graphColors(for: viewStore.stressData))
         }
+        .foregroundStyle(.mainText)
         .frame(height: 250)
         .padding(.trailing, 16)
     }
@@ -129,20 +133,34 @@ extension ProfileView {
                     .interpolationMethod(.catmullRom)
                     .symbol {
                         Circle()
-                            .fill(.green)
-                            .frame(width: 10)
+                            .fill(.lineChart)
+                            .frame(width: 5)
                     }
+                    .foregroundStyle(.lineChart)
                 }
             }
         }
+
+        .chartYAxis() {
+            AxisMarks(position: .leading)
+        }
+        .foregroundStyle(.mainText)
         .padding(.horizontal, 16)
     }
 }
 
 
-// MARK: - Private. Actions
+// MARK: - Private
 private extension ProfileView {
-    
+    func graphColors(for input: [ProfileChartData]) -> [Color] {
+        var returnColors = [Color]()
+        for item in input {
+            if let color = item.color {
+                returnColors.append(color)
+            }
+        }
+        return returnColors
+    }
 }
 
 struct ProfileView_Previews: PreviewProvider {

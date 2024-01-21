@@ -19,7 +19,7 @@ struct GamesView: View {
 
     var body: some View {
         main
-            .background(backgroundImage)
+            .background(PearlGradient())
             .fullScreenCover(
                 store: self.store.scope(
                     state: \.$destination.selectedGame,
@@ -47,7 +47,7 @@ private extension GamesView {
 
     var title: some View {
         Text(localStr("game.pickGame"))
-            .font(.system(size: 30, weight: .bold, design: .monospaced))
+            .font(.main(size: 24, weight: .bold))
     }
 
     var categories: some View {

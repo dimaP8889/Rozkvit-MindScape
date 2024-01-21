@@ -21,9 +21,10 @@
 "statistic.description" = "Check your progress and click on a category to start a new game!";
 
 // Game
-"game.pickGame" = "Pick Game";
-"game.pickEmotion.title" = "Pick Emotion";
+"game.pickGame" = "pick game";
+"game.pickEmotion.title" = "Pick the emotion";
 "game.result.text" = "Your result is: ";
+"game.unavailable.description" = "Сollect 3 stars in the previous level to open the game";
 "game.button.finish" = "Finish";
 "game.button.continue" = "Continue";
 "game.emotion.fear.title" = "Fear";

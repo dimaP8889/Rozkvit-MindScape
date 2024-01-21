@@ -5,7 +5,7 @@
 //  Created by Dmytro Pogrebniak on 25.12.2023.
 //
 
-import Foundation
+import SwiftUI
 
 struct CategoryData: Equatable {
     var type: CategoryType
@@ -32,6 +32,13 @@ enum CategoryType: Equatable, CaseIterable {
         switch self {
         case .emotionalIntelect:    return localStr("statistic.emotionalIntelect")
         case .criticalThinking:     return localStr("statistic.criticalThinking")
+        }
+    }
+
+    var mainColor: Color {
+        switch self {
+        case .emotionalIntelect:    return .melonB
+        case .criticalThinking:     return .burnishedBrown
         }
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import Foundation
+import SwiftUI
 
 @Reducer
 struct CategoryGamesList {
@@ -15,6 +15,7 @@ struct CategoryGamesList {
         private var category: CategoryData
         var tabIndex: Int { category.type.tabIndex }
         var categoryName: String { category.name }
+        var categoryColor: Color { category.type.mainColor }
         var games: [GameData]
 
         init(category: CategoryData) {

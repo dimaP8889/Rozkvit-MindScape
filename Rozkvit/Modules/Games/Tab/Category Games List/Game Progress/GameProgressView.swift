@@ -13,54 +13,68 @@ struct GameProgressView: View {
     let selectAction: (GameType) -> Void
 
     var body: some View {
-        ZStack(alignment: .center) {
-            background
-            foreground
+        VStack(spacing: 0) {
+            imageView
+            gameInfoView
         }
-        .frame(width: 300)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .frame(maxWidth: .infinity)
+        .allowsHitTesting(game.isAvailable)
+        .onTapGesture {
+            selectAction(game.type)
+        }
+        .padding(.horizontal, 8)
     }
 }
 
 // MARK: - Private. Elements
 private extension GameProgressView {
-    @ViewBuilder
-    var foreground: some View {
-        if !game.isAvailable {
-            Color.white.opacity(0.7)
+    var imageView: some View {
+        ZStack {
+            game.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+            if !game.isAvailable {
+                notAvailableView
+            }
+        }
+        .frame(maxHeight: 240)
+    }
+
+    var notAvailableView: some View {
+        ZStack {
+            Color.mainText.opacity(0.78)
+            Text(localStr("game.unavailable.description"))
+                .font(.main(size: 12))
+                .foregroundStyle(.greyText)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 200)
         }
     }
 
-    var background: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            gameName
-            progressBar
+    var gameInfoView: some View {
+        HStack(alignment: .center) {
+            gameNameView
+            Spacer()
+            gameProgressView
         }
-        .onTapGesture {
-            selectAction(game.type)
-        }
-        .scaleOnTap(scaleFactor: .min)
+        .padding(.top, 8)
+        .padding(.bottom, 12)
+        .padding(.horizontal, 16)
+        .background(.white)
     }
 
-    var gameName: some View {
-        Text(game.type.title)
+    var gameNameView: some View {
+        Text(game.title)
+            .font(.main(size: 17, weight: .bold))
+            .padding(.top, 3)
     }
 
-    var progressBar: some View {
-        ZStack(alignment: .leading) {
-            Rectangle()
-                .frame(height: 20)
-                .opacity(0.3)
-                .foregroundColor(.gray)
-
-            Rectangle()
-                .frame(width: CGFloat(game.progress * 3), height: 20)
-                .foregroundColor(.green)
-                .animation(.easeInOut, value: game.progress)
-
-            Rectangle()
-                .frame(width: 2, height: 20)
-                .foregroundColor(.red)
-                .padding(.leading, 300 * 0.8)
+    var gameProgressView: some View {
+        HStack(spacing: 2) {
+            game.progress.firstStar
+            game.progress.secondStar
+            game.progress.thirdStar
         }
     }
 }
@@ -68,7 +82,7 @@ private extension GameProgressView {
 struct GameProgressView_Previews: PreviewProvider {
     static var previews: some View {
         GameProgressView(
-            game: .init(type: .pickEmotion, progress: 45, isAvailable: true),
+            game: .init(type: .pickEmotion, progress: 45, isAvailable: false),
             selectAction: { _ in }
         )
     }

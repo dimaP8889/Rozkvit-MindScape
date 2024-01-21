@@ -20,6 +20,7 @@ struct CategoryGamesListView: View {
     var body: some View {
         VStack {
             title
+            subtitle
             gamesList
         }
     }
@@ -28,8 +29,21 @@ struct CategoryGamesListView: View {
 // MARK: - Private. Elements
 private extension CategoryGamesListView {
     var title: some View {
+        Text(localStr("game.category.title"))
+            .font(.main(size: 17, weight: .bold))
+            .foregroundStyle(viewStore.categoryColor)
+    }
+
+    var subtitle: some View {
         Text(viewStore.categoryName)
-            .font(.system(size: 18, weight: .semibold, design: .rounded))
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.pearlC)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(viewStore.categoryColor)
+            )
     }
 
     var gamesList: some View {
@@ -42,9 +56,13 @@ private extension CategoryGamesListView {
                             viewStore.send(.didSelectGame(gameType))
                         }
                     )
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                 }
             }
             .scrollContentBackground(.hidden)
+            .listStyle(.grouped)
+            .background(.clear)
         }
     }
 }
@@ -53,10 +71,11 @@ struct CategoryGamesListView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryGamesListView(
             store: .init(
-                initialState: CategoryGamesList.State(category: .init(type: .criticalThinking))
+                initialState: CategoryGamesList.State(category: .init(type: .emotionalIntelect))
             ) {
                 CategoryGamesList()
             }
         )
+        .background(PearlGradient())
     }
 }

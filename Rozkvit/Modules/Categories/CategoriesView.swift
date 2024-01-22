@@ -20,23 +20,26 @@ struct CategoriesView: View {
 
     var body: some View {
         main
-            .background(backgroundImage)
+            .background(PearlGradient())
     }
 }
 
 // MARK: - Private. Elements
 private extension CategoriesView {
-    var backgroundImage: some View {
-        Image(.categoriesBg)
-            .resizable()
-    }
-
     var main: some View {
         VStack {
+            title
+            Spacer()
             chart
             Spacer()
             description
         }
+    }
+
+    var title: some View {
+        Text(localStr("tab.categories").lowercased())
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.mainText)
     }
 
     var chart: some View {
@@ -65,11 +68,10 @@ private extension CategoriesView {
 
     var description: some View {
         Text(localStr("statistic.description"))
-            .font(.system(size: 28))
-            .fontWeight(.bold)
-            .foregroundColor(Color.white)
+            .font(.main(size: 17, weight: .bold))
+            .foregroundColor(.mainText)
             .padding(.horizontal, 35)
-            .padding(.bottom, 55)
+            .padding(.bottom, 48)
             .multilineTextAlignment(.center)
     }
 }

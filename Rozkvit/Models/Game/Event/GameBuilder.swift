@@ -20,7 +20,7 @@ final class GameEnvironment: Equatable {
     private var results: [Bool] = []
     
     let type: GameType
-    let categoryName: String
+    let category: CategoryType
     var currentSlide: GameSlide?
     let amountOfSlides: Int
 
@@ -28,11 +28,11 @@ final class GameEnvironment: Equatable {
         lhs.slides == rhs.slides && lhs.results == rhs.results && lhs.amountOfSlides == rhs.amountOfSlides
     }
 
-    init(gameType: GameType, sliders: [GameSlide], categoryName: String) {
+    init(gameType: GameType, category: CategoryType, sliders: [GameSlide]) {
         self.type = gameType
+        self.category = category
         self.slides = Stack(sliders)
         self.amountOfSlides = sliders.count
-        self.categoryName = categoryName
     }
 
     func nextSlide() -> GameSlide? {

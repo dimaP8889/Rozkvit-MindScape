@@ -15,8 +15,8 @@ final class PickEmotionsGameFabric {
         let slides = createSlides()
         return GameEnvironment(
             gameType: .pickEmotion,
-            sliders: slides,
-            categoryName: localStr("statistic.emotionalIntelect").lowercased()
+            category: .emotionalIntelect, 
+            sliders: slides
         )
     }
 }
@@ -25,7 +25,7 @@ final class PickEmotionsGameFabric {
 private extension PickEmotionsGameFabric {
     private func createSlides() -> [GameSlide] {
         var slides = [GameSlide]()
-        while slides.count != 3 {
+        while slides.count != 10 {
             let randomEmotion = Emotion.allCases.randomElement()!
             let answers = createImageAnswers(for: randomEmotion)
             let slide = GameSlide(
@@ -36,31 +36,31 @@ private extension PickEmotionsGameFabric {
             slides.append(slide)
         }
 
-        while slides.count != 4 {
-            let question = GameQuestion(
-                data: .image(.init(
-                    title: localStr("game.wall.question"),
-                    image: Image(.boyAndWall))
-                ))
-            let answers = createWallTextAnswers()
-            let slide = GameSlide(
-                question: question,
-                answers: answers,
-                wrongAnswerDescription: nil
-            )
-            slides.append(slide)
-        }
-
-        while slides.count != 5 {
-            let question = GameQuestion(data: .text(.init(title: localStr("game.panic.question"))))
-            let answers = createPanicTextAnswers()
-            let slide = GameSlide(
-                question: question,
-                answers: answers,
-                wrongAnswerDescription: .init(image: Image(.calmDown), description: localStr("game.panic.advice"))
-            )
-            slides.append(slide)
-        }
+//        while slides.count != 4 {
+//            let question = GameQuestion(
+//                data: .image(.init(
+//                    title: localStr("game.wall.question"),
+//                    image: Image(.boyAndWall))
+//                ))
+//            let answers = createWallTextAnswers()
+//            let slide = GameSlide(
+//                question: question,
+//                answers: answers,
+//                wrongAnswerDescription: nil
+//            )
+//            slides.append(slide)
+//        }
+//
+//        while slides.count != 5 {
+//            let question = GameQuestion(data: .text(.init(title: localStr("game.panic.question"))))
+//            let answers = createPanicTextAnswers()
+//            let slide = GameSlide(
+//                question: question,
+//                answers: answers,
+//                wrongAnswerDescription: .init(image: Image(.calmDown), description: localStr("game.panic.advice"))
+//            )
+//            slides.append(slide)
+//        }
 
         return slides.shuffled()
     }

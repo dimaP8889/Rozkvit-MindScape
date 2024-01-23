@@ -30,8 +30,8 @@ enum CategoryType: Equatable, CaseIterable {
 
     var localization: String {
         switch self {
-        case .emotionalIntelect:    return localStr("statistic.emotionalIntelect")
-        case .criticalThinking:     return localStr("statistic.criticalThinking")
+        case .emotionalIntelect:    return localStr("statistic.emotionalIntelect").lowercased()
+        case .criticalThinking:     return localStr("statistic.criticalThinking").lowercased()
         }
     }
 

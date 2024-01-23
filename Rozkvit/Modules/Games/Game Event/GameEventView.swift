@@ -66,18 +66,18 @@ private extension GameEventView {
     var categoryText: some View {
         Text(localStr("game.category.title"))
             .font(.main(size: 17, weight: .bold))
-            .foregroundStyle(.burnishedBrown)
+            .foregroundStyle(viewStore.game.category.mainColor)
     }
 
     var categoryNameText: some View {
-        Text(viewStore.game.categoryName)
+        Text(viewStore.game.category.localization)
             .font(.main(size: 24, weight: .bold))
             .foregroundStyle(.pearlC)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .background(
                 RoundedRectangle(cornerRadius: 30)
-                    .fill(.burnishedBrown)
+                    .fill(viewStore.game.category.mainColor)
             )
     }
 }

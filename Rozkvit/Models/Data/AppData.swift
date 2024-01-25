@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import SwiftUI
 import Charts
 
 struct AppData {
@@ -44,8 +45,11 @@ struct AppData {
 }
 
 // MARK: - Model
-struct StatisticData: Equatable {
+struct StatisticData: Equatable, Identifiable {
+    var id: String { type.id }
     var type: CategoryType
     var name: String { type.localization }
+    var color: Color { type.mainColor }
+    var percentage: String { "\(Int(amount * 100))%" }
     var amount: Double
 }

@@ -46,6 +46,7 @@
 		F18D207D2B542BD400523CFD /* GameEntityAnswerSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D207B2B542BD400523CFD /* GameEntityAnswerSectionView.swift */; };
 		F18D207E2B542BD400523CFD /* GameEntityAnswerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D207C2B542BD400523CFD /* GameEntityAnswerSection.swift */; };
 		F18D20812B542DB400523CFD /* GameEntityImageAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D20802B542DB400523CFD /* GameEntityImageAnswerView.swift */; };
+		F1C41F892B62C19400F40820 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = F1C41F882B62C19400F40820 /* WrappingHStack */; };
 		F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74372B2EDCAC00A9A7F0 /* CategoriesView.swift */; };
 		F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74382B2EDCAC00A9A7F0 /* Categories.swift */; };
 		F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743C2B2EDCC800A9A7F0 /* GamesView.swift */; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C41F892B62C19400F40820 /* WrappingHStack in Frameworks */,
 				F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +485,7 @@
 			name = Rozkvit;
 			packageProductDependencies = (
 				F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */,
+				F1C41F882B62C19400F40820 /* WrappingHStack */,
 			);
 			productName = Rozkvit;
 			productReference = F110B7562B2EC29100FD3B95 /* Rozkvit.app */;
@@ -514,6 +517,7 @@
 			mainGroup = F110B74D2B2EC29100FD3B95;
 			packageReferences = (
 				F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				F1C41F872B62C19400F40820 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = F110B7572B2EC29100FD3B95 /* Products */;
 			projectDirPath = "";
@@ -830,6 +834,14 @@
 				minimumVersion = 1.5.5;
 			};
 		};
+		F1C41F872B62C19400F40820 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -837,6 +849,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		F1C41F882B62C19400F40820 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1C41F872B62C19400F40820 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

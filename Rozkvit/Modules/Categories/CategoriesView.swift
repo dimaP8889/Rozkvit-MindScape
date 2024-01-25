@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import WrappingHStack
 import SwiftUI
 import Charts
 
@@ -19,30 +20,49 @@ struct CategoriesView: View {
     }
 
     var body: some View {
-        main
-            .background(PearlGradient())
+        mainView
+            .background(PearlGradient(), ignoresSafeAreaEdges: .top)
     }
 }
 
 // MARK: - Private. Elements
 private extension CategoriesView {
-    var main: some View {
+    var mainView: some View {
         VStack {
-            title
+            titleView
             Spacer()
-            chart
+            namesListView
             Spacer()
-            description
+            chartView
+            Spacer()
+            descriptionView
         }
     }
 
-    var title: some View {
+    var titleView: some View {
         Text(localStr("tab.categories").lowercased())
             .font(.main(size: 24, weight: .bold))
             .foregroundStyle(.mainText)
     }
 
-    var chart: some View {
+    var namesListView: some View {
+        WrappingHStack(
+            viewStore.charts,
+            alignment: .center,
+            spacing: .constant(10),
+            lineSpacing: 15
+        ) { item in
+            Text(item.name.capitalized)
+                .font(.main(size: 17, weight: .bold))
+                .foregroundStyle(item.type.fontColor)
+                .padding(.horizontal, 13)
+                .frame(height: 40)
+                .background(item.type.mainColor)
+                .cornerRadius(30)
+        }
+    }
+
+    var chartView: some View {
         Chart(viewStore.charts, id: \.type.localization) { data in
             SectorMark(
                 angle: .value(Text(data.name), data.amount),
@@ -55,18 +75,19 @@ private extension CategoriesView {
                 )
             )
             .annotation(position: .overlay) {
-                Text(data.name)
-                    .font(.headline)
-                    .foregroundStyle(.white)
+                Text(data.percentage)
+                    .font(.main(size: 30, weight: .bold))
+                    .foregroundStyle(data.type.fontColor)
             }
         }
-        .frame(height: 500)
+        .frame(height: 400)
         .padding(.horizontal, 16)
         .chartLegend(.hidden)
         .chartAngleSelection(value: selectedAngle)
+        .chartForegroundStyleScale(range: graphColors(for: viewStore.charts))
     }
 
-    var description: some View {
+    var descriptionView: some View {
         Text(localStr("statistic.description"))
             .font(.main(size: 17, weight: .bold))
             .foregroundColor(.mainText)
@@ -83,6 +104,17 @@ extension CategoriesView {
             get: { viewStore.selectedAngle },
             set: { viewStore.send(.didSelectChart(angle: $0)) }
         )
+    }
+}
+
+// MARK: - Private
+private extension CategoriesView {
+    func graphColors(for input: [StatisticData]) -> [Color] {
+        var returnColors = [Color]()
+        for item in input {
+            returnColors.append(item.color)
+        }
+        return returnColors
     }
 }
 

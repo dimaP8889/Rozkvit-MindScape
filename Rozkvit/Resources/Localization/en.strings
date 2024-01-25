@@ -18,6 +18,9 @@
 // Statistic
 "statistic.emotionalIntelect" = "Emotional Intelligence";
 "statistic.criticalThinking" = "Critical Thinking";
+"statistic.logic" = "Logic";
+"statistic.selfIdentity" = "Self Identity";
+"statistic.rationalThinking" = "Rational Thinking";
 "statistic.description" = "Check your progress and click on a category to start a new game!";
 
 // Game

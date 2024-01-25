@@ -31,18 +31,18 @@ private extension CategoryGamesListView {
     var title: some View {
         Text(localStr("game.category.title"))
             .font(.main(size: 17, weight: .bold))
-            .foregroundStyle(viewStore.categoryColor)
+            .foregroundStyle(viewStore.categoryFontColor)
     }
 
     var subtitle: some View {
         Text(viewStore.categoryName)
             .font(.main(size: 24, weight: .bold))
-            .foregroundStyle(.pearlC)
+            .foregroundStyle(viewStore.categoryFontColor)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .background(
                 RoundedRectangle(cornerRadius: 30)
-                    .fill(viewStore.categoryColor)
+                    .fill(viewStore.categoryMainColor)
             )
     }
 

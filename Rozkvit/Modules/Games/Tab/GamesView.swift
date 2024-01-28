@@ -28,6 +28,7 @@ struct GamesView: View {
             ) { store in
                 GameEventView(store: store)
             }
+            .task { await self.viewStore.send(.task).finish() }
     }
 }
 

@@ -20,13 +20,14 @@ struct HomeView: View {
     var body: some View {
         main
             .background(backgroundImage)
+            .onAppear { store.send(.onAppear) }
     }
 }
 
 // MARK: - Private. Elements
 private extension HomeView {
     var backgroundImage: some View {
-        Image(.tree6)
+        viewStore.treeImage
             .resizable()
             .ignoresSafeArea(edges: .top)
     }

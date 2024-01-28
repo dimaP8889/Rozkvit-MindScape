@@ -11,7 +11,7 @@ import Combine
 @dynamicMemberLookup
 struct AppDataClient {
     var get: @Sendable () -> AppData
-    var set: @Sendable (AppData) async -> Void
+    var setGameStatistic: @Sendable (GameType, Int) async -> Void
     var stream: @Sendable () -> AsyncStream<AppData>
 
     public subscript<Value>(dynamicMember keyPath: KeyPath<AppData, Value>) -> Value {
@@ -24,11 +24,11 @@ struct AppDataClient {
         self.stream().map { $0[keyPath: keyPath] }.eraseToStream()
     }
 
-    public func modify(_ operation: (inout AppData) -> Void) async {
-        var appData = self.get()
-        operation(&appData)
-        await self.set(appData)
-    }
+//    public func modify(_ operation: (inout AppData) -> Void) async {
+//        var appData = self.get()
+//        operation(&appData)
+//        await self.set(appData)
+//    }
 }
 
 extension AppDataClient: DependencyKey {
@@ -41,10 +41,10 @@ extension AppDataClient: DependencyKey {
             get: {
                 appData.value
             },
-            set: { updatedData in
+            setGameStatistic: { game, result in
                 appData.withValue {
-                    $0 = updatedData
-                    subject.send(updatedData)
+                    $0.gameStatistic[game] = result
+                    subject.send($0)
                 }
             },
             stream: {
@@ -62,10 +62,10 @@ extension AppDataClient: DependencyKey {
             get: {
                 appData.value
             },
-            set: { updatedData in
+            setGameStatistic: { game, result in
                 appData.withValue {
-                    $0 = updatedData
-                    subject.send(updatedData)
+                    $0.gameStatistic[game] = result
+                    subject.send($0)
                 }
             },
             stream: {

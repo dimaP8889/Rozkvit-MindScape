@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AvailabilityChecker {
+struct AvailabilityChecker: Equatable {
     func isGameAvailable(_ game: GameType, gameStatistic: [GameType: Int]) -> Bool {
         switch game {
         case .pickEmotion:
@@ -15,9 +15,11 @@ struct AvailabilityChecker {
         case .emotionalIntelect1:
             return gameStatistic[.pickEmotion] ?? 0 >= 80
         case .emotionalIntelect2:
-            return gameStatistic[.emotionalIntelect1] ?? 0 >= 80
+            return isGameAvailable(.emotionalIntelect1, gameStatistic: gameStatistic) &&
+                gameStatistic[.emotionalIntelect1] ?? 0 >= 80
         case .emotionalIntelect3:
-            return gameStatistic[.emotionalIntelect2] ?? 0 >= 80
+            return isGameAvailable(.emotionalIntelect2, gameStatistic: gameStatistic) &&
+                gameStatistic[.emotionalIntelect2] ?? 0 >= 80
 
 
         case .criticalThinking0:
@@ -25,9 +27,11 @@ struct AvailabilityChecker {
         case .criticalThinking1:
             return gameStatistic[.criticalThinking0] ?? 0 >= 80
         case .criticalThinking2:
-            return gameStatistic[.criticalThinking1] ?? 0 >= 80
+            return isGameAvailable(.criticalThinking1, gameStatistic: gameStatistic) &&
+                gameStatistic[.criticalThinking1] ?? 0 >= 80
         case .criticalThinking3:
-            return gameStatistic[.criticalThinking2] ?? 0 >= 80
+            return isGameAvailable(.criticalThinking2, gameStatistic: gameStatistic) &&
+                gameStatistic[.criticalThinking2] ?? 0 >= 80
         }
     }
 }

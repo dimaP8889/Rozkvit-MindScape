@@ -9,11 +9,11 @@ import ComposableArchitecture
 import SwiftUI
 import Charts
 
-struct AppData {
+struct AppData: Equatable {
     static var mock: AppData = AppData(
         gameStatistic: [
-            .criticalThinking0: 80, .criticalThinking1: 0, .criticalThinking2: 0, .criticalThinking3: 0,
-            .pickEmotion: 80, .emotionalIntelect1: 0, .emotionalIntelect2: 0, .emotionalIntelect3: 0
+            .criticalThinking0: 0, .criticalThinking1: 0, .criticalThinking2: 0, .criticalThinking3: 0,
+            .pickEmotion: 0, .emotionalIntelect1: 0, .emotionalIntelect2: 0, .emotionalIntelect3: 0
         ]
     )
 
@@ -28,12 +28,12 @@ struct AppData {
 
     var categoriesData: IdentifiedArrayOf<CategoryGamesList.State>  {
         [
-            .init(category: .init(type: .emotionalIntelect)),
-            .init(category: .init(type: .criticalThinking))
+            .init(category: .emotionalIntelect),
+            .init(category: .criticalThinking)
         ]
     }
 
-    func gamesData(for category: CategoryData) -> [GameData] {
+    func gamesData(for category: CategoryType) -> [GameData] {
         category.games.map {
             GameData(
                 type: $0,

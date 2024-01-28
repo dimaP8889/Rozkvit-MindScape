@@ -12,14 +12,14 @@ import SwiftUI
 struct CategoryGamesList {
     struct State: Equatable, Identifiable {
         var id: UUID
-        private var category: CategoryData
-        var tabIndex: Int { category.type.tabIndex }
-        var categoryName: String { category.name }
-        var categoryMainColor: Color { category.type.mainColor }
-        var categoryFontColor: Color { category.type.fontColor }
+        private var category: CategoryType
+        var tabIndex: Int { category.tabIndex }
+        var categoryName: String { category.localization }
+        var categoryMainColor: Color { category.mainColor }
+        var categoryFontColor: Color { category.fontColor }
         var games: [GameData]
 
-        init(category: CategoryData) {
+        init(category: CategoryType) {
             @Dependency(\.uuid) var uuid
             @Dependency(\.appData.get) var appData
             self.id = uuid.callAsFunction()

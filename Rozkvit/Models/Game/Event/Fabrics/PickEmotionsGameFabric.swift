@@ -11,11 +11,12 @@ import ComposableArchitecture
 final class PickEmotionsGameFabric {
     @Dependency(\.uuid) var uuid
 
-    func createGame() -> GameEnvironment {
+    func createGame(of type: GameType) -> GameEnvironment {
         let slides = createSlides()
+        let category = CategoryType.allCases.category(for: type) ?? .emotionalIntelect
         return GameEnvironment(
-            gameType: .pickEmotion,
-            category: .emotionalIntelect, 
+            gameType: type,
+            category: category,
             sliders: slides
         )
     }

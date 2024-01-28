@@ -7,25 +7,6 @@
 
 import SwiftUI
 
-struct CategoryData: Equatable {
-    var type: CategoryType
-    var name: String { type.localization }
-    var games: [GameType] {
-        switch type {
-        case .emotionalIntelect:
-            return [.pickEmotion, .emotionalIntelect1, .emotionalIntelect2, .emotionalIntelect3]
-        case .criticalThinking:
-            return [.criticalThinking0, .criticalThinking1, .criticalThinking2, .criticalThinking3]
-        default:
-            return []
-        }
-    }
-
-    init(type: CategoryType) {
-        self.type = type
-    }
-}
-
 enum CategoryType: Equatable, CaseIterable, Identifiable {
     var id: String { localization }
 
@@ -64,8 +45,18 @@ enum CategoryType: Equatable, CaseIterable, Identifiable {
         case .rationalThinking:     return .rationalThinkingFont
         }
     }
-}
 
+    var games: [GameType] {
+        switch self {
+        case .emotionalIntelect:
+            return [.pickEmotion, .emotionalIntelect1, .emotionalIntelect2, .emotionalIntelect3]
+        case .criticalThinking:
+            return [.criticalThinking0, .criticalThinking1, .criticalThinking2, .criticalThinking3]
+        default:
+            return []
+        }
+    }
+}
 
 extension CategoryType {
     var tabIndex: Int {
@@ -75,6 +66,14 @@ extension CategoryType {
         case .logic:                return 2
         case .selfIdentity:         return 3
         case .rationalThinking:     return 4
+        }
+    }
+}
+
+extension Array where Element == CategoryType {
+    func category(for game: GameType) -> CategoryType? {
+        first { category in
+            category.games.contains { $0 == game }
         }
     }
 }

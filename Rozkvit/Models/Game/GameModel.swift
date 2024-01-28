@@ -71,7 +71,7 @@ struct GameData: Identifiable, Equatable {
     }
 }
 
-enum GameType: CaseIterable {
+enum GameType: Equatable, CaseIterable {
     // Emotional Intelect
     case pickEmotion
     case emotionalIntelect1

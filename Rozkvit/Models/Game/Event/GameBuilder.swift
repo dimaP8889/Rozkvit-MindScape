@@ -11,7 +11,7 @@ import SwiftUI
 final class GameBuilder {
     func createGame(for type: GameType) -> GameEnvironment {
         let fabric = PickEmotionsGameFabric()
-        return fabric.createGame()
+        return fabric.createGame(of: type)
     }
 }
 
@@ -44,9 +44,9 @@ final class GameEnvironment: Equatable {
         results.append(result)
     }
 
-    func percentOfCorrectAnswers() -> Double {
+    func percentOfCorrectAnswers() -> Int {
         let correctAmount = results.filter { $0 == true }.count
-        return Double(correctAmount) / Double(results.count)
+        return Int((Double(correctAmount) / Double(results.count)) * 100)
     }
 }
 

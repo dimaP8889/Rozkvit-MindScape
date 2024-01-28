@@ -40,6 +40,8 @@ struct Games {
 
     enum Action: Equatable {
         case didSelectCategoryIndex(Int)
+        case didUpdateData(AppData)
+        case task
         case categories(IdentifiedActionOf<CategoryGamesList>)
         case destination(PresentationAction<Destination.Action>)
     }
@@ -53,12 +55,31 @@ struct Games {
                 state.selectedCategoryIndex = index
                 return .none
 
+            case let .didUpdateData(appData):
+                state.categories = appData.categoriesData
+                return .none
+
+            case .task:
+                return .run { send in
+                    await withThrowingTaskGroup(of: Void.self) { group in
+                        group.addTask {
+                            for await appData in self.appData.stream() {
+                                await send(.didUpdateData(appData))
+                            }
+                        }
+                    }
+                }
+
+            case let .categories(.element(_, .didSelectGame(type))):
+                let game = createGame(with: type)
+                state.destination = .selectedGame(GameEvent.State(game: game))
+                return .none
+
             case let .destination(.presented(.selectedGame(.delegate(.didSubmit(game, result))))):
-                print("Game: \(game.title)")
-                print("Result: \(result)")
                 guard case .selectedGame = state.destination 
                 else { return .none }
 
+                submitGameResult(game: game, result: Int(result))
                 state.destination = nil
                 return .none
 
@@ -68,12 +89,6 @@ struct Games {
             case .destination(.dismiss):
                 state.destination = nil
                 return .none
-
-            case let .categories(.element(_, .didSelectGame(type))):
-                let game = createGame(with: type)
-                state.destination = .selectedGame(GameEvent.State(game: game))
-                return .none
-
             }
         }
         .forEach(\.categories, action: \.categories) {
@@ -90,5 +105,11 @@ extension Games {
     func createGame(with type: GameType) -> GameEnvironment {
         let builder = GameBuilder()
         return builder.createGame(for: type)
+    }
+
+    func submitGameResult(game: GameType, result: Int) {
+        Task {
+            await appData.setGameStatistic(game, result)
+        }
     }
 }

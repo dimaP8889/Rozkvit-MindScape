@@ -15,7 +15,7 @@ struct GameEvent {
         var game: GameEnvironment
         
         var result: String {
-            "\(localStr("game.result.text")) \(String(format: "%.0f", game.percentOfCorrectAnswers() * 100))%"
+            "\(localStr("game.result.text")) \(game.percentOfCorrectAnswers())%"
         }
         var question: GameQuestion?
         var answers: GameEntityAnswerSection.State?
@@ -58,7 +58,7 @@ struct GameEvent {
         case delegate(Delegate)
 
         enum Delegate: Equatable {
-            case didSubmit(game: GameType, result: Double)
+            case didSubmit(game: GameType, result: Int)
         }
     }
 

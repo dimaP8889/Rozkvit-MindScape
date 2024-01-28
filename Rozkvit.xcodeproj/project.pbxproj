@@ -19,6 +19,7 @@
 		F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B77C2B2ECE9600FD3B95 /* RootView.swift */; };
 		F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7802B2ECF4000FD3B95 /* HomeView.swift */; };
 		F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7812B2ECF4000FD3B95 /* Home.swift */; };
+		F12B4F5B2B665D9600D7F5C3 /* TreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B4F5A2B665D9600D7F5C3 /* TreeBuilder.swift */; };
 		F134F6772B4850BD00E58224 /* GameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134F6762B4850BD00E58224 /* GameBuilder.swift */; };
 		F134F67A2B48558C00E58224 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134F6792B48558C00E58224 /* Stack.swift */; };
 		F134F67D2B49892100E58224 /* GameEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134F67B2B49892100E58224 /* GameEventView.swift */; };
@@ -74,6 +75,7 @@
 		F110B77C2B2ECE9600FD3B95 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F110B7802B2ECF4000FD3B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F110B7812B2ECF4000FD3B95 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F12B4F5A2B665D9600D7F5C3 /* TreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeBuilder.swift; sourceTree = "<group>"; };
 		F134F6762B4850BD00E58224 /* GameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuilder.swift; sourceTree = "<group>"; };
 		F134F6792B48558C00E58224 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F134F67B2B49892100E58224 /* GameEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F12B4F592B665D8400D7F5C3 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				F12B4F5A2B665D9600D7F5C3 /* TreeBuilder.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
 		F134F6732B48506200E58224 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +346,7 @@
 				F16356C62B31EF9F00890D3C /* Data */,
 				F16D01EC2B39898D003614EE /* Category */,
 				F16D01EF2B398C99003614EE /* Game */,
+				F12B4F592B665D8400D7F5C3 /* Tree */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -573,6 +584,7 @@
 				F16D01F62B3BCC2D003614EE /* AvailabilityChecker.swift in Sources */,
 				F18D206F2B53D75B00523CFD /* Fonts.swift in Sources */,
 				F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */,
+				F12B4F5B2B665D9600D7F5C3 /* TreeBuilder.swift in Sources */,
 				F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */,
 				F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */,
 				F134F67A2B48558C00E58224 /* Stack.swift in Sources */,
@@ -721,7 +733,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Rozkvit/Rozkvit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rozkvit/Preview Content\"";
 				DEVELOPMENT_TEAM = 452NG5983H;
@@ -747,7 +759,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.Rozkvit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.TherapyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -765,7 +777,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Rozkvit/Rozkvit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rozkvit/Preview Content\"";
 				DEVELOPMENT_TEAM = 452NG5983H;
@@ -791,7 +803,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.Rozkvit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drillKambojazz.TherapyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

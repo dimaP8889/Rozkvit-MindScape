@@ -8,7 +8,6 @@
 import ComposableArchitecture
 import SwiftUI
 
-// MARK: - Test rebase
 @Reducer
 struct Home {
     @Dependency(\.appData) var appData

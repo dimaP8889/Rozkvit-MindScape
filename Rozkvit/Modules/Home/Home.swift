@@ -17,12 +17,8 @@ struct Home {
             switch action {
             case .onAppear:
                 return .run { send in
-                    await withThrowingTaskGroup(of: Void.self) { group in
-                        group.addTask {
-                            for await appData in self.appData.stream() {
-                                await send(.didUpdateData(appData))
-                            }
-                        }
+                    for await appData in self.appData.stream() {
+                        await send(.didUpdateData(appData))
                     }
                 }
 

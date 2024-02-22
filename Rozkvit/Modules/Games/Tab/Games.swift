@@ -61,12 +61,8 @@ struct Games {
 
             case .task:
                 return .run { send in
-                    await withThrowingTaskGroup(of: Void.self) { group in
-                        group.addTask {
-                            for await appData in self.appData.stream() {
-                                await send(.didUpdateData(appData))
-                            }
-                        }
+                    for await appData in self.appData.stream() {
+                        await send(.didUpdateData(appData))
                     }
                 }
 

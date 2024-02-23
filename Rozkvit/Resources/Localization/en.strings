@@ -28,6 +28,7 @@
 "game.pickEmotion.title" = "Pick the emotion";
 "game.result.text" = "Your result is: ";
 "game.unavailable.description" = "Сollect 3 stars in the previous level to open the game";
+"game.comingsoon.description" = "Coming soon. Stay tuned";
 "game.button.finish" = "Finish";
 "game.button.continue" = "Continue";
 "game.emotion.fear.title" = "Fear";

@@ -19,7 +19,7 @@ struct GameProgressView: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .frame(maxWidth: .infinity)
-        .allowsHitTesting(game.isAvailable)
+        .allowsHitTesting(game.availabilityState == .available)
         .onTapGesture {
             selectAction(game.type)
         }
@@ -34,7 +34,7 @@ private extension GameProgressView {
             game.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-            if !game.isAvailable {
+            if !game.availabilityState.isGameAvailable {
                 notAvailableView
             }
         }
@@ -44,7 +44,7 @@ private extension GameProgressView {
     var notAvailableView: some View {
         ZStack {
             Color.mainText.opacity(0.78)
-            Text(localStr("game.unavailable.description"))
+            Text(game.availabilityState.unavailableText)
                 .font(.main(size: 12))
                 .foregroundStyle(.greyText)
                 .multilineTextAlignment(.center)
@@ -82,7 +82,7 @@ private extension GameProgressView {
 struct GameProgressView_Previews: PreviewProvider {
     static var previews: some View {
         GameProgressView(
-            game: .init(type: .pickEmotion, progress: 45, isAvailable: false),
+            game: .init(type: .pickEmotion, progress: 45, availabilityState: .available),
             selectAction: { _ in }
         )
     }

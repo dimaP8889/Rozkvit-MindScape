@@ -51,9 +51,13 @@ enum CategoryType: Equatable, CaseIterable, Identifiable {
         case .emotionalIntelect:
             return [.pickEmotion, .emotionalIntelect1, .emotionalIntelect2, .emotionalIntelect3]
         case .criticalThinking:
-            return [.criticalThinking0, .criticalThinking1, .criticalThinking2, .criticalThinking3]
-        default:
-            return []
+            return [.criticalThinking0]
+        case .logic:
+            return [.logic0]
+        case .selfIdentity:
+            return [.selfIdentity0]
+        case .rationalThinking:
+            return [.rationalThinking0]
         }
     }
 }

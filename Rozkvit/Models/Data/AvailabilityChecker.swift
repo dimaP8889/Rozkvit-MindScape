@@ -8,30 +8,33 @@
 import Foundation
 
 struct AvailabilityChecker: Equatable {
-    func isGameAvailable(_ game: GameType, gameStatistic: [GameType: Int]) -> Bool {
+    typealias GameAvalability = GameData.AvailabilityState
+    
+    func gameAvailability(_ game: GameType, gameStatistic: [GameType: Int]) -> GameAvalability {
         switch game {
         case .pickEmotion:
-            return true
+            return .available
         case .emotionalIntelect1:
-            return gameStatistic[.pickEmotion] ?? 0 >= 80
+            return gameStatistic[.pickEmotion] ?? 0 >= 80 ? .available : .notAvailable
         case .emotionalIntelect2:
-            return isGameAvailable(.emotionalIntelect1, gameStatistic: gameStatistic) &&
-                gameStatistic[.emotionalIntelect1] ?? 0 >= 80
+            return gameAvailability(.emotionalIntelect1, gameStatistic: gameStatistic) == .available &&
+                gameStatistic[.emotionalIntelect1] ?? 0 >= 80 ? .available : .notAvailable
         case .emotionalIntelect3:
-            return isGameAvailable(.emotionalIntelect2, gameStatistic: gameStatistic) &&
-                gameStatistic[.emotionalIntelect2] ?? 0 >= 80
+            return gameAvailability(.emotionalIntelect2, gameStatistic: gameStatistic) == .available &&
+                gameStatistic[.emotionalIntelect2] ?? 0 >= 80 ? .available : .notAvailable
 
 
         case .criticalThinking0:
-            return true
-        case .criticalThinking1:
-            return gameStatistic[.criticalThinking0] ?? 0 >= 80
-        case .criticalThinking2:
-            return isGameAvailable(.criticalThinking1, gameStatistic: gameStatistic) &&
-                gameStatistic[.criticalThinking1] ?? 0 >= 80
-        case .criticalThinking3:
-            return isGameAvailable(.criticalThinking2, gameStatistic: gameStatistic) &&
-                gameStatistic[.criticalThinking2] ?? 0 >= 80
+            return .comingSoon
+
+        case .logic0:
+            return .comingSoon
+
+        case .selfIdentity0:
+            return .comingSoon
+
+        case .rationalThinking0:
+            return .comingSoon
         }
     }
 }

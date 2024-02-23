@@ -12,7 +12,6 @@ import Charts
 struct AppData: Equatable {
     static var mock: AppData = AppData(
         gameStatistic: [
-            .criticalThinking0: 0, .criticalThinking1: 0, .criticalThinking2: 0, .criticalThinking3: 0,
             .pickEmotion: 0, .emotionalIntelect1: 0, .emotionalIntelect2: 0, .emotionalIntelect3: 0
         ]
     )
@@ -27,10 +26,10 @@ struct AppData: Equatable {
     }
 
     var categoriesData: IdentifiedArrayOf<CategoryGamesList.State>  {
-        [
-            .init(category: .emotionalIntelect),
-            .init(category: .criticalThinking)
-        ]
+        let categoriesArray: [CategoryGamesList.State] = CategoryType.allCases.map {
+            .init(category: $0)
+        }
+        return .init(uniqueElements: categoriesArray)
     }
 
     func gamesData(for category: CategoryType) -> [GameData] {
@@ -38,7 +37,7 @@ struct AppData: Equatable {
             GameData(
                 type: $0,
                 progress: gameStatistic[$0] ?? 0,
-                isAvailable: availabilityChecker.isGameAvailable($0, gameStatistic: gameStatistic)
+                availabilityState: availabilityChecker.gameAvailability($0, gameStatistic: gameStatistic)
             )
         }
     }

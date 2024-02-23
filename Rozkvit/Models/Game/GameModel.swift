@@ -10,14 +10,14 @@ import SwiftUI
 struct GameData: Identifiable, Equatable {
     let type: GameType
     let progress: GameStarProgress
-    let isAvailable: Bool
+    let availabilityState: AvailabilityState
     var image: Image { type.mainImage }
     var title: String { type.title }
 
-    init(type: GameType, progress: Int, isAvailable: Bool) {
+    init(type: GameType, progress: Int, availabilityState: AvailabilityState) {
         self.type = type
         self.progress = GameStarProgress(progress: progress)
-        self.isAvailable = isAvailable
+        self.availabilityState = availabilityState
     }
 
     var id: String {
@@ -69,6 +69,24 @@ struct GameData: Identifiable, Equatable {
             }
         }
     }
+
+    enum AvailabilityState {
+        case available
+        case notAvailable
+        case comingSoon
+
+        var isGameAvailable: Bool {
+            self == .available
+        }
+
+        var unavailableText: String {
+            switch self {
+            case .available:    return ""
+            case .notAvailable: return localStr("game.unavailable.description")
+            case .comingSoon:  return localStr("game.comingsoon.description")
+            }
+        }
+    }
 }
 
 enum GameType: Equatable, CaseIterable {
@@ -80,30 +98,39 @@ enum GameType: Equatable, CaseIterable {
 
     // Critical Thinking
     case criticalThinking0
-    case criticalThinking1
-    case criticalThinking2
-    case criticalThinking3
+
+    // Logic
+    case logic0
+
+    // Self Identity
+    case selfIdentity0
+
+    // Rational Thinking
+    case rationalThinking0
 
     var title: String {
         switch self {
         case .pickEmotion:
             return localStr("game.pickEmotion.title")
         case .emotionalIntelect1:
-            return "Emotional Intelect1"
+            return localStr("game.pickEmotion.title") + " 2"
         case .emotionalIntelect2:
-            return "Emotional Intelect2"
+            return localStr("game.pickEmotion.title") + " 3"
         case .emotionalIntelect3:
-            return "Emotional Intelect3"
+            return localStr("game.pickEmotion.title") + " 4"
 
 
         case .criticalThinking0:
-            return "Critical Thinking0"
-        case .criticalThinking1:
-            return "Critical Thinking1"
-        case .criticalThinking2:
-            return "Critical Thinking2"
-        case .criticalThinking3:
-            return "Critical Thinking3"
+            return localStr("statistic.criticalThinking")
+
+        case .logic0:
+            return localStr("statistic.logic")
+
+        case .selfIdentity0:
+            return localStr("statistic.selfIdentity")
+
+        case .rationalThinking0:
+            return localStr("statistic.rationalThinking")
         }
     }
 
@@ -120,12 +147,15 @@ enum GameType: Equatable, CaseIterable {
 
         case .criticalThinking0:
             return Image(.sadness3)
-        case .criticalThinking1:
-            return Image(.surprise2)
-        case .criticalThinking2:
-            return Image(.calmDown)
-        case .criticalThinking3:
-            return Image(.anger2)
+
+        case .logic0:
+            return Image(.happiness1)
+
+        case .selfIdentity0:
+            return Image(.fear1)
+
+        case .rationalThinking0:
+            return Image(.surprise1)
         }
     }
 }

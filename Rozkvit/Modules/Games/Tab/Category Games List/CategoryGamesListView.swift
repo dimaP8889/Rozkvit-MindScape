@@ -71,7 +71,16 @@ struct CategoryGamesListView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryGamesListView(
             store: .init(
-                initialState: CategoryGamesList.State(category: .emotionalIntelect)
+                initialState: CategoryGamesList.State(
+                    category: .emotionalIntelect,
+                    gamesData: [
+                        .init(
+                            type: .pickEmotion,
+                            progress: 80,
+                            availabilityState: .available
+                        )
+                    ]
+                )
             ) {
                 CategoryGamesList()
             }

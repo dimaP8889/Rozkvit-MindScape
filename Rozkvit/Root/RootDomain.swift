@@ -33,7 +33,13 @@ struct RootDomain {
         case home(Home.Action)
         case games(Games.Action)
         case profile(Profile.Action)
+
+        case onAppear
+        case didUpdateDataFromDatabase
     }
+
+    @Dependency(\.database) var database
+    @Dependency(\.appData) var appData
 
     var body: some Reducer<State, Action> {
         Scope(state: \.categoriesState, action: \.categories) {
@@ -61,6 +67,21 @@ struct RootDomain {
             case let .categories(.showGamesFor(category)):
                 state.gamesState.selectedCategoryIndex = category.tabIndex
                 return .send(.tabSelected(.games))
+
+            case .onAppear:
+                return .run { send in
+                    let statistic = try await database.fetchStats()
+                    for stat in statistic {
+                        await appData.addGameStatistic(stat)
+                    }
+                    await send(.didUpdateDataFromDatabase)
+                }
+
+            case .didUpdateDataFromDatabase:
+                state.homeState = .init()
+                state.gamesState = .init()
+                state.profileState = .init()
+                return .none
 
             default:
                 return .none

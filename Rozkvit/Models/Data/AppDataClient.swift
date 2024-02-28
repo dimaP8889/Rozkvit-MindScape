@@ -11,7 +11,7 @@ import Combine
 @dynamicMemberLookup
 struct AppDataClient {
     var get: @Sendable () -> AppData
-    var setGameStatistic: @Sendable (GameType, Int) async -> Void
+    var addGameStatistic: @Sendable (DatabaseGameStatistic) async -> Void
     var stream: @Sendable () -> AsyncStream<AppData>
 
     public subscript<Value>(dynamicMember keyPath: KeyPath<AppData, Value>) -> Value {
@@ -33,7 +33,7 @@ struct AppDataClient {
 
 extension AppDataClient: DependencyKey {
     static var liveValue: AppDataClient {
-        let initialData = AppData.mock
+        let initialData = AppData.liveValue
         let appData = LockIsolated(initialData)
         let subject = PassthroughSubject<AppData, Never>()
 
@@ -41,9 +41,9 @@ extension AppDataClient: DependencyKey {
             get: {
                 appData.value
             },
-            setGameStatistic: { game, result in
+            addGameStatistic: { stats in
                 appData.withValue {
-                    $0.gameStatistic[game] = result
+                    $0.databaseGameStatistic.append(stats)
                     subject.send($0)
                 }
             },
@@ -62,9 +62,9 @@ extension AppDataClient: DependencyKey {
             get: {
                 appData.value
             },
-            setGameStatistic: { game, result in
+            addGameStatistic: { stats in
                 appData.withValue {
-                    $0.gameStatistic[game] = result
+                    $0.databaseGameStatistic.append(stats)
                     subject.send($0)
                 }
             },

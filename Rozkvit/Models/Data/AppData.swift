@@ -10,45 +10,34 @@ import SwiftUI
 import Charts
 
 struct AppData: Equatable {
-    static var mock: AppData = AppData(
-        gameStatistic: [
-            .pickEmotion: 0, .emotionalIntelect1: 0, .emotionalIntelect2: 0, .emotionalIntelect3: 0
-        ]
-    )
+    static var mock: AppData = {
+        return AppData(databaseGameStatistic: [
+            .init(game: .pickEmotion, date: Int(Date().timeIntervalSince1970), result: 0),
+            .init(game: .pickEmotion2, date: Int(Date().timeIntervalSince1970), result: 0),
+            .init(game: .pickEmotion3, date: Int(Date().timeIntervalSince1970), result: 0)
+        ])
+    }()
 
-    var gameStatistic: [GameType: Int] = [:]
-    private var availabilityChecker = AvailabilityChecker()
+    static var liveValue: AppData = AppData()
 
-    var chartsData: [StatisticData] {
-        CategoryType.allCases.map { type in
-            StatisticData(type: type, amount: (1 / Double(CategoryType.allCases.count)))
-        }
+    var databaseGameStatistic: [DatabaseGameStatistic] = []
+    var gameStatistic: [GameType: Int] {
+        databaseGameStatistic.toLastSessionStatistic()
     }
 
-    var categoriesData: IdentifiedArrayOf<CategoryGamesList.State>  {
-        let categoriesArray: [CategoryGamesList.State] = CategoryType.allCases.map {
-            .init(category: $0)
-        }
-        return .init(uniqueElements: categoriesArray)
+    var categoriesTabData: CategoriesTabData {
+        CategoriesTabData()
     }
 
-    func gamesData(for category: CategoryType) -> [GameData] {
-        category.games.map {
-            GameData(
-                type: $0,
-                progress: gameStatistic[$0] ?? 0,
-                availabilityState: availabilityChecker.gameAvailability($0, gameStatistic: gameStatistic)
-            )
-        }
+    var homeTabData: HomeTabData {
+        HomeTabData(gameStatistic: gameStatistic)
     }
-}
 
-// MARK: - Model
-struct StatisticData: Equatable, Identifiable {
-    var id: String { type.id }
-    var type: CategoryType
-    var name: String { type.localization }
-    var color: Color { type.mainColor }
-    var percentage: String { "\(Int(amount * 100))%" }
-    var amount: Double
+    var gamesTabData: GamesTabData {
+        GamesTabData(gameStatistic: gameStatistic)
+    }
+
+    var profileTabData: ProfileTabData {
+        ProfileTabData(databaseStatistic: databaseGameStatistic)
+    }
 }

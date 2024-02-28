@@ -66,3 +66,8 @@
 
 //Profile
 "profile.progress" = "progress";
+"profile.correct" = "Correct";
+"profile.incorrect" = "Incorrect";
+"profile.today.correct" = "Today's correct answers";
+"profile.alltime.correct" = "All time correct answers";
+"profile.alltime.effectiveness" = "Effectiveness of therapy %";

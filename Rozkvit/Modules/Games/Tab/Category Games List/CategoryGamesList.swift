@@ -19,12 +19,11 @@ struct CategoryGamesList {
         var categoryFontColor: Color { category.fontColor }
         var games: [GameData]
 
-        init(category: CategoryType) {
+        init(category: CategoryType, gamesData: [GameData]) {
             @Dependency(\.uuid) var uuid
-            @Dependency(\.appData.get) var appData
             self.id = uuid.callAsFunction()
             self.category = category
-            self.games = appData().gamesData(for: category)
+            self.games = gamesData
         }
     }
 

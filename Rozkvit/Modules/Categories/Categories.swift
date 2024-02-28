@@ -6,16 +6,19 @@
 //
 
 import ComposableArchitecture
+import SwiftUI
 
 @Reducer
 struct Categories {
     struct State: Equatable {
-        var charts: [StatisticData]
+        typealias ChartsData = Categories.ChartsData
+
+        var charts: [ChartsData]
         var selectedAngle: Double? = nil
 
         init() {
             @Dependency(\.appData) var appData
-            self.charts = appData.chartsData
+            self.charts = appData.categoriesTabData.chartsData
         }
     }
 
@@ -42,7 +45,7 @@ struct Categories {
 
 // MARK: - Middlewares
 private extension Categories {
-    func findSelectedCategory(_ selectedAngle: Double, charts: [StatisticData]) -> CategoryType? {
+    func findSelectedCategory(_ selectedAngle: Double, charts: [ChartsData]) -> CategoryType? {
         var cumulative = 0.0
 
         let cumulativeData = charts.map {
@@ -57,5 +60,17 @@ private extension Categories {
             return charts[selectedIndex].type
         }
         return nil
+    }
+}
+
+// MARK: - Model
+extension Categories {
+    struct ChartsData: Equatable, Identifiable {
+        var id: String { type.id }
+        var type: CategoryType
+        var name: String { type.localization }
+        var color: Color { type.mainColor }
+        var percentage: String { "\(Int(amount * 100))%" }
+        var amount: Double
     }
 }

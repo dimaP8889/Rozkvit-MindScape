@@ -89,34 +89,34 @@ struct GameData: Identifiable, Equatable {
     }
 }
 
-enum GameType: Equatable, CaseIterable {
+enum GameType: String, Equatable, CaseIterable {
     // Emotional Intelect
-    case pickEmotion
-    case emotionalIntelect1
-    case emotionalIntelect2
-    case emotionalIntelect3
+    case pickEmotion = "Pick Emotion"
+    case pickEmotion2 = "Pick Emotion 2"
+    case pickEmotion3 = "Pick Emotion 3"
+    case pickEmotion4 = "Pick Emotion 4"
 
     // Critical Thinking
-    case criticalThinking0
+    case criticalThinking0 = "Critical Thinking"
 
     // Logic
-    case logic0
+    case logic0 = "Logic"
 
     // Self Identity
-    case selfIdentity0
+    case selfIdentity0 = "Self Identity"
 
     // Rational Thinking
-    case rationalThinking0
+    case rationalThinking0 = "Rational Thinking"
 
     var title: String {
         switch self {
         case .pickEmotion:
             return localStr("game.pickEmotion.title")
-        case .emotionalIntelect1:
+        case .pickEmotion2:
             return localStr("game.pickEmotion.title") + " 2"
-        case .emotionalIntelect2:
+        case .pickEmotion3:
             return localStr("game.pickEmotion.title") + " 3"
-        case .emotionalIntelect3:
+        case .pickEmotion4:
             return localStr("game.pickEmotion.title") + " 4"
 
 
@@ -138,11 +138,11 @@ enum GameType: Equatable, CaseIterable {
         switch self {
         case .pickEmotion:
             return Image(.happiness4)
-        case .emotionalIntelect1:
+        case .pickEmotion2:
             return Image(.boyAndWall)
-        case .emotionalIntelect2:
+        case .pickEmotion3:
             return Image(.anger1)
-        case .emotionalIntelect3:
+        case .pickEmotion4:
             return Image(.fear2)
 
         case .criticalThinking0:

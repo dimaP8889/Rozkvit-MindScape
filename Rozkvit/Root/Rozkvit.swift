@@ -16,6 +16,9 @@ struct Rozkvit: App {
                 store: Store(initialState: RootDomain.State()) {
                     RootDomain()
                         ._printChanges()
+                } withDependencies: {
+                    $0.appData = .liveValue
+                    $0.database = .liveValue
                 }
             )
         }

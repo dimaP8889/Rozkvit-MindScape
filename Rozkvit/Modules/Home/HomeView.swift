@@ -34,7 +34,7 @@ private extension HomeView {
 
     var main: some View {
         VStack {
-            daysStreak
+            //daysStreak
             Spacer()
             motivationText
         }

@@ -21,6 +21,7 @@ struct ProfileView: View {
     var body: some View {
         main
             .background(PearlGradient(), ignoresSafeAreaEdges: .top)
+            .onAppear { store.send(.onAppear) }
     }
 }
 
@@ -71,18 +72,18 @@ extension ProfileView {
     var charts: some View {
         VStack {
             HStack {
-                moodChart
-                stressChart
+                todayCorrectChart
+                allTimeChart
             }
-            effectivnesChart
+            effectivenessChart
             Spacer()
         }
         .padding(.top, 16)
     }
 
-    var moodChart: some View {
-        GroupBox ("Mood") {
-            Chart(viewStore.moodData, id: \.name) { data in
+    var todayCorrectChart: some View {
+        GroupBox(localStr("profile.today.correct")) {
+            Chart(viewStore.todayCorrectData, id: \.name) { data in
                 SectorMark(
                     angle: .value(Text(data.name), data.amount),
                     angularInset: 1
@@ -94,16 +95,16 @@ extension ProfileView {
                     )
                 )
             }
-            .chartForegroundStyleScale(range: graphColors(for: viewStore.moodData))
+            .chartForegroundStyleScale(range: graphColors(for: viewStore.todayCorrectData))
         }
         .foregroundStyle(.mainText)
         .padding(.leading, 16)
         .frame(height: 250)
     }
 
-    var stressChart: some View {
-        GroupBox ("Stress Triggers") {
-            Chart(viewStore.stressData, id: \.name) { data in
+    var allTimeChart: some View {
+        GroupBox(localStr("profile.alltime.correct")) {
+            Chart(viewStore.allTimeCorrectData, id: \.name) { data in
                 SectorMark(
                     angle: .value(Text(data.name), data.amount),
                     angularInset: 1
@@ -115,17 +116,17 @@ extension ProfileView {
                     )
                 )
             }
-            .chartForegroundStyleScale(range: graphColors(for: viewStore.stressData))
+            .chartForegroundStyleScale(range: graphColors(for: viewStore.allTimeCorrectData))
         }
         .foregroundStyle(.mainText)
         .frame(height: 250)
         .padding(.trailing, 16)
     }
 
-    var effectivnesChart: some View {
-        GroupBox ("Therapy Effectivnes") {
+    var effectivenessChart: some View {
+        GroupBox (localStr("profile.alltime.effectiveness")) {
             Chart {
-                ForEach(viewStore.effectivnesData, id: \.name) { data in
+                ForEach(viewStore.effectivenessData, id: \.name) { data in
                     LineMark(
                         x: .value("Day", data.name),
                         y: .value("Progress", data.amount)

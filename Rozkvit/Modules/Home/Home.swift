@@ -23,8 +23,7 @@ struct Home {
                 }
 
             case let .didUpdateData(data):
-                let treeBuilder = TreeBuilder()
-                state.treeImage = treeBuilder.tree(for: data.gameStatistic)
+                state.treeImage = data.homeTabData.treeImage
                 return .none
             }
         }
@@ -38,8 +37,7 @@ extension Home {
 
         init() {
             @Dependency(\.appData.get) var appData
-            let treeBuilder = TreeBuilder()
-            self.treeImage = treeBuilder.tree(for: appData().gameStatistic)
+            self.treeImage = appData().homeTabData.treeImage
         }
     }
 }

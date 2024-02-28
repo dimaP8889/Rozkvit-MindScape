@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10F8FB52B8B51C90062DE05 /* GamesTabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FB42B8B51C90062DE05 /* GamesTabData.swift */; };
+		F10F8FB72B8B54480062DE05 /* CategoriesTabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FB62B8B54480062DE05 /* CategoriesTabData.swift */; };
+		F10F8FBA2B8B633C0062DE05 /* HomeTabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FB92B8B633C0062DE05 /* HomeTabData.swift */; };
+		F10F8FBE2B8B65410062DE05 /* ProfileTabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FBD2B8B65410062DE05 /* ProfileTabData.swift */; };
+		F10F8FC12B8B6C8A0062DE05 /* LocalDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FC02B8B6C8A0062DE05 /* LocalDatabaseClient.swift */; };
+		F10F8FC32B8B6D490062DE05 /* DatabaseGameStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FC22B8B6D490062DE05 /* DatabaseGameStatistic.swift */; };
+		F10F8FC62B8B6FEC0062DE05 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F10F8FC52B8B6FEC0062DE05 /* SQLite */; };
+		F10F8FC82B8B93910062DE05 /* LocalDatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FC72B8B93910062DE05 /* LocalDatabaseInterface.swift */; };
+		F10F8FCE2B8EE8FB0062DE05 /* Date+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F8FCD2B8EE8FB0062DE05 /* Date+DateFormatter.swift */; };
 		F110B75A2B2EC29100FD3B95 /* Rozkvit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7592B2EC29100FD3B95 /* Rozkvit.swift */; };
 		F110B75E2B2EC29400FD3B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B75D2B2EC29400FD3B95 /* Assets.xcassets */; };
 		F110B7622B2EC29400FD3B95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F110B7612B2EC29400FD3B95 /* Preview Assets.xcassets */; };
@@ -62,6 +71,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F10F8FB42B8B51C90062DE05 /* GamesTabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTabData.swift; sourceTree = "<group>"; };
+		F10F8FB62B8B54480062DE05 /* CategoriesTabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTabData.swift; sourceTree = "<group>"; };
+		F10F8FB92B8B633C0062DE05 /* HomeTabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabData.swift; sourceTree = "<group>"; };
+		F10F8FBD2B8B65410062DE05 /* ProfileTabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabData.swift; sourceTree = "<group>"; };
+		F10F8FC02B8B6C8A0062DE05 /* LocalDatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseClient.swift; sourceTree = "<group>"; };
+		F10F8FC22B8B6D490062DE05 /* DatabaseGameStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGameStatistic.swift; sourceTree = "<group>"; };
+		F10F8FC72B8B93910062DE05 /* LocalDatabaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseInterface.swift; sourceTree = "<group>"; };
+		F10F8FCD2B8EE8FB0062DE05 /* Date+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormatter.swift"; sourceTree = "<group>"; };
 		F110B7562B2EC29100FD3B95 /* Rozkvit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rozkvit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F110B7592B2EC29100FD3B95 /* Rozkvit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rozkvit.swift; sourceTree = "<group>"; };
 		F110B75D2B2EC29400FD3B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10F8FC62B8B6FEC0062DE05 /* SQLite in Frameworks */,
 				F1C41F892B62C19400F40820 /* WrappingHStack in Frameworks */,
 				F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */,
 			);
@@ -130,6 +148,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10F8FB82B8B63290062DE05 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F12B4F592B665D8400D7F5C3 /* Tree */,
+				F10F8FB92B8B633C0062DE05 /* HomeTabData.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F10F8FBC2B8B63BA0062DE05 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F10F8FBD2B8B65410062DE05 /* ProfileTabData.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F10F8FBF2B8B6C100062DE05 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F10F8FC02B8B6C8A0062DE05 /* LocalDatabaseClient.swift */,
+				F10F8FC72B8B93910062DE05 /* LocalDatabaseInterface.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		F10F8FCC2B8EE8E80062DE05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10F8FCD2B8EE8FB0062DE05 /* Date+DateFormatter.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F110B74D2B2EC29100FD3B95 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +253,7 @@
 		F110B7722B2ECD9800FD3B95 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F10F8FCC2B8EE8E80062DE05 /* Extensions */,
 				F16D01F02B3B161F003614EE /* View Modifiers */,
 				F110B7792B2ECDF800FD3B95 /* Utils */,
 				F110B7732B2ECDA300FD3B95 /* Defaults */,
@@ -342,11 +395,13 @@
 		F16356CB2B32B90B00890D3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F10F8FBF2B8B6C100062DE05 /* Database */,
 				F134F6782B48558200E58224 /* Common */,
 				F16356C62B31EF9F00890D3C /* Data */,
 				F16D01EC2B39898D003614EE /* Category */,
+				F10F8FB82B8B63290062DE05 /* Home */,
 				F16D01EF2B398C99003614EE /* Game */,
-				F12B4F592B665D8400D7F5C3 /* Tree */,
+				F10F8FBC2B8B63BA0062DE05 /* Profile */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				F16D01ED2B3989E1003614EE /* CategoryModel.swift */,
+				F10F8FB62B8B54480062DE05 /* CategoriesTabData.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -362,6 +418,8 @@
 		F16D01EF2B398C99003614EE /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				F10F8FB42B8B51C90062DE05 /* GamesTabData.swift */,
+				F10F8FC22B8B6D490062DE05 /* DatabaseGameStatistic.swift */,
 				F134F6752B48509800E58224 /* Event */,
 				F16D01F32B3B1AD0003614EE /* GameModel.swift */,
 				F1E46E5B2B5500150036DEF2 /* Emotion.swift */,
@@ -497,6 +555,7 @@
 			packageProductDependencies = (
 				F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */,
 				F1C41F882B62C19400F40820 /* WrappingHStack */,
+				F10F8FC52B8B6FEC0062DE05 /* SQLite */,
 			);
 			productName = Rozkvit;
 			productReference = F110B7562B2EC29100FD3B95 /* Rozkvit.app */;
@@ -529,6 +588,7 @@
 			packageReferences = (
 				F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				F1C41F872B62C19400F40820 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				F10F8FC42B8B6FEC0062DE05 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = F110B7572B2EC29100FD3B95 /* Products */;
 			projectDirPath = "";
@@ -567,18 +627,22 @@
 				F1E46E5E2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift in Sources */,
 				F18D20662B52B6CC00523CFD /* GameEntityWrongAnswerDescriptionView.swift in Sources */,
 				F110B7752B2ECDB300FD3B95 /* Defaults.swift in Sources */,
+				F10F8FCE2B8EE8FB0062DE05 /* Date+DateFormatter.swift in Sources */,
 				F137808E2B35DD9300DF2C8F /* CategoryGamesListView.swift in Sources */,
 				F1DA743F2B2EDCC800A9A7F0 /* Games.swift in Sources */,
+				F10F8FC32B8B6D490062DE05 /* DatabaseGameStatistic.swift in Sources */,
 				F16D01EE2B3989E1003614EE /* CategoryModel.swift in Sources */,
 				F16356C82B31EFF600890D3C /* AppData.swift in Sources */,
 				F137808F2B35DD9300DF2C8F /* CategoryGamesList.swift in Sources */,
 				F110B77B2B2ECE0800FD3B95 /* Localization.swift in Sources */,
+				F10F8FB72B8B54480062DE05 /* CategoriesTabData.swift in Sources */,
 				F1E46E5C2B5500150036DEF2 /* Emotion.swift in Sources */,
 				F110B7782B2ECDD600FD3B95 /* Defaults+Lang.swift in Sources */,
 				F18D207E2B542BD400523CFD /* GameEntityAnswerSection.swift in Sources */,
 				F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */,
 				F16356CA2B3207AF00890D3C /* AppDataClient.swift in Sources */,
 				F1E46E552B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift in Sources */,
+				F10F8FC12B8B6C8A0062DE05 /* LocalDatabaseClient.swift in Sources */,
 				F18D20812B542DB400523CFD /* GameEntityImageAnswerView.swift in Sources */,
 				F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */,
 				F16D01F62B3BCC2D003614EE /* AvailabilityChecker.swift in Sources */,
@@ -594,11 +658,15 @@
 				F110B75A2B2EC29100FD3B95 /* Rozkvit.swift in Sources */,
 				F14B43152B552D4200AF1142 /* ExpandedTap.swift in Sources */,
 				F18D207D2B542BD400523CFD /* GameEntityAnswerSectionView.swift in Sources */,
+				F10F8FC82B8B93910062DE05 /* LocalDatabaseInterface.swift in Sources */,
+				F10F8FB52B8B51C90062DE05 /* GamesTabData.swift in Sources */,
 				F17382192B4B958A00B88A06 /* PickEmotionsGameFabric.swift in Sources */,
 				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
 				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
+				F10F8FBE2B8B65410062DE05 /* ProfileTabData.swift in Sources */,
 				F1E46E582B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,
+				F10F8FBA2B8B633C0062DE05 /* HomeTabData.swift in Sources */,
 				F13780932B35DFA800DF2C8F /* GameProgressView.swift in Sources */,
 				F134F6772B4850BD00E58224 /* GameBuilder.swift in Sources */,
 				F18D20742B53DA9100523CFD /* PearlGradient.swift in Sources */,
@@ -838,6 +906,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F10F8FC42B8B6FEC0062DE05 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.0;
+			};
+		};
 		F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -857,6 +933,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F10F8FC52B8B6FEC0062DE05 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F10F8FC42B8B6FEC0062DE05 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		F110B76A2B2EC88700FD3B95 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F110B7692B2EC88700FD3B95 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

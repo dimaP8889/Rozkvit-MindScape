@@ -49,7 +49,7 @@ enum CategoryType: Equatable, CaseIterable, Identifiable {
     var games: [GameType] {
         switch self {
         case .emotionalIntelect:
-            return [.pickEmotion, .emotionalIntelect1, .emotionalIntelect2, .emotionalIntelect3]
+            return [.pickEmotion, .pickEmotion2, .pickEmotion3, .pickEmotion4]
         case .criticalThinking:
             return [.criticalThinking0]
         case .logic:

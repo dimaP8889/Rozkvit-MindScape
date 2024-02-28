@@ -56,6 +56,9 @@ struct RootView: View {
                 .tag(RootDomain.Tab.profile)
             }
         }
+        .onAppear {
+            store.send(.onAppear)
+        }
     }
 }
 

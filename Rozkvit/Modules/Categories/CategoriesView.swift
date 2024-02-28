@@ -109,7 +109,7 @@ extension CategoriesView {
 
 // MARK: - Private
 private extension CategoriesView {
-    func graphColors(for input: [StatisticData]) -> [Color] {
+    func graphColors(for input: [Categories.ChartsData]) -> [Color] {
         var returnColors = [Color]()
         for item in input {
             returnColors.append(item.color)

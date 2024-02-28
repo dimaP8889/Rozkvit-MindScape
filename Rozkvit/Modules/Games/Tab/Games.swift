@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Foundation
 
 @Reducer
 struct Games {
@@ -33,7 +34,7 @@ struct Games {
 
         init() {
             @Dependency(\.appData) var appData
-            self.categories = appData.categoriesData
+            self.categories = appData.gamesTabData.categories
             self.selectedCategoryIndex = 0
         }
     }
@@ -47,6 +48,7 @@ struct Games {
     }
 
     @Dependency(\.appData) var appData
+    @Dependency(\.database) var database
 
     var body: some Reducer<State, Action> {
         Reduce { state, action in
@@ -56,7 +58,7 @@ struct Games {
                 return .none
 
             case let .didUpdateData(appData):
-                state.categories = appData.categoriesData
+                state.categories = appData.gamesTabData.categories
                 return .none
 
             case .task:
@@ -105,7 +107,10 @@ extension Games {
 
     func submitGameResult(game: GameType, result: Int) {
         Task {
-            await appData.setGameStatistic(game, result)
+            let date = Int(Date().timeIntervalSince1970)
+            let data = DatabaseGameStatistic(game: game, date: date, result: result)
+            await appData.addGameStatistic(data)
+            try await database.save(data)
         }
     }
 }

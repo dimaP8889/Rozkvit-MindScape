@@ -10,18 +10,18 @@ import Foundation
 struct AvailabilityChecker: Equatable {
     typealias GameAvalability = GameData.AvailabilityState
     
-    func gameAvailability(_ game: GameType, gameStatistic: [GameType: Int]) -> GameAvalability {
+    func gameAvailability(_ game: GameType, gameStatistic: [GameType: Int] = [:]) -> GameAvalability {
         switch game {
         case .pickEmotion:
             return .available
-        case .emotionalIntelect1:
+        case .pickEmotion2:
             return gameStatistic[.pickEmotion] ?? 0 >= 80 ? .available : .notAvailable
-        case .emotionalIntelect2:
-            return gameAvailability(.emotionalIntelect1, gameStatistic: gameStatistic) == .available &&
-                gameStatistic[.emotionalIntelect1] ?? 0 >= 80 ? .available : .notAvailable
-        case .emotionalIntelect3:
-            return gameAvailability(.emotionalIntelect2, gameStatistic: gameStatistic) == .available &&
-                gameStatistic[.emotionalIntelect2] ?? 0 >= 80 ? .available : .notAvailable
+        case .pickEmotion3:
+            return gameAvailability(.pickEmotion2, gameStatistic: gameStatistic) == .available &&
+                gameStatistic[.pickEmotion2] ?? 0 >= 80 ? .available : .notAvailable
+        case .pickEmotion4:
+            return gameAvailability(.pickEmotion3, gameStatistic: gameStatistic) == .available &&
+                gameStatistic[.pickEmotion3] ?? 0 >= 80 ? .available : .notAvailable
 
 
         case .criticalThinking0:

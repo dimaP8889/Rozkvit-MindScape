@@ -13,7 +13,9 @@
 "tab.profile" = "Profile";
 
 // Home
-"home.motivation.text" = "Well done, your tree looks strong and flourish! Keep up the progress";
+"home.motivation.text.1" = "Great start! Your tree has sprouted and is beginning to grow. Keep nurturing it with your efforts.";
+"home.motivation.text.2" = "Your tree is growing beautifully, showing signs of strength and vitality. Continue on this path to see it flourish!";
+"home.motivation.text.3" = "Well done, your tree looks strong and flourish! Keep up the progress";
 
 // Statistic
 "statistic.emotionalIntelect" = "Emotional Intelligence";

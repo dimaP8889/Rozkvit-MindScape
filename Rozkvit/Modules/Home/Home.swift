@@ -24,6 +24,7 @@ struct Home {
 
             case let .didUpdateData(data):
                 state.treeImage = data.homeTabData.treeImage
+                state.motivationText = data.homeTabData.motivationText
                 return .none
             }
         }
@@ -34,10 +35,12 @@ struct Home {
 extension Home {
     struct State: Equatable {
         var treeImage: Image
+        var motivationText: String
 
         init() {
             @Dependency(\.appData.get) var appData
             self.treeImage = appData().homeTabData.treeImage
+            self.motivationText = appData().homeTabData.motivationText
         }
     }
 }

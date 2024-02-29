@@ -15,7 +15,7 @@ struct DatabaseGameStatistic: Equatable {
 
 extension Array where Element == DatabaseGameStatistic {
     func toLastSessionStatistic() -> [GameType: Int] {
-        let sortedStatistic = self.sorted { $0.date < $1.date }
+        let sortedStatistic = self.sorted { $0.date > $1.date }
 
         var gamesStatistic: [GameType: Int] = [:]
         sortedStatistic.forEach {

@@ -18,4 +18,8 @@ final class HomeTabData {
     var treeImage: Image {
         treeBuilder.tree(for: gameStatistic)
     }
+
+    var motivationText: String {
+        treeBuilder.motivation(for: gameStatistic)
+    }
 }

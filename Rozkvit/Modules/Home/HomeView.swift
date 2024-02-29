@@ -55,7 +55,7 @@ private extension HomeView {
     }
 
     var motivationText: some View {
-        Text(localStr("home.motivation.text"))
+        Text(viewStore.motivationText)
             .font(.main(size: 17, weight: .bold))
             .foregroundStyle(.white)
             .padding(.bottom, 48)

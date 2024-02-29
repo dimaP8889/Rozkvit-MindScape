@@ -33,11 +33,21 @@
 "game.comingsoon.description" = "Coming soon. Stay tuned";
 "game.button.finish" = "Finish";
 "game.button.continue" = "Continue";
+
+// Level 1
 "game.emotion.fear.title" = "Fear";
 "game.emotion.sadness.title" = "Sadness";
 "game.emotion.happiness.title" = "Happiness";
 "game.emotion.anger.title" = "Anger";
 "game.emotion.surprise.title" = "Surprise";
+
+// Level 2
+"game.emotion.contempt.title" = "Contempt";
+"game.emotion.disgust.title" = "Disgust";
+"game.emotion.excitement.title" = "Excitement";
+"game.emotion.interest.title" = "Interest";
+"game.emotion.relief.title" = "Relief";
+
 "game.category.title" = "category";
 "game.emotion.pick.question.title" = "Pick the emotion";
 "game.wrongAnswer.title" = "This is";
@@ -51,6 +61,16 @@
 "game.wrongAnswer.surprise.description" = "Surprise is a sudden and often unexpected emotional response to a novel or unforeseen event or information. It can range from mild curiosity to overwhelming shock, depending on the nature and context of the surprising incident. This emotion typically triggers a quick physiological reaction, such as a gasp or a jolt, and can lead to a variety of outcomes, from joy and excitement to fear and confusion, depending on the situation.";
 
 "game.wrongAnswer.happiness.description" = "Happiness is a state of well-being and contentment, marked by feelings of joy, satisfaction, or positive fulfillment. It often arises from engaging in enjoyable activities, achieving personal goals, or through meaningful connections with others. This emotion can positively influence one’s mental and physical health, fostering a sense of purpose and overall life satisfaction.";
+
+"game.wrongAnswer.contempt.description" = "Contempt is characterized by feelings of disdain, scorn, or superiority towards someone or something perceived as inferior or unworthy. It is typically expressed through facial cues such as one-sided mouth raise, eye rolling, and raised chin, signaling the individual's sense of superiority or dismissive attitude.";
+
+"game.wrongAnswer.disgust.description" = "Disgust is characterized by feelings of aversion, revulsion, or repulsion in response to something unpleasant or offensive. It is typically expressed through facial cues such as nose wrinkling, upper lip raise, and downturned mouth, signaling the individual's strong negative reaction to the perceived source of disgust.";
+
+"game.wrongAnswer.excitement.description" = "Excitement is characterized by feelings of enthusiasm, anticipation, or thrill in response to something enjoyable or stimulating. It is typically expressed through facial cues such as a wide smile, bright eyes, raised eyebrows, and animated gestures, signaling the individual's heightened emotional arousal and positive anticipation.";
+
+"game.wrongAnswer.interest.description" = "Interest is characterized by feelings of curiosity, engagement, and receptiveness towards something that captures the individual's attention. It is typically expressed through facial cues such as raised eyebrows, a focused gaze, an open expression, and a slight head tilt, signaling the individual's eagerness to explore and understand.";
+
+"game.wrongAnswer.relief.description" = "Relief is characterized by feelings of relaxation, comfort, and release from stress or tension after experiencing a challenging or stressful situation. It is typically expressed through facial cues such as a sigh of relief, relaxed facial muscles, softened eyes, and a subtle smile, signaling the individual's sense of ease and contentment.";
 
 "game.wall.question" = "What will you do with this wall?";
 "game.wall.answer.1" = "I'll break it";

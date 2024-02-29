@@ -12,7 +12,7 @@ final class PickEmotionsGameFabric {
     @Dependency(\.uuid) var uuid
 
     func createGame(of type: GameType) -> GameEnvironment {
-        let slides = createSlides()
+        let slides = createSlides(for: type)
         let category = CategoryType.allCases.category(for: type) ?? .emotionalIntelect
         return GameEnvironment(
             gameType: type,
@@ -24,17 +24,76 @@ final class PickEmotionsGameFabric {
 
 // MARK: - Private
 private extension PickEmotionsGameFabric {
-    private func createSlides() -> [GameSlide] {
-        var slides = [GameSlide]()
-        while slides.count != 10 {
-            let randomEmotion = Emotion.allCases.randomElement()!
-            let answers = createImageAnswers(for: randomEmotion)
-            let slide = GameSlide(
-                question: randomEmotion.question,
-                answers: answers,
-                wrongAnswerDescription: .init(emotion: randomEmotion)
-            )
-            slides.append(slide)
+    private func createSlides(for game: GameType) -> [GameSlide] {
+        if game == .pickEmotion {
+            var slides = [GameSlide]()
+            while slides.count != 10 {
+                let randomEmotion = Emotion.level1.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+            return slides.shuffled()
+        }
+
+        if game == .pickEmotion2 {
+            var slides = [GameSlide]()
+            while slides.count != 10 {
+                let randomEmotion = Emotion.level2.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != 14 {
+                let randomEmotion = Emotion.level1.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+            return slides.shuffled()
+        }
+
+        if game == .pickEmotion3 {
+            var slides = [GameSlide]()
+            while slides.count != 10 {
+                let randomEmotion = Emotion.allCases.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+            return slides.shuffled()
+        }
+
+        if game == .pickEmotion4 {
+            var slides = [GameSlide]()
+            while slides.count != 10 {
+                let randomEmotion = Emotion.allCases.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+            return slides.shuffled()
         }
 
 //        while slides.count != 4 {
@@ -63,16 +122,17 @@ private extension PickEmotionsGameFabric {
 //            slides.append(slide)
 //        }
 
-        return slides.shuffled()
+        return []
     }
 
-    private func createImageAnswers(for emotion: Emotion) -> GameAnswers {
+    private func createImageAnswers(for emotion: Emotion, isCurrentLevelEmotion: Bool) -> GameAnswers {
         var answers: [GameAnswer<Image>] = []
         let correctAnswer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: true), value: emotion.randomImage)
         answers.append(correctAnswer)
 
         while answers.count != 4 {
-            let image = randomEmotionImage(from: emotion.allEmotionsExceptCurrent, currentAnswers: answers)
+            let emotions = isCurrentLevelEmotion ? emotion.currentLevelEmotionsExceptCurrent : emotion.allEmotionsExceptCurrent
+            let image = randomEmotionImage(from: emotions, currentAnswers: answers)
             let answer = GameAnswer<Image>(metadata: .init(id: uuid(), isCorrect: false), value: image)
             answers.append(answer)
         }
@@ -111,6 +171,12 @@ private extension PickEmotionsGameFabric {
             case .surprise:     images += Images.surprise
             case .happiness:    images += Images.happiness
             case .anger:        images += Images.anger
+
+            case .contempt:     images += Images.contempt
+            case .disgust:      images += Images.disgust
+            case .excitement:   images += Images.excitement
+            case .interest:     images += Images.interest
+            case .relief:       images += Images.relief
             }
         }
 

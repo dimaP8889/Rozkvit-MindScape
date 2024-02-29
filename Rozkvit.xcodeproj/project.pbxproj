@@ -68,6 +68,7 @@
 		F1E46E5A2B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E592B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift */; };
 		F1E46E5C2B5500150036DEF2 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5B2B5500150036DEF2 /* Emotion.swift */; };
 		F1E46E5E2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */; };
+		F1FB65F32B90228900296912 /* ProgressCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB65F22B90228900296912 /* ProgressCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		F1E46E592B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityTextQuestionView.swift; sourceTree = "<group>"; };
 		F1E46E5B2B5500150036DEF2 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityWrongAnswerDescription.swift; sourceTree = "<group>"; };
+		F1FB65F22B90228900296912 /* ProgressCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				F16D01F52B3BCC2D003614EE /* AvailabilityChecker.swift */,
+				F1FB65F22B90228900296912 /* ProgressCounter.swift */,
 				F16356C72B31EFF600890D3C /* AppData.swift */,
 				F16356C92B3207AF00890D3C /* AppDataClient.swift */,
 			);
@@ -658,6 +661,7 @@
 				F110B75A2B2EC29100FD3B95 /* Rozkvit.swift in Sources */,
 				F14B43152B552D4200AF1142 /* ExpandedTap.swift in Sources */,
 				F18D207D2B542BD400523CFD /* GameEntityAnswerSectionView.swift in Sources */,
+				F1FB65F32B90228900296912 /* ProgressCounter.swift in Sources */,
 				F10F8FC82B8B93910062DE05 /* LocalDatabaseInterface.swift in Sources */,
 				F10F8FB52B8B51C90062DE05 /* GamesTabData.swift in Sources */,
 				F17382192B4B958A00B88A06 /* PickEmotionsGameFabric.swift in Sources */,

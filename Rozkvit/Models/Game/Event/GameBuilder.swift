@@ -132,6 +132,12 @@ private extension Emotion {
         case .surprise:     return Image(.surprise1)
         case .happiness:    return Image(.happiness1)
         case .anger:        return Image(.anger2)
+
+        case .contempt:     return Image(.contempt1)
+        case .disgust:      return Image(.disgust2)
+        case .excitement:   return Image(.excitement1)
+        case .interest:     return Image(.interest4)
+        case .relief:       return Image(.relief1)
         }
     }
 
@@ -142,6 +148,12 @@ private extension Emotion {
         case .surprise:     return localStr("game.wrongAnswer.surprise.description")
         case .happiness:    return localStr("game.wrongAnswer.happiness.description")
         case .anger:        return localStr("game.wrongAnswer.anger.description")
+
+        case .contempt:     return localStr("game.wrongAnswer.contempt.description")
+        case .disgust:      return localStr("game.wrongAnswer.disgust.description")
+        case .excitement:   return localStr("game.wrongAnswer.excitement.description")
+        case .interest:     return localStr("game.wrongAnswer.interest.description")
+        case .relief:       return localStr("game.wrongAnswer.relief.description")
         }
     }
 }

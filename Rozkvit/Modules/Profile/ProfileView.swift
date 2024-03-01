@@ -124,26 +124,25 @@ extension ProfileView {
     }
 
     var effectivenessChart: some View {
-        GroupBox (localStr("profile.alltime.effectiveness")) {
+        GroupBox(localStr("profile.alltime.effectiveness")) {
             Chart {
                 ForEach(viewStore.effectivenessData, id: \.name) { data in
-                    LineMark(
+                    BarMark(
                         x: .value("Day", data.name),
                         y: .value("Progress", data.amount)
                     )
                     .interpolationMethod(.catmullRom)
-                    .symbol {
-                        Circle()
-                            .fill(.lineChart)
-                            .frame(width: 5)
-                    }
                     .foregroundStyle(.lineChart)
                 }
             }
         }
-
         .chartYAxis() {
-            AxisMarks(position: .leading)
+            AxisMarks(
+                position: .leading,
+                values: [0, 25, 50, 75, 100]
+            ) {
+                AxisValueLabel(format: Decimal.FormatStyle.Percent.percent.scale(1))
+            }
         }
         .foregroundStyle(.mainText)
         .padding(.horizontal, 16)

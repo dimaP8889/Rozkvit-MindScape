@@ -37,32 +37,37 @@ final class ProfileTabData {
     }
 
     func effectivenessChartByDay() -> [ProfileChartData] {
-        // Count number of results for each day
-        var daysDict: [String: Int] = [:]
-        databaseStatistic.forEach { data in
-            let date = Date(timeIntervalSince1970: TimeInterval(data.date)).formattedDate(by: .therapyEffectivnessByDay)
-            if daysDict[date] != nil {
-                daysDict[date]! += 1
-            } else {
-                daysDict[date] = 1
+        let lastSevenDays = Date().lastSevenDays()
+
+        // Dictionary of results per each day
+        var results: [Int: [Int]] = [:]
+        for day in lastSevenDays {
+            results[day] = [0]
+            for statistic in databaseStatistic {
+                let date = Date(timeIntervalSince1970: TimeInterval(statistic.date))
+                let startOfDay = Int(Calendar.current.startOfDay(for: date).timeIntervalSince1970)
+                if startOfDay == day {
+                    if results[startOfDay] != nil {
+                        results[startOfDay]!.append(statistic.result)
+                    } else {
+                        results[startOfDay] = [statistic.result]
+                    }
+                }
             }
         }
 
-        // Create a dictionary with total result for a day
-        var daysResultDict: [String: Int] = [:]
-        databaseStatistic.forEach { data in
-            let date = Date(timeIntervalSince1970: TimeInterval(data.date)).formattedDate(by: .therapyEffectivnessByDay)
-            daysResultDict[date] = (daysResultDict[date] ?? 0) + data.result
-        }
-
-        let final = daysResultDict
-            .map { day, result in
-                ProfileChartData(name: day, amount: result / (daysDict[day] ?? 1))
+        return results
+            .map { (day: Int, result: [Int]) -> (date: Date, amount: Int) in
+                let date = Date(timeIntervalSince1970: TimeInterval(day))
+                let amount = result.count == 0 ? 0 : result.reduce(0, +) / result.count
+                return (date, amount)
             }
             .sorted {
-                $0.name < $1.name
+                $0.date < $1.date
             }
-        return final
+            .map { (date, amount) in
+                return ProfileChartData(name: date.formattedDate(by: .therapyEffectivnessByDay), amount: amount)
+            }
     }
 
     private func allTimeCorrectData(for statistic: [DatabaseGameStatistic]) -> [ProfileChartData] {
@@ -76,5 +81,20 @@ final class ProfileTabData {
             .init(name: localStr("profile.correct"), amount: medianCorrect, color: .pieChart1),
             .init(name: localStr("profile.incorrect"), amount: medianIncorrect, color: .pieChart3)
         ]
+    }
+}
+
+private extension Date {
+    func lastSevenDays() -> [Int] {
+        let calendar = Calendar.current
+        var lastSevenDays: [Int] = []
+
+        for day in 0..<7 {
+            if let date = calendar.date(byAdding: .day, value: -day, to: self) {
+                let startOfDay = calendar.startOfDay(for: date)
+                lastSevenDays.append(Int(startOfDay.timeIntervalSince1970))
+            }
+        }
+        return lastSevenDays
     }
 }

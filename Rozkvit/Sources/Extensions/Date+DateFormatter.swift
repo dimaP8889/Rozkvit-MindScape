@@ -15,19 +15,18 @@ extension Date {
     }
     
 
-    func formattedDate(by dateFormat: DateTimeFormat = .therapyEffectivnessTotal) -> String {
+    func formattedDate(by dateFormat: DateTimeFormat = .therapyEffectivnessByDay) -> String {
         Date.timeFormatter(dateFormat).string(from: self)
     }
 }
 
 enum DateTimeFormat {
     case therapyEffectivnessByDay
-    case therapyEffectivnessTotal
 
     var formattedString: String {
         switch self {
         case .therapyEffectivnessByDay: return "dd.MM"
-        case .therapyEffectivnessTotal: return "dd.MM hh:mm"
+
         }
     }
 }

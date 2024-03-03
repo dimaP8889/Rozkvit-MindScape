@@ -25,9 +25,12 @@ final class PickEmotionsGameFabric {
 // MARK: - Private
 private extension PickEmotionsGameFabric {
     private func createSlides(for game: GameType) -> [GameSlide] {
+        guard let levelDesign = GameLevelDesign(game: game) else { return [] }
+
         if game == .pickEmotion {
             var slides = [GameSlide]()
-            while slides.count != 10 {
+
+            while slides.count != levelDesign.firstPhaseAmount {
                 let randomEmotion = Emotion.level1.randomElement()!
                 let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
                 let slide = GameSlide(
@@ -42,7 +45,8 @@ private extension PickEmotionsGameFabric {
 
         if game == .pickEmotion2 {
             var slides = [GameSlide]()
-            while slides.count != 10 {
+
+            while slides.count != levelDesign.firstPhaseAmount {
                 let randomEmotion = Emotion.level2.randomElement()!
                 let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
                 let slide = GameSlide(
@@ -53,7 +57,7 @@ private extension PickEmotionsGameFabric {
                 slides.append(slide)
             }
 
-            while slides.count != 14 {
+            while slides.count != levelDesign.secondPhaseAmount {
                 let randomEmotion = Emotion.level1.randomElement()!
                 let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
                 let slide = GameSlide(
@@ -68,8 +72,30 @@ private extension PickEmotionsGameFabric {
 
         if game == .pickEmotion3 {
             var slides = [GameSlide]()
-            while slides.count != 10 {
-                let randomEmotion = Emotion.allCases.randomElement()!
+            while slides.count != levelDesign.firstPhaseAmount {
+                let randomEmotion = Emotion.level3.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != levelDesign.secondPhaseAmount {
+                let randomEmotion = Emotion.level2.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != levelDesign.thirdPhaseAmount {
+                let randomEmotion = Emotion.level1.randomElement()!
                 let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
                 let slide = GameSlide(
                     question: randomEmotion.question,
@@ -83,8 +109,41 @@ private extension PickEmotionsGameFabric {
 
         if game == .pickEmotion4 {
             var slides = [GameSlide]()
-            while slides.count != 10 {
-                let randomEmotion = Emotion.allCases.randomElement()!
+            while slides.count != levelDesign.firstPhaseAmount {
+                let randomEmotion = Emotion.level4.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: true)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != levelDesign.secondPhaseAmount {
+                let randomEmotion = Emotion.level3.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != levelDesign.thirdPhaseAmount {
+                let randomEmotion = Emotion.level2.randomElement()!
+                let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
+                let slide = GameSlide(
+                    question: randomEmotion.question,
+                    answers: answers,
+                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                )
+                slides.append(slide)
+            }
+
+            while slides.count != levelDesign.fourthPhaseAmount {
+                let randomEmotion = Emotion.level1.randomElement()!
                 let answers = createImageAnswers(for: randomEmotion, isCurrentLevelEmotion: false)
                 let slide = GameSlide(
                     question: randomEmotion.question,
@@ -162,21 +221,32 @@ private extension PickEmotionsGameFabric {
         return .init(data: .text(answers.shuffled()))
     }
 
-    func randomEmotionImage(from emotions: [Emotion], currentAnswers: [GameAnswer<Image>]) -> Image {
+    private func randomEmotionImage(from emotions: [Emotion], currentAnswers: [GameAnswer<Image>]) -> Image {
         var images: [Image] = []
         for emotion in emotions {
             switch emotion {
-            case .fear:         images += Images.fear
-            case .sadness:      images += Images.sadness
-            case .surprise:     images += Images.surprise
-            case .happiness:    images += Images.happiness
-            case .anger:        images += Images.anger
+            case .fear:             images += Images.fear
+            case .sadness:          images += Images.sadness
+            case .surprise:         images += Images.surprise
+            case .happiness:        images += Images.happiness
+            case .anger:            images += Images.anger
 
-            case .contempt:     images += Images.contempt
-            case .disgust:      images += Images.disgust
-            case .excitement:   images += Images.excitement
-            case .interest:     images += Images.interest
-            case .relief:       images += Images.relief
+            case .contempt:         images += Images.contempt
+            case .disgust:          images += Images.disgust
+            case .excitement:       images += Images.excitement
+            case .interest:         images += Images.interest
+            case .relief:           images += Images.relief
+
+            case .anticipation:     images += Images.anticipation
+            case .boredom:          images += Images.boredom
+            case .confusion:        images += Images.confusion
+            case .contentment:      images += Images.contentment
+            case .embarrassment:    images += Images.embarrassment
+
+            case .envy:             images += Images.envy
+            case .guilt:            images += Images.guilt
+            case .pride:            images += Images.pride
+            case .shame:            images += Images.shame
             }
         }
 
@@ -188,5 +258,62 @@ private extension PickEmotionsGameFabric {
             image = images.randomElement()!
         }
         return image
+    }
+}
+
+private extension PickEmotionsGameFabric {
+    enum GameLevelDesign {
+    #if DEBUG
+        static var isDebug = true
+    #else
+        static var isDebug = false
+    #endif
+
+        case firstLevel
+        case secondLevel
+        case thirdLevel
+        case fourthLevel
+
+        var firstPhaseAmount: Int {
+            return GameLevelDesign.isDebug ? 2 : 10
+        }
+
+        var secondPhaseAmount: Int {
+            switch self {
+            case .firstLevel:   return firstPhaseAmount + 0
+            case .secondLevel:  return firstPhaseAmount + (GameLevelDesign.isDebug ? 1 : 4)
+            case .thirdLevel:   return firstPhaseAmount + (GameLevelDesign.isDebug ? 1 : 3)
+            case .fourthLevel:  return firstPhaseAmount + (GameLevelDesign.isDebug ? 1 : 2)
+            }
+        }
+
+        var thirdPhaseAmount: Int {
+            switch self {
+            case .firstLevel:   return secondPhaseAmount + 0
+            case .secondLevel:  return secondPhaseAmount + 0
+            case .thirdLevel:   return secondPhaseAmount + (GameLevelDesign.isDebug ? 1 : 3)
+            case .fourthLevel:  return secondPhaseAmount + (GameLevelDesign.isDebug ? 1 : 2)
+            }
+        }
+
+        var fourthPhaseAmount: Int {
+            switch self {
+            case .firstLevel:   return thirdPhaseAmount + 0
+            case .secondLevel:  return thirdPhaseAmount + 0
+            case .thirdLevel:   return thirdPhaseAmount + 0
+            case .fourthLevel:  return thirdPhaseAmount + (GameLevelDesign.isDebug ? 1 : 2)
+            }
+        }
+
+        init?(game: GameType) {
+            switch game {
+            case .pickEmotion:  self = .firstLevel
+            case .pickEmotion2: self = .secondLevel
+            case .pickEmotion3: self = .thirdLevel
+            case .pickEmotion4: self = .fourthLevel
+
+            default: return nil
+            }
+        }
     }
 }

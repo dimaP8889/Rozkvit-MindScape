@@ -42,7 +42,6 @@ final class ProfileTabData {
         // Dictionary of results per each day
         var results: [Int: [Int]] = [:]
         for day in lastSevenDays {
-            results[day] = [0]
             for statistic in databaseStatistic {
                 let date = Date(timeIntervalSince1970: TimeInterval(statistic.date))
                 let startOfDay = Int(Calendar.current.startOfDay(for: date).timeIntervalSince1970)
@@ -54,8 +53,10 @@ final class ProfileTabData {
                     }
                 }
             }
+            if results[day] == nil {
+                results[day] = [0]
+            }
         }
-
         return results
             .map { (day: Int, result: [Int]) -> (date: Date, amount: Int) in
                 let date = Date(timeIntervalSince1970: TimeInterval(day))

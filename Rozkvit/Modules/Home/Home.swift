@@ -10,29 +10,6 @@ import SwiftUI
 
 @Reducer
 struct Home {
-    @Dependency(\.appData) var appData
-    
-    var body: some Reducer<State, Action> {
-        Reduce { state, action in
-            switch action {
-            case .onAppear:
-                return .run { send in
-                    for await appData in self.appData.stream() {
-                        await send(.didUpdateData(appData))
-                    }
-                }
-
-            case let .didUpdateData(data):
-                state.treeImage = data.homeTabData.treeImage
-                state.motivationText = data.homeTabData.motivationText
-                return .none
-            }
-        }
-    }
-}
-
-// MARK: - State
-extension Home {
     struct State: Equatable {
         var treeImage: Image
         var motivationText: String
@@ -43,13 +20,29 @@ extension Home {
             self.motivationText = appData().homeTabData.motivationText
         }
     }
-}
 
-// MARK: - Action
-extension Home {
     enum Action: Equatable {
         case onAppear
-        case didUpdateData(AppData)
+        case didUpdateData
+    }
+
+    @Dependency(\.appData) var appData
+    
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .onAppear:
+                return .run { send in
+                    for await _ in self.appData.stream() {
+                        await send(.didUpdateData)
+                    }
+                }
+
+            case .didUpdateData:
+                state.treeImage = appData.get().homeTabData.treeImage
+                state.motivationText = appData.get().homeTabData.motivationText
+                return .none
+            }
+        }
     }
 }
-

@@ -33,7 +33,7 @@ private extension GameEventView {
             headerView
             slideView
         }
-        .background(PearlGradient())
+        .background(PearlGradient(), ignoresSafeAreaEdges: .all)
         .blur(radius: viewStore.blur)
     }
 
@@ -89,6 +89,7 @@ private extension GameEventView {
             Spacer()
             close
         }
+        .padding(.top, 16)
         .padding(.horizontal, 16)
     }
 

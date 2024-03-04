@@ -11,6 +11,12 @@ import ComposableArchitecture
 struct RootView: View {
     let store: StoreOf<RootDomain>
 
+    init(store: StoreOf<RootDomain>) {
+        self.store = store
+        UITabBar.appearance().barTintColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
+
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             TabView(

@@ -29,7 +29,7 @@ private extension HomeView {
     var backgroundImage: some View {
         viewStore.treeImage
             .resizable()
-            .ignoresSafeArea(edges: .top)
+            .background(PearlGradient(), ignoresSafeAreaEdges: .top)
     }
 
     var main: some View {
@@ -58,8 +58,8 @@ private extension HomeView {
         Text(viewStore.motivationText)
             .font(.main(size: 17, weight: .bold))
             .foregroundStyle(.white)
-            .padding(.bottom, 48)
-            .padding(.horizontal, 50)
+            .padding(.bottom, 30)
+            .padding(.horizontal, 24)
             .multilineTextAlignment(.center)
     }
 }

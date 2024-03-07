@@ -42,7 +42,7 @@ struct Games {
     enum Action: Equatable {
         case didSelectCategoryIndex(Int)
         case didUpdateData(AppData)
-        case task
+        case onInit
         case categories(IdentifiedActionOf<CategoryGamesList>)
         case destination(PresentationAction<Destination.Action>)
     }
@@ -61,7 +61,7 @@ struct Games {
                 state.categories = appData.gamesTabData.categories
                 return .none
 
-            case .task:
+            case .onInit:
                 return .run { send in
                     for await appData in self.appData.stream() {
                         await send(.didUpdateData(appData))

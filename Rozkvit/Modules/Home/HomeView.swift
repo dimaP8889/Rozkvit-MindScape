@@ -15,12 +15,20 @@ struct HomeView: View {
     init(store: StoreOf<Home>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
+        store.send(.onInit)
     }
 
     var body: some View {
         main
             .background(backgroundImage)
-            .onAppear { store.send(.onAppear) }
+            .fullScreenCover(
+                store: self.store.scope(
+                    state: \.$destination.selectedGame,
+                    action: \.destination.selectedGame
+                )
+            ) { store in
+                GameEventView(store: store)
+            }
     }
 }
 
@@ -36,6 +44,7 @@ private extension HomeView {
         VStack {
             //daysStreak
             Spacer()
+            startButton
             motivationText
         }
         .frame(maxWidth: .infinity)
@@ -54,11 +63,30 @@ private extension HomeView {
             .padding(.top, 16)
     }
 
+    var startButton: some View {
+        Button(
+            action: {
+                store.send(.didPressStart)
+            },
+            label: {
+                Text(localStr("home.game.start"))
+                    .font(.main(size: 24, weight: .bold))
+                    .foregroundStyle(.black)
+                    .frame(height: 45)
+                    .padding(.horizontal, 40)
+            }
+        )
+        .background(
+            RoundedRectangle(cornerRadius: 30)
+                .foregroundStyle(.white)
+        )
+    }
+
     var motivationText: some View {
         Text(viewStore.motivationText)
             .font(.main(size: 17, weight: .bold))
             .foregroundStyle(.white)
-            .padding(.bottom, 30)
+            .padding(.bottom, 16)
             .padding(.horizontal, 24)
             .multilineTextAlignment(.center)
     }

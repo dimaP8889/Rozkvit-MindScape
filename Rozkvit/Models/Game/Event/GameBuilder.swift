@@ -13,6 +13,24 @@ final class GameBuilder {
         let fabric = PickEmotionsGameFabric()
         return fabric.createGame(of: type)
     }
+
+    func createNextGame(for statistic: [GameType: Int]) -> GameEnvironment {
+        let nextGame = nextGame(for: statistic)
+        return createGame(for: nextGame)
+    }
+
+    private func nextGame(for statistic: [GameType: Int]) -> GameType {
+        let availabilityChecker = AvailabilityChecker()
+
+        var prevGame: GameType = .pickEmotion
+        for game in GameType.allCases {
+            if availabilityChecker.gameAvailability(game, gameStatistic: statistic) != .available {
+                return prevGame
+            }
+            prevGame = game
+        }
+        return prevGame
+    }
 }
 
 final class GameEnvironment: Equatable {

@@ -10,6 +10,7 @@ import SwiftUI
 final class HomeTabData {
     private var gameStatistic: [GameType: Int]
     private var treeBuilder = TreeBuilder()
+    private var gameBuilder = GameBuilder()
 
     init(gameStatistic: [GameType : Int]) {
         self.gameStatistic = gameStatistic
@@ -21,5 +22,9 @@ final class HomeTabData {
 
     var motivationText: String {
         treeBuilder.motivation(for: gameStatistic)
+    }
+
+    var nextGame: GameEnvironment {
+        gameBuilder.createNextGame(for: gameStatistic)
     }
 }

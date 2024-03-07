@@ -15,6 +15,7 @@ struct GamesView: View {
     init(store: StoreOf<Games>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
+        store.send(.onInit)
     }
 
     var body: some View {
@@ -28,7 +29,6 @@ struct GamesView: View {
             ) { store in
                 GameEventView(store: store)
             }
-            .task { await self.viewStore.send(.task).finish() }
     }
 }
 

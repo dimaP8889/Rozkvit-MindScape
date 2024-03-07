@@ -32,7 +32,7 @@ struct Profile {
 
     enum Action: Equatable {
         case didUpdateData(AppData)
-        case onAppear
+        case onInit
     }
 
     @Dependency(\.appData) var appData
@@ -40,7 +40,7 @@ struct Profile {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .onAppear:
+            case .onInit:
                 return .run { send in
                     for await appData in self.appData.stream() {
                         await send(.didUpdateData(appData))

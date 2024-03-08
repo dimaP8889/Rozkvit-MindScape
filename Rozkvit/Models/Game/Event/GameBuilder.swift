@@ -106,6 +106,16 @@ struct GameAnswers: Equatable {
     enum DataType: Equatable {
         case text([GameAnswer<String>])
         case image([GameAnswer<Image>])
+
+        var correctAnswerImage: Image? {
+            switch self {
+            case .text:
+                return nil
+            case let .image(answers):
+                let correct = answers.first { $0.metadata.isCorrect }
+                return correct?.value
+            }
+        }
     }
 }
 
@@ -124,7 +134,7 @@ struct GameAnswer<T: Equatable>: Equatable, Identifiable {
 struct GameWrongAnswerDescription: Equatable {
     var title: String?
     var subtitle: String?
-    var image: Image
+    var image: Image?
     var description: String
 
     init(title: String? = nil, subtitle: String? = nil, image: Image, description: String) {
@@ -134,10 +144,10 @@ struct GameWrongAnswerDescription: Equatable {
         self.description = description
     }
 
-    init(emotion: Emotion) {
+    init(emotion: Emotion, image: Image?) {
         self.title = localStr("game.wrongAnswer.title")
         self.subtitle = emotion.title.uppercased()
-        self.image = emotion.mainImage
+        self.image = image
         self.description = emotion.description
     }
 }

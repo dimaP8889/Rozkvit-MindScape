@@ -74,15 +74,18 @@ extension GameEntityWrongAnswerDescriptionView {
         }
     }
 
+    @ViewBuilder
     var imageView: some View {
-        viewStore.model.image
-            .resizable()
-            .frame(width: 120, height: 120)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.mainText, lineWidth: 2)
-            )
+        if let image = viewStore.model.image {
+            image
+                .resizable()
+                .frame(width: 120, height: 120)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.mainText, lineWidth: 2)
+                )
+        }
     }
 
     var textView: some View {
@@ -115,7 +118,7 @@ extension GameEntityWrongAnswerDescriptionView {
 #Preview {
     return GameEntityWrongAnswerDescriptionView(
         store: .init(
-            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .anger)),
+            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .anger, image: Image(.anger1))),
             reducer: {
                 GameEntityWrongAnswerDescription()
             }

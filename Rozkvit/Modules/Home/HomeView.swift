@@ -15,7 +15,6 @@ struct HomeView: View {
     init(store: StoreOf<Home>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
-        store.send(.onInit)
     }
 
     var body: some View {
@@ -29,6 +28,7 @@ struct HomeView: View {
             ) { store in
                 GameEventView(store: store)
             }
+            .onFirstAppear { store.send(.onFirstAppear) }
     }
 }
 

@@ -41,8 +41,8 @@ struct Games {
 
     enum Action: Equatable {
         case didSelectCategoryIndex(Int)
-        case didUpdateData(AppData)
-        case onInit
+        case didUpdateData
+        case onFirstAppear
         case categories(IdentifiedActionOf<CategoryGamesList>)
         case destination(PresentationAction<Destination.Action>)
     }
@@ -57,14 +57,14 @@ struct Games {
                 state.selectedCategoryIndex = index
                 return .none
 
-            case let .didUpdateData(appData):
+            case .didUpdateData:
                 state.categories = appData.gamesTabData.categories
                 return .none
 
-            case .onInit:
+            case .onFirstAppear:
                 return .run { send in
-                    for await appData in self.appData.stream() {
-                        await send(.didUpdateData(appData))
+                    for await _ in self.appData.stream() {
+                        await send(.didUpdateData)
                     }
                 }
 

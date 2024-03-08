@@ -27,15 +27,6 @@ final class ProfileTabData {
         allTimeCorrectData(for: databaseStatistic)
     }
 
-    func effectivenessChart() -> [ProfileChartData] {
-        let sortedStatistic = databaseStatistic.sorted { $0.date < $1.date }
-
-        return sortedStatistic.map { stat in
-            let date = Date(timeIntervalSince1970: TimeInterval(stat.date))
-            return ProfileChartData(name: date.formattedDate(), amount: stat.result)
-        }
-    }
-
     func effectivenessChartByDay() -> [ProfileChartData] {
         let lastSevenDays = Date().lastSevenDays()
 
@@ -72,6 +63,12 @@ final class ProfileTabData {
     }
 
     private func allTimeCorrectData(for statistic: [DatabaseGameStatistic]) -> [ProfileChartData] {
+        if statistic.isEmpty {
+            return [
+                .init(name: localStr("profile.noData"), amount: 1, color: .gray)
+            ]
+        }
+
         let totalResult = statistic.reduce(0) { partialResult, stat in
             partialResult + stat.result
         }

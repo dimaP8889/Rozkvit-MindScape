@@ -40,7 +40,7 @@ struct Home {
     }
 
     enum Action: Equatable {
-        case onInit
+        case onFirstAppear
         case didUpdateData
         case didPressStart
         case destination(PresentationAction<Destination.Action>)
@@ -52,7 +52,7 @@ struct Home {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .onInit:
+            case .onFirstAppear:
                 return .run { send in
                     for await _ in self.appData.stream() {
                         await send(.didUpdateData)

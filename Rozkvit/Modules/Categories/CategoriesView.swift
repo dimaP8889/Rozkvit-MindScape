@@ -59,6 +59,9 @@ private extension CategoriesView {
                 .frame(height: 40)
                 .background(item.type.mainColor)
                 .cornerRadius(30)
+                .onTapGesture {
+                    store.send(.showGamesFor(item.type))
+                }
         }
     }
 
@@ -88,7 +91,7 @@ private extension CategoriesView {
     }
 
     var descriptionView: some View {
-        Text(localStr("statistic.description"))
+        Text(localStr("categories.description"))
             .font(.main(size: 17, weight: .bold))
             .foregroundColor(.mainText)
             .padding(.horizontal, 35)

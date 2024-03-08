@@ -16,12 +16,12 @@ struct ProfileView: View {
     init(store: StoreOf<Profile>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { $0 })
-        store.send(.onInit)
     }
 
     var body: some View {
         main
             .background(PearlGradient(), ignoresSafeAreaEdges: .top)
+            .onAppear { store.send(.onAppear) }
     }
 }
 

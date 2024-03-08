@@ -36,7 +36,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -52,7 +52,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -63,7 +63,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -78,7 +78,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -89,7 +89,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -100,7 +100,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -115,7 +115,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -126,7 +126,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -137,7 +137,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }
@@ -148,7 +148,7 @@ private extension PickEmotionsGameFabric {
                 let slide = GameSlide(
                     question: randomEmotion.question,
                     answers: answers,
-                    wrongAnswerDescription: .init(emotion: randomEmotion)
+                    wrongAnswerDescription: .init(emotion: randomEmotion, image: answers.data.correctAnswerImage)
                 )
                 slides.append(slide)
             }

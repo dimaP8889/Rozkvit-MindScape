@@ -68,6 +68,15 @@ struct GameData: Identifiable, Equatable {
             case .threeStars:   return Image(.starFilledIc)
             }
         }
+
+        var starsAmount: Int {
+            switch self {
+            case .noStars:      return 0
+            case .oneStar:      return 1
+            case .twoStars:     return 2
+            case .threeStars:   return 3
+            }
+        }
     }
 
     enum AvailabilityState {
@@ -121,16 +130,16 @@ enum GameType: String, Equatable, CaseIterable {
 
 
         case .criticalThinking0:
-            return localStr("statistic.criticalThinking")
+            return localStr("categories.criticalThinking")
 
         case .logic0:
-            return localStr("statistic.logic")
+            return localStr("categories.logic")
 
         case .selfIdentity0:
-            return localStr("statistic.selfIdentity")
+            return localStr("categories.selfIdentity")
 
         case .rationalThinking0:
-            return localStr("statistic.rationalThinking")
+            return localStr("categories.rationalThinking")
         }
     }
 

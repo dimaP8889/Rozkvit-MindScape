@@ -18,13 +18,13 @@
 "home.motivation.text.3" = "Well done, your tree looks strong and flourish! Keep up the progress";
 "home.game.start" = "Start";
 
-// Statistic
-"statistic.emotionalIntelect" = "Emotional Intelligence";
-"statistic.criticalThinking" = "Critical Thinking";
-"statistic.logic" = "Logic";
-"statistic.selfIdentity" = "Self Identity";
-"statistic.rationalThinking" = "Rational Thinking";
-"statistic.description" = "Click on a category to pick a game!";
+// Categories
+"categories.emotionalIntelect" = "Emotional Intelligence";
+"categories.criticalThinking" = "Critical Thinking";
+"categories.logic" = "Logic";
+"categories.selfIdentity" = "Self Identity";
+"categories.rationalThinking" = "Rational Thinking";
+"categories.description" = "Click on a category to pick a game!";
 
 // Game
 "game.pickGame" = "pick game";
@@ -125,3 +125,4 @@
 "profile.today.correct" = "Today's correct answers";
 "profile.alltime.correct" = "All time correct answers";
 "profile.alltime.effectiveness" = "Effectiveness correct answers per day";
+"profile.noData" = "No data yet";

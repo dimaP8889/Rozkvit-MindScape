@@ -18,11 +18,11 @@ enum CategoryType: Equatable, CaseIterable, Identifiable {
 
     var localization: String {
         switch self {
-        case .emotionalIntelect:    return localStr("statistic.emotionalIntelect").lowercased()
-        case .criticalThinking:     return localStr("statistic.criticalThinking").lowercased()
-        case .logic:                return localStr("statistic.logic").lowercased()
-        case .selfIdentity:         return localStr("statistic.selfIdentity").lowercased()
-        case .rationalThinking:     return localStr("statistic.rationalThinking").lowercased()
+        case .emotionalIntelect:    return localStr("categories.emotionalIntelect").lowercased()
+        case .criticalThinking:     return localStr("categories.criticalThinking").lowercased()
+        case .logic:                return localStr("categories.logic").lowercased()
+        case .selfIdentity:         return localStr("categories.selfIdentity").lowercased()
+        case .rationalThinking:     return localStr("categories.rationalThinking").lowercased()
         }
     }
 

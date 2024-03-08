@@ -12,7 +12,7 @@ final class TreeBuilder {
     private var progressCounter = ProgressCounter()
 
     func tree(for statistic: [GameType: Int]) -> Image {
-        let percentage = progressCounter.progressPercentage(for: statistic)
+        let percentage = progressCounter.progressStarsPercentage(for: statistic)
 
         let allTrees: [Image] = [
             Image(.tree0), Image(.tree1), Image(.tree2), Image(.tree3), Image(.tree4),

@@ -148,7 +148,7 @@ enum GameType: String, Equatable, CaseIterable {
         case .pickEmotion:
             return Image(.happiness4)
         case .pickEmotion2:
-            return Image(.boyAndWall)
+            return Image(.surprise3)
         case .pickEmotion3:
             return Image(.anger1)
         case .pickEmotion4:

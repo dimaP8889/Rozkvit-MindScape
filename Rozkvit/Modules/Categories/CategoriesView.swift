@@ -83,7 +83,7 @@ private extension CategoriesView {
                     .foregroundStyle(data.type.fontColor)
             }
         }
-        .frame(height: 400)
+        .frame(minHeight: 200, idealHeight: 400)
         .padding(.horizontal, 16)
         .chartLegend(.hidden)
         .chartAngleSelection(value: selectedAngle)

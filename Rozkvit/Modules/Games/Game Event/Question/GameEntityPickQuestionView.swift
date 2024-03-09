@@ -30,8 +30,8 @@ extension GameEntityPickQuestionView {
     var subtitleView: some View {
         Text(data.subtitle)
             .font(.main(size: 40, weight: .bold))
+            .lineLimit(2)
             .foregroundStyle(.mainText)
-            .frame(width: 285)
     }
 }
 

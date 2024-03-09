@@ -99,7 +99,7 @@ extension ProfileView {
         }
         .foregroundStyle(.mainText)
         .padding(.leading, 16)
-        .frame(height: 250)
+        .frame(minHeight: 150, idealHeight: 250)
     }
 
     var allTimeChart: some View {
@@ -119,7 +119,7 @@ extension ProfileView {
             .chartForegroundStyleScale(range: graphColors(for: viewStore.allTimeCorrectData))
         }
         .foregroundStyle(.mainText)
-        .frame(height: 250)
+        .frame(minHeight: 150, idealHeight: 250)
         .padding(.trailing, 16)
     }
 
@@ -145,6 +145,7 @@ extension ProfileView {
             }
         }
         .foregroundStyle(.mainText)
+        .frame(minHeight: 150, idealHeight: 250)
         .padding(.horizontal, 16)
     }
 }

@@ -30,6 +30,7 @@ private extension GameEventView {
     var mainView: some View {
         VStack(spacing: 0) {
             navigationView
+            Spacer()
             headerView
             slideView
         }
@@ -60,7 +61,6 @@ private extension GameEventView {
             categoryText
             categoryNameText
         }
-        .padding(.top, 32)
     }
 
     var categoryText: some View {

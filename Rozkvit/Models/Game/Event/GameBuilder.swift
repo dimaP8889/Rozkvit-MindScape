@@ -153,33 +153,6 @@ struct GameWrongAnswerDescription: Equatable {
 }
 
 private extension Emotion {
-    var mainImage: Image {
-        switch self {
-        case .fear:             return Image(.fear1)
-        case .sadness:          return Image(.sadness1)
-        case .surprise:         return Image(.surprise1)
-        case .happiness:        return Image(.happiness1)
-        case .anger:            return Image(.anger2)
-
-        case .contempt:         return Image(.contempt1)
-        case .disgust:          return Image(.disgust2)
-        case .excitement:       return Image(.excitement1)
-        case .interest:         return Image(.interest4)
-        case .relief:           return Image(.relief1)
-
-        case .anticipation:     return Image(.anticipation3)
-        case .boredom:          return Image(.boredom3)
-        case .confusion:        return Image(.confusion3)
-        case .contentment:      return Image(.contentment2)
-        case .embarrassment:    return Image(.embarrassment1)
-
-        case .envy:             return Image(.envy1)
-        case .guilt:            return Image(.guilt2)
-        case .pride:            return Image(.pride3)
-        case .shame:            return Image(.shame3)
-        }
-    }
-
     var description: String {
         switch self {
         case .fear:             return localStr("game.wrongAnswer.fear.description")
@@ -200,10 +173,10 @@ private extension Emotion {
         case .contentment:      return localStr("game.wrongAnswer.contentment.description")
         case .embarrassment:    return localStr("game.wrongAnswer.embarrassment.description")
 
-        case .envy:             return localStr("game.wrongAnswer.anticipation.description")
-        case .guilt:            return localStr("game.wrongAnswer.boredom.description")
-        case .pride:            return localStr("game.wrongAnswer.confusion.description")
-        case .shame:            return localStr("game.wrongAnswer.contentment.description")
+        case .envy:             return localStr("game.wrongAnswer.envy.description")
+        case .guilt:            return localStr("game.wrongAnswer.guilt.description")
+        case .pride:            return localStr("game.wrongAnswer.pride.description")
+        case .shame:            return localStr("game.wrongAnswer.shame.description")
         }
     }
 }

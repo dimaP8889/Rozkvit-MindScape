@@ -63,8 +63,16 @@ struct Games {
 
             case .onFirstAppear:
                 return .run { send in
-                    for await _ in self.appData.stream() {
-                        await send(.didUpdateData)
+                    await withDiscardingTaskGroup { group in
+                        group.addTask {
+                            for await _ in self.appData.stream() {
+                                await send(.didUpdateData)
+                            }
+                        }
+
+                        group.addTask {
+                            await send(.didUpdateData)
+                        }
                     }
                 }
 

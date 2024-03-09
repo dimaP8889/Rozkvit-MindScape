@@ -47,7 +47,10 @@
 		F16D01F42B3B1AD0003614EE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D01F32B3B1AD0003614EE /* GameModel.swift */; };
 		F16D01F62B3BCC2D003614EE /* AvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D01F52B3BCC2D003614EE /* AvailabilityChecker.swift */; };
 		F17382192B4B958A00B88A06 /* PickEmotionsGameFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17382182B4B958A00B88A06 /* PickEmotionsGameFabric.swift */; };
-		F18D20632B52749C00523CFD /* GameEntityPickQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D20622B52749C00523CFD /* GameEntityPickQuestionView.swift */; };
+		F18325162B9C626A0090BDF8 /* GameEntityQuestionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18325122B9C626A0090BDF8 /* GameEntityQuestionSectionView.swift */; };
+		F18325172B9C626A0090BDF8 /* GameEntityTextQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18325132B9C626A0090BDF8 /* GameEntityTextQuestionView.swift */; };
+		F18325182B9C626A0090BDF8 /* GameEntityImageQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18325142B9C626A0090BDF8 /* GameEntityImageQuestionView.swift */; };
+		F18325192B9C626A0090BDF8 /* GameEntityPickQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18325152B9C626A0090BDF8 /* GameEntityPickQuestionView.swift */; };
 		F18D20662B52B6CC00523CFD /* GameEntityWrongAnswerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D20652B52B6CC00523CFD /* GameEntityWrongAnswerDescriptionView.swift */; };
 		F18D206F2B53D75B00523CFD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D206E2B53D75B00523CFD /* Fonts.swift */; };
 		F18D20742B53DA9100523CFD /* PearlGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D20732B53DA9100523CFD /* PearlGradient.swift */; };
@@ -64,9 +67,6 @@
 		F1DA743F2B2EDCC800A9A7F0 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA743D2B2EDCC800A9A7F0 /* Games.swift */; };
 		F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74412B2EDCE500A9A7F0 /* ProfileView.swift */; };
 		F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74422B2EDCE500A9A7F0 /* Profile.swift */; };
-		F1E46E552B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E532B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift */; };
-		F1E46E582B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E572B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift */; };
-		F1E46E5A2B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E592B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift */; };
 		F1E46E5C2B5500150036DEF2 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5B2B5500150036DEF2 /* Emotion.swift */; };
 		F1E46E5E2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */; };
 		F1FB65F32B90228900296912 /* ProgressCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB65F22B90228900296912 /* ProgressCounter.swift */; };
@@ -113,7 +113,10 @@
 		F16D01F32B3B1AD0003614EE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		F16D01F52B3BCC2D003614EE /* AvailabilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityChecker.swift; sourceTree = "<group>"; };
 		F17382182B4B958A00B88A06 /* PickEmotionsGameFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickEmotionsGameFabric.swift; sourceTree = "<group>"; };
-		F18D20622B52749C00523CFD /* GameEntityPickQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityPickQuestionView.swift; sourceTree = "<group>"; };
+		F18325122B9C626A0090BDF8 /* GameEntityQuestionSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntityQuestionSectionView.swift; sourceTree = "<group>"; };
+		F18325132B9C626A0090BDF8 /* GameEntityTextQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntityTextQuestionView.swift; sourceTree = "<group>"; };
+		F18325142B9C626A0090BDF8 /* GameEntityImageQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntityImageQuestionView.swift; sourceTree = "<group>"; };
+		F18325152B9C626A0090BDF8 /* GameEntityPickQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEntityPickQuestionView.swift; sourceTree = "<group>"; };
 		F18D20652B52B6CC00523CFD /* GameEntityWrongAnswerDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityWrongAnswerDescriptionView.swift; sourceTree = "<group>"; };
 		F18D20692B53D74300523CFD /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		F18D206C2B53D74400523CFD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -130,9 +133,6 @@
 		F1DA743D2B2EDCC800A9A7F0 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		F1DA74412B2EDCE500A9A7F0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F1DA74422B2EDCE500A9A7F0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		F1E46E532B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityQuestionSectionView.swift; sourceTree = "<group>"; };
-		F1E46E572B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityImageQuestionView.swift; sourceTree = "<group>"; };
-		F1E46E592B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityTextQuestionView.swift; sourceTree = "<group>"; };
 		F1E46E5B2B5500150036DEF2 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityWrongAnswerDescription.swift; sourceTree = "<group>"; };
 		F1FB65F22B90228900296912 /* ProgressCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCounter.swift; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 		F134F6742B48507400E58224 /* Game Event */ = {
 			isa = PBXGroup;
 			children = (
-				F18D205F2B52746700523CFD /* Question */,
 				F134F67F2B49892D00E58224 /* Answer */,
+				F18325102B9C626A0090BDF8 /* Question */,
 				F18D20642B52B6A700523CFD /* Description */,
 				F134F67B2B49892100E58224 /* GameEventView.swift */,
 				F134F67C2B49892100E58224 /* GameEvent.swift */,
@@ -450,16 +450,23 @@
 			path = Fabrics;
 			sourceTree = "<group>";
 		};
-		F18D205F2B52746700523CFD /* Question */ = {
+		F18325102B9C626A0090BDF8 /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				F1E46E522B54DC910036DEF2 /* Section */,
-				F18D20622B52749C00523CFD /* GameEntityPickQuestionView.swift */,
-				F1E46E572B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift */,
-				F1E46E592B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift */,
+				F18325112B9C626A0090BDF8 /* Section */,
+				F18325132B9C626A0090BDF8 /* GameEntityTextQuestionView.swift */,
+				F18325142B9C626A0090BDF8 /* GameEntityImageQuestionView.swift */,
+				F18325152B9C626A0090BDF8 /* GameEntityPickQuestionView.swift */,
 			);
-			name = Question;
-			path = "Йгуіешщт";
+			path = Question;
+			sourceTree = "<group>";
+		};
+		F18325112B9C626A0090BDF8 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				F18325122B9C626A0090BDF8 /* GameEntityQuestionSectionView.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		F18D20642B52B6A700523CFD /* Description */ = {
@@ -532,14 +539,6 @@
 				F1DA74422B2EDCE500A9A7F0 /* Profile.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		F1E46E522B54DC910036DEF2 /* Section */ = {
-			isa = PBXGroup;
-			children = (
-				F1E46E532B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift */,
-			);
-			path = Section;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18D20632B52749C00523CFD /* GameEntityPickQuestionView.swift in Sources */,
 				F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */,
 				F134F67D2B49892100E58224 /* GameEventView.swift in Sources */,
 				F1E46E5E2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift in Sources */,
@@ -648,7 +646,6 @@
 				F18D207E2B542BD400523CFD /* GameEntityAnswerSection.swift in Sources */,
 				F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */,
 				F16356CA2B3207AF00890D3C /* AppDataClient.swift in Sources */,
-				F1E46E552B54DCD20036DEF2 /* GameEntityQuestionSectionView.swift in Sources */,
 				F10F8FC12B8B6C8A0062DE05 /* LocalDatabaseClient.swift in Sources */,
 				F18D20812B542DB400523CFD /* GameEntityImageAnswerView.swift in Sources */,
 				F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */,
@@ -657,11 +654,12 @@
 				F1DA743E2B2EDCC800A9A7F0 /* GamesView.swift in Sources */,
 				F12B4F5B2B665D9600D7F5C3 /* TreeBuilder.swift in Sources */,
 				F1DA743A2B2EDCAC00A9A7F0 /* Categories.swift in Sources */,
+				F18325192B9C626A0090BDF8 /* GameEntityPickQuestionView.swift in Sources */,
 				F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */,
 				F134F67A2B48558C00E58224 /* Stack.swift in Sources */,
 				F134F67E2B49892100E58224 /* GameEvent.swift in Sources */,
 				F134F6862B49896500E58224 /* GameEntityTextAnswerView.swift in Sources */,
-				F1E46E5A2B54E2EB0036DEF2 /* GameEntityTextQuestionView.swift in Sources */,
+				F18325172B9C626A0090BDF8 /* GameEntityTextQuestionView.swift in Sources */,
 				F110B75A2B2EC29100FD3B95 /* Rozkvit.swift in Sources */,
 				F14B43152B552D4200AF1142 /* ExpandedTap.swift in Sources */,
 				F18D207D2B542BD400523CFD /* GameEntityAnswerSectionView.swift in Sources */,
@@ -672,7 +670,6 @@
 				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
 				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
 				F10F8FBE2B8B65410062DE05 /* ProfileTabData.swift in Sources */,
-				F1E46E582B54DEFE0036DEF2 /* GameEntityImageQuestionView.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,
 				F10F8FBA2B8B633C0062DE05 /* HomeTabData.swift in Sources */,
 				F13780932B35DFA800DF2C8F /* GameProgressView.swift in Sources */,
@@ -680,6 +677,8 @@
 				F18D20742B53DA9100523CFD /* PearlGradient.swift in Sources */,
 				F16D01F22B3B163C003614EE /* ScaleOnTap.swift in Sources */,
 				F16D01F42B3B1AD0003614EE /* GameModel.swift in Sources */,
+				F18325162B9C626A0090BDF8 /* GameEntityQuestionSectionView.swift in Sources */,
+				F18325182B9C626A0090BDF8 /* GameEntityImageQuestionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +808,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Rozkvit/Rozkvit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rozkvit/Preview Content\"";
 				DEVELOPMENT_TEAM = 452NG5983H;
@@ -853,7 +852,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Rozkvit/Rozkvit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Rozkvit/Preview Content\"";
 				DEVELOPMENT_TEAM = 452NG5983H;

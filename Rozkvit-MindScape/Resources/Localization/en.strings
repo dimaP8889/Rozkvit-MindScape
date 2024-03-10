@@ -1,0 +1,128 @@
+/* 
+  en.strings
+  Rozkvit-MindScape
+
+  Created by Dmytro Pogrebniak on 17.12.2023.
+  
+*/
+
+// Tabs
+"tab.categories" = "Categories";
+"tab.home" = "Home";
+"tab.games" = "Games";
+"tab.profile" = "Profile";
+
+// Home
+"home.motivation.text.1" = "Great start! Your tree has sprouted and is beginning to grow. Keep nurturing it with your efforts.";
+"home.motivation.text.2" = "Your tree is growing beautifully, showing signs of strength and vitality. Continue on this path to see it flourish!";
+"home.motivation.text.3" = "Well done, your tree looks strong and flourish! Keep up the progress";
+"home.game.start" = "Start";
+
+// Categories
+"categories.emotionalIntelect" = "Emotional Intelligence";
+"categories.criticalThinking" = "Critical Thinking";
+"categories.logic" = "Logic";
+"categories.selfIdentity" = "Self Identity";
+"categories.rationalThinking" = "Rational Thinking";
+"categories.description" = "Click on a category to pick a game!";
+
+// Game
+"game.pickGame" = "pick game";
+"game.pickEmotion.title" = "Pick the emotion";
+"game.result.text" = "Your result is: ";
+"game.unavailable.description" = "Сollect 3 stars in the previous level to open the game";
+"game.comingsoon.description" = "Coming soon. Stay tuned";
+"game.button.finish" = "Finish";
+"game.button.continue" = "Continue";
+
+// Level 1
+"game.emotion.fear.title" = "Fear";
+"game.emotion.sadness.title" = "Sadness";
+"game.emotion.happiness.title" = "Happiness";
+"game.emotion.anger.title" = "Anger";
+"game.emotion.surprise.title" = "Surprise";
+
+// Level 2
+"game.emotion.contempt.title" = "Contempt";
+"game.emotion.disgust.title" = "Disgust";
+"game.emotion.excitement.title" = "Excitement";
+"game.emotion.interest.title" = "Interest";
+"game.emotion.relief.title" = "Relief";
+
+// Level 3
+"game.emotion.anticipation.title" = "Anticipation";
+"game.emotion.boredom.title" = "Boredom";
+"game.emotion.confusion.title" = "Confusion";
+"game.emotion.contentment.title" = "Contentment";
+"game.emotion.embarrassment.title" = "Embarrassment";
+
+// Level 4
+"game.emotion.envy.title" = "Envy";
+"game.emotion.guilt.title" = "Guilt";
+"game.emotion.pride.title" = "Pride";
+"game.emotion.shame.title" = "Shame";
+
+"game.category.title" = "category";
+"game.emotion.pick.question.title" = "Pick the emotion";
+"game.wrongAnswer.title" = "This is";
+
+"game.wrongAnswer.fear.description" = "Fear is a primal and often intense emotion triggered by the perception of danger, whether real or imagined. It activates the body's fight-or-flight response, leading to physiological changes like increased heart rate, rapid breathing, and heightened senses. This emotion can range from mild apprehension to paralyzing terror and serves as a protective mechanism, alerting individuals to potential threats and preparing them to respond to challenging situations.";
+
+"game.wrongAnswer.sadness.description" = "Sadness is a deep, emotional state often characterized by feelings of loss, despair, or disappointment. It's a natural response to situations involving grief, failure, or heartache, and can manifest as a sense of emptiness or a pervasive low mood. While typically associated with decreased energy and withdrawal from usual activities, sadness can also provide a pathway to empathy, reflection, and a deeper understanding of one's own values and priorities.";
+
+"game.wrongAnswer.anger.description" = "Anger is a powerful and often intense emotion characterized by feelings of displeasure, irritation, or hostility. It can arise in response to perceived threats, injustices, or frustrations, often triggering physiological responses like increased heart rate or heightened adrenaline levels. This emotion can range from mild irritation to intense rage and can impact both mental and physical health, as well as interpersonal relationships.";
+
+"game.wrongAnswer.surprise.description" = "Surprise is a sudden and often unexpected emotional response to a novel or unforeseen event or information. It can range from mild curiosity to overwhelming shock, depending on the nature and context of the surprising incident. This emotion typically triggers a quick physiological reaction, such as a gasp or a jolt, and can lead to a variety of outcomes, from joy and excitement to fear and confusion, depending on the situation.";
+
+"game.wrongAnswer.happiness.description" = "Happiness is a state of well-being and contentment, marked by feelings of joy, satisfaction, or positive fulfillment. It often arises from engaging in enjoyable activities, achieving personal goals, or through meaningful connections with others. This emotion can positively influence one’s mental and physical health, fostering a sense of purpose and overall life satisfaction.";
+
+"game.wrongAnswer.contempt.description" = "Contempt is characterized by feelings of disdain, scorn, or superiority towards someone or something perceived as inferior or unworthy. It is typically expressed through facial cues such as one-sided mouth raise, eye rolling, and raised chin, signaling the individual's sense of superiority or dismissive attitude.";
+
+"game.wrongAnswer.disgust.description" = "Disgust is characterized by feelings of aversion, revulsion, or repulsion in response to something unpleasant or offensive. It is typically expressed through facial cues such as nose wrinkling, upper lip raise, and downturned mouth, signaling the individual's strong negative reaction to the perceived source of disgust.";
+
+"game.wrongAnswer.excitement.description" = "Excitement is characterized by feelings of enthusiasm, anticipation, or thrill in response to something enjoyable or stimulating. It is typically expressed through facial cues such as a wide smile, bright eyes, raised eyebrows, and animated gestures, signaling the individual's heightened emotional arousal and positive anticipation.";
+
+"game.wrongAnswer.interest.description" = "Interest is characterized by feelings of curiosity, engagement, and receptiveness towards something that captures the individual's attention. It is typically expressed through facial cues such as raised eyebrows, a focused gaze, an open expression, and a slight head tilt, signaling the individual's eagerness to explore and understand.";
+
+"game.wrongAnswer.relief.description" = "Relief is characterized by feelings of relaxation, comfort, and release from stress or tension after experiencing a challenging or stressful situation. It is typically expressed through facial cues such as a sigh of relief, relaxed facial muscles, softened eyes, and a subtle smile, signaling the individual's sense of ease and contentment.";
+
+"game.wrongAnswer.anticipation.description" = "Anticipation is characterized by feelings of excitement, eagerness, and readiness for an upcoming event or experience. It is typically expressed through facial cues such as raised eyebrows, a focused gaze, an eager expression, and subtle body language, signaling the individual's anticipation and enthusiasm.";
+
+"game.wrongAnswer.boredom.description" = "Boredom is characterized by feelings of disinterest, apathy, or lack of engagement in response to unstimulating or monotonous activities. It is typically expressed through facial cues such as drooping eyelids, a blank expression, yawning, and restless movements, signaling the individual's lack of interest or involvement.";
+
+"game.wrongAnswer.confusion.description" = "Confusion is characterized by feelings of uncertainty, perplexity, or bewilderment in response to a complex or unclear situation. It is typically expressed through facial cues such as a furrowed brow, a puzzled expression, a tilted head, and uncertain eye contact, signaling the individual's struggle to make sense of the situation.";
+
+"game.wrongAnswer.contentment.description" = "Contentment is characterized by feelings of satisfaction, peace, and well-being in response to a sense of fulfillment or harmony. It is typically expressed through facial cues such as a relaxed smile, softened eyes, a peaceful expression, and a contented sigh, signaling the individual's inner sense of happiness and satisfaction.";
+
+"game.wrongAnswer.embarrassment.description" = "Embarrassment is characterized by feelings of self-consciousness, awkwardness, or shame in response to a perceived social blunder or mistake. It is typically expressed through facial cues such as blushing, averted eyes, a nervous smile, and fidgeting, signaling the individual's discomfort or unease in the situation.";
+
+"game.wrongAnswer.envy.description" = "Envy is characterized by feelings of resentment, longing, or covetousness towards someone else's possessions, qualities, or achievements. It is typically expressed through facial cues such as facial tension, a side glance, a forced smile, and a slight frown, signaling the individual's inner turmoil or dissatisfaction.";
+
+"game.wrongAnswer.guilt.description" = "Guilt is characterized by feelings of remorse, shame, or self-blame in response to a perceived wrongdoing or moral transgression. It is typically expressed through facial cues such as downcast eyes, a tense mouth, a furrowed brow, and a subdued expression, signaling the individual's inner turmoil or regret.";
+
+"game.wrongAnswer.pride.description" = "Pride is characterized by feelings of satisfaction, accomplishment, and self-worth in response to success or achievement. It is typically expressed through facial cues such as an uplifted chin, a broad smile, a straight posture, and glowing eyes, signaling the individual's confidence and self-assurance.";
+
+"game.wrongAnswer.shame.description" = "Shame is characterized by feelings of embarrassment, unworthiness, or self-blame in response to a perceived failure or social transgression. It is typically expressed through facial cues such as downcast eyes, blushing, a closed posture, and a subdued expression, signaling the individual's inner turmoil or discomfort.";
+
+"game.wall.question" = "What will you do with this wall?";
+"game.wall.answer.1" = "I'll break it";
+"game.wall.answer.2" = "I'll go around";
+"game.wall.answer.3" = "I'll climb over";
+"game.wall.answer.4" = "I'll stop and won't go further";
+
+"game.panic.question" = "What should you do if you have a panic attack?";
+"game.panic.answer.1" = "Calm down";
+"game.panic.answer.2" = "Start to panic";
+"game.panic.answer.3" = "Call an ambulance";
+"game.panic.answer.4" = "Do nothing";
+
+"game.panic.advice" = "If you experience a panic attack, it's important to find a calm and safe space where you can focus on deep, controlled breathing—inhale slowly for a count of four, hold for a count of four, and then exhale for a count of four—to help stabilize your heart rate and ease anxiety. Simultaneously, engage in grounding techniques, such as gently tapping your feet on the ground or holding onto a tangible object, to help your mind refocus and regain a sense of control and calm.";
+
+//Profile
+"profile.progress" = "progress";
+"profile.correct" = "Correct";
+"profile.incorrect" = "Incorrect";
+"profile.today.correct" = "Today's correct answers";
+"profile.alltime.correct" = "All time correct answers";
+"profile.alltime.effectiveness" = "Effectiveness correct answers per day";
+"profile.noData" = "No data yet";

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_1-transformed.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

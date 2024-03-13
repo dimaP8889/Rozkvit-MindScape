@@ -28,6 +28,7 @@
 		F110B77D2B2ECE9600FD3B95 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B77C2B2ECE9600FD3B95 /* RootView.swift */; };
 		F110B7822B2ECF4000FD3B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7802B2ECF4000FD3B95 /* HomeView.swift */; };
 		F110B7832B2ECF4000FD3B95 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110B7812B2ECF4000FD3B95 /* Home.swift */; };
+		F11CC3F72BA1E713007E7C76 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11CC3F62BA1E713007E7C76 /* Launch Screen.storyboard */; };
 		F12B4F5B2B665D9600D7F5C3 /* TreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B4F5A2B665D9600D7F5C3 /* TreeBuilder.swift */; };
 		F134F6772B4850BD00E58224 /* GameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134F6762B4850BD00E58224 /* GameBuilder.swift */; };
 		F134F67A2B48558C00E58224 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134F6792B48558C00E58224 /* Stack.swift */; };
@@ -94,6 +95,7 @@
 		F110B77C2B2ECE9600FD3B95 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F110B7802B2ECF4000FD3B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F110B7812B2ECF4000FD3B95 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F11CC3F62BA1E713007E7C76 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F12B4F5A2B665D9600D7F5C3 /* TreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeBuilder.swift; sourceTree = "<group>"; };
 		F134F6762B4850BD00E58224 /* GameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuilder.swift; sourceTree = "<group>"; };
 		F134F6792B48558C00E58224 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				F110B7592B2EC29100FD3B95 /* RozkvitMindScape.swift */,
 				F110B76C2B2ECC1900FD3B95 /* RootDomain.swift */,
 				F110B77C2B2ECE9600FD3B95 /* RootView.swift */,
+				F11CC3F62BA1E713007E7C76 /* Launch Screen.storyboard */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 			files = (
 				F110B7712B2ECD2700FD3B95 /* en.strings in Resources */,
 				F18D20752B53DE6300523CFD /* Inter-Bold.ttf in Resources */,
+				F11CC3F72BA1E713007E7C76 /* Launch Screen.storyboard in Resources */,
 				F134F68A2B498EDB00E58224 /* Colors.xcassets in Resources */,
 				F110B7622B2EC29400FD3B95 /* Preview Assets.xcassets in Resources */,
 				F18D20762B53DE6400523CFD /* Inter-Regular.ttf in Resources */,
@@ -824,6 +828,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
@@ -869,6 +874,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;

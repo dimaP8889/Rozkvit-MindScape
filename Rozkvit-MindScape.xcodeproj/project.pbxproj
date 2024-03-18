@@ -39,6 +39,8 @@
 		F137808E2B35DD9300DF2C8F /* CategoryGamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F137808C2B35DD9300DF2C8F /* CategoryGamesListView.swift */; };
 		F137808F2B35DD9300DF2C8F /* CategoryGamesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F137808D2B35DD9300DF2C8F /* CategoryGamesList.swift */; };
 		F13780932B35DFA800DF2C8F /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13780912B35DFA800DF2C8F /* GameProgressView.swift */; };
+		F13B85A72BA89072006A24C9 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B85A62BA89072006A24C9 /* LocalizedString.swift */; };
+		F13B85A92BA890A1006A24C9 /* Text+LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B85A82BA890A1006A24C9 /* Text+LocalizedString.swift */; };
 		F14A9AE52B9ADC8A009C0583 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A9AE42B9ADC8A009C0583 /* OnFirstAppear.swift */; };
 		F14B43152B552D4200AF1142 /* ExpandedTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B43142B552D4200AF1142 /* ExpandedTap.swift */; };
 		F16356C82B31EFF600890D3C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16356C72B31EFF600890D3C /* AppData.swift */; };
@@ -106,6 +108,8 @@
 		F137808C2B35DD9300DF2C8F /* CategoryGamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGamesListView.swift; sourceTree = "<group>"; };
 		F137808D2B35DD9300DF2C8F /* CategoryGamesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGamesList.swift; sourceTree = "<group>"; };
 		F13780912B35DFA800DF2C8F /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
+		F13B85A62BA89072006A24C9 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		F13B85A82BA890A1006A24C9 /* Text+LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+LocalizedString.swift"; sourceTree = "<group>"; };
 		F14A9AE42B9ADC8A009C0583 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		F14B43142B552D4200AF1142 /* ExpandedTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTap.swift; sourceTree = "<group>"; };
 		F16356C72B31EFF600890D3C /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				F10F8FCD2B8EE8FB0062DE05 /* Date+DateFormatter.swift */,
+				F13B85A82BA890A1006A24C9 /* Text+LocalizedString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				F134F6792B48558C00E58224 /* Stack.swift */,
+				F13B85A62BA89072006A24C9 /* LocalizedString.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -663,6 +669,7 @@
 				F134F67A2B48558C00E58224 /* Stack.swift in Sources */,
 				F134F67E2B49892100E58224 /* GameEvent.swift in Sources */,
 				F134F6862B49896500E58224 /* GameEntityTextAnswerView.swift in Sources */,
+				F13B85A92BA890A1006A24C9 /* Text+LocalizedString.swift in Sources */,
 				F18325172B9C626A0090BDF8 /* GameEntityTextQuestionView.swift in Sources */,
 				F110B75A2B2EC29100FD3B95 /* RozkvitMindScape.swift in Sources */,
 				F14B43152B552D4200AF1142 /* ExpandedTap.swift in Sources */,
@@ -674,6 +681,7 @@
 				F1DA74392B2EDCAC00A9A7F0 /* CategoriesView.swift in Sources */,
 				F1DA74432B2EDCE500A9A7F0 /* ProfileView.swift in Sources */,
 				F10F8FBE2B8B65410062DE05 /* ProfileTabData.swift in Sources */,
+				F13B85A72BA89072006A24C9 /* LocalizedString.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,
 				F10F8FBA2B8B633C0062DE05 /* HomeTabData.swift in Sources */,
 				F13780932B35DFA800DF2C8F /* GameProgressView.swift in Sources */,

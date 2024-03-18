@@ -34,6 +34,7 @@
 "game.comingsoon.description" = "Coming soon. Stay tuned";
 "game.button.finish" = "Finish";
 "game.button.continue" = "Continue";
+"game.wrongAnswer.warning" = "Oh no, that's wrong!";
 
 // Level 1
 "game.emotion.fear.title" = "Fear";
@@ -68,7 +69,12 @@
 
 "game.wrongAnswer.fear.description" = "Fear is a primal and often intense emotion triggered by the perception of danger, whether real or imagined. It activates the body's fight-or-flight response, leading to physiological changes like increased heart rate, rapid breathing, and heightened senses. This emotion can range from mild apprehension to paralyzing terror and serves as a protective mechanism, alerting individuals to potential threats and preparing them to respond to challenging situations.";
 
-"game.wrongAnswer.sadness.description" = "Sadness is a deep, emotional state often characterized by feelings of loss, despair, or disappointment. It's a natural response to situations involving grief, failure, or heartache, and can manifest as a sense of emptiness or a pervasive low mood. While typically associated with decreased energy and withdrawal from usual activities, sadness can also provide a pathway to empathy, reflection, and a deeper understanding of one's own values and priorities.";
+"game.wrongAnswer.sadness.description" = "Sadness is characterized by feelings of sorrow, grief, or emotional pain. It is typically expressed through:
+
+1. **Downturned Mouth:** A key indicator of sadness is a downturned mouth, where the corners of the lips are turned downwards in a frown or pout.
+2. **Closed or Downcast Eyes:** Sadness often involves closed or downcast eyes, with the eyelids drooping slightly and reduced eye contact.
+3. **Eyebrow Position:** The eyebrows may be drawn together and lowered, forming a slight furrow or crease between the brows, indicating emotional distress.
+4. **Flat or Tense Facial Muscles:** The overall facial expression may appear flat or tense, with reduced muscle activity and a lack of brightness in the eyes.";
 
 "game.wrongAnswer.anger.description" = "Anger is a powerful and often intense emotion characterized by feelings of displeasure, irritation, or hostility. It can arise in response to perceived threats, injustices, or frustrations, often triggering physiological responses like increased heart rate or heightened adrenaline levels. This emotion can range from mild irritation to intense rage and can impact both mental and physical health, as well as interpersonal relationships.";
 

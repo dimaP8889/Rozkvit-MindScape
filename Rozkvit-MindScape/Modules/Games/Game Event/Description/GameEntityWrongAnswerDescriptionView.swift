@@ -48,11 +48,20 @@ extension GameEntityWrongAnswerDescriptionView {
 
     var titleView: some View {
         VStack {
+            wrongAnswerText
             titleText
             subtitleText
         }
     }
-    
+
+    var wrongAnswerText: some View {
+        Text(localStr("game.wrongAnswer.warning"))
+            .font(.main(size: 24, weight: .bold))
+            .foregroundStyle(.mainText)
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
+    }
+
     @ViewBuilder
     var titleText: some View {
         if let title = viewStore.model.title {
@@ -60,7 +69,7 @@ extension GameEntityWrongAnswerDescriptionView {
                 .font(.main(size: 24, weight: .bold))
                 .foregroundStyle(.mainText)
                 .padding(.horizontal, 16)
-                .padding(.top, 16)
+                .padding(.top, 8)
         }
     }
 
@@ -89,7 +98,7 @@ extension GameEntityWrongAnswerDescriptionView {
     }
 
     var textView: some View {
-        Text(viewStore.model.description)
+        Text(styledLocalizedString: .init(viewStore.model.description))
             .font(.main(size: 12, weight: .regular))
             .multilineTextAlignment(.leading)
             .foregroundStyle(.mainText)
@@ -118,7 +127,7 @@ extension GameEntityWrongAnswerDescriptionView {
 #Preview {
     return GameEntityWrongAnswerDescriptionView(
         store: .init(
-            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .anger, image: Image(.anger1))),
+            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .sadness, image: Image(.sadness1))),
             reducer: {
                 GameEntityWrongAnswerDescription()
             }

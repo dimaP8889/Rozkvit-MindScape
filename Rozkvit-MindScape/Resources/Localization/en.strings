@@ -71,10 +71,11 @@
 
 "game.wrongAnswer.sadness.description" = "Sadness is characterized by feelings of sorrow, grief, or emotional pain. It is typically expressed through:
 
-1. **Downturned Mouth:** A key indicator of sadness is a downturned mouth, where the corners of the lips are turned downwards in a frown or pout.
-2. **Closed or Downcast Eyes:** Sadness often involves closed or downcast eyes, with the eyelids drooping slightly and reduced eye contact.
-3. **Eyebrow Position:** The eyebrows may be drawn together and lowered, forming a slight furrow or crease between the brows, indicating emotional distress.
-4. **Flat or Tense Facial Muscles:** The overall facial expression may appear flat or tense, with reduced muscle activity and a lack of brightness in the eyes.";
+**Mouth** - downturned
+**Eyes** - closed or downcast
+**Eyelids** - drooping slightly and reduced eye contact
+**Eyebrow** - drawn together and lowered
+**Facial Muscles** - flat or tense";
 
 "game.wrongAnswer.anger.description" = "Anger is a powerful and often intense emotion characterized by feelings of displeasure, irritation, or hostility. It can arise in response to perceived threats, injustices, or frustrations, often triggering physiological responses like increased heart rate or heightened adrenaline levels. This emotion can range from mild irritation to intense rage and can impact both mental and physical health, as well as interpersonal relationships.";
 

@@ -78,6 +78,7 @@ extension GameEntityWrongAnswerDescriptionView {
         if let subtitle = viewStore.model.subtitle {
             Text(subtitle)
                 .font(.main(size: 40, weight: .bold))
+                .minimumScaleFactor(0.6)
                 .foregroundStyle(.mainText)
                 .padding(.horizontal, 16)
         }
@@ -127,7 +128,7 @@ extension GameEntityWrongAnswerDescriptionView {
 #Preview {
     return GameEntityWrongAnswerDescriptionView(
         store: .init(
-            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .sadness, image: Image(.sadness1))),
+            initialState: GameEntityWrongAnswerDescription.State(model: .init(emotion: .embarrassment, image: Image(.embarrassment1))),
             reducer: {
                 GameEntityWrongAnswerDescription()
             }

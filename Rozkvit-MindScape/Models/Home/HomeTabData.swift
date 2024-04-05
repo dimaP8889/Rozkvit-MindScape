@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Dependencies
 
 final class HomeTabData {
     private var gameStatistic: [GameType: Int]
-    private var treeBuilder = TreeBuilder()
-    private var gameBuilder = GameBuilder()
+    @Dependency(\.treeBuilder) var treeBuilder
+    @Dependency(\.gameBuilder) var gameBuilder
 
     init(gameStatistic: [GameType : Int]) {
         self.gameStatistic = gameStatistic

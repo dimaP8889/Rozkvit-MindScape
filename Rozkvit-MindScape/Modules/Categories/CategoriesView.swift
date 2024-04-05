@@ -127,7 +127,7 @@ struct CategoriesView_Previews: PreviewProvider {
             store: Store(initialState: Categories.State()) {
                 Categories()
             } withDependencies: {
-                $0.appData = .mock
+                $0.appData = AppDataClientKey.liveValue
             }
         )
     }

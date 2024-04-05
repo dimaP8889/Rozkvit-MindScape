@@ -9,12 +9,6 @@ import ComposableArchitecture
 import SQLite
 import Foundation
 
-@DependencyClient
-struct LocalDatabaseClient {
-    var fetchStats: @Sendable () async throws -> [DatabaseGameStatistic]
-    var save: @Sendable (DatabaseGameStatistic) async throws -> Void
-}
-
 extension LocalDatabaseClient {
     public static func live(location: Connection.Location? = nil, path: String? = nil) -> Self {
         let _db = UncheckedSendable(Box<Connection?>(wrappedValue: nil))

@@ -10,16 +10,6 @@ import SwiftUI
 import Charts
 
 struct AppData: Equatable {
-    static var mock: AppData = {
-        return AppData(databaseGameStatistic: [
-            .init(game: .pickEmotion, date: Int(Date().timeIntervalSince1970), result: 0),
-            .init(game: .pickEmotion2, date: Int(Date().timeIntervalSince1970), result: 0),
-            .init(game: .pickEmotion3, date: Int(Date().timeIntervalSince1970), result: 0)
-        ])
-    }()
-
-    static var liveValue: AppData = AppData()
-
     var databaseGameStatistic: [DatabaseGameStatistic] = []
     var gameStatistic: [GameType: Int] {
         databaseGameStatistic.toLastSessionStatistic()

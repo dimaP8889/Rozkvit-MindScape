@@ -27,7 +27,7 @@ struct RootView: View {
             ) {
                 CategoriesView(store: store.scope(
                     state: \.categoriesState,
-                    action: RootDomain.Action.categories))
+                    action: \.categories))
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text(localStr("tab.categories"))
@@ -36,7 +36,7 @@ struct RootView: View {
 
                 HomeView(store: store.scope(
                     state: \.homeState,
-                    action: RootDomain.Action.home))
+                    action: \.home))
                 .tabItem {
                     Image(systemName: "house.circle")
                     Text(localStr("tab.home"))
@@ -45,7 +45,7 @@ struct RootView: View {
 
                 GamesView(store: store.scope(
                     state: \.gamesState,
-                    action: RootDomain.Action.games))
+                    action: \.games))
                 .tabItem {
                     Image(systemName: "gamecontroller")
                     Text(localStr("tab.games"))
@@ -54,7 +54,7 @@ struct RootView: View {
 
                 ProfileView(store: store.scope(
                     state: \.profileState,
-                    action: RootDomain.Action.profile))
+                    action: \.profile))
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text(localStr("tab.profile"))

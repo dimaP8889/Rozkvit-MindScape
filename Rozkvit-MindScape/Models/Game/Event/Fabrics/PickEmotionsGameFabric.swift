@@ -8,7 +8,11 @@
 import SwiftUI
 import ComposableArchitecture
 
-final class PickEmotionsGameFabric {
+protocol PickEmotionsGameFabricProtocol {
+    func createGame(of type: GameType) -> GameEnvironment
+}
+
+final class PickEmotionsGameFabric: PickEmotionsGameFabricProtocol {
     @Dependency(\.uuid) var uuid
 
     func createGame(of type: GameType) -> GameEnvironment {
@@ -19,6 +23,17 @@ final class PickEmotionsGameFabric {
             category: category,
             sliders: slides
         )
+    }
+}
+
+enum PickEmotionsGameFabricKey: DependencyKey {
+    static var liveValue: PickEmotionsGameFabricProtocol = PickEmotionsGameFabric()
+}
+
+extension DependencyValues {
+    var pickEmotionsGameFabric: PickEmotionsGameFabricProtocol {
+        get { self[PickEmotionsGameFabricKey.self] }
+        set { self[PickEmotionsGameFabricKey.self] = newValue }
     }
 }
 

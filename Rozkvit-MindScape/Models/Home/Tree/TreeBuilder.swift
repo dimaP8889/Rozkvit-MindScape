@@ -5,11 +5,16 @@
 //  Created by Dmytro Pogrebniak on 28.01.2024.
 //
 
-import Foundation
+import Dependencies
 import SwiftUI
 
-final class TreeBuilder {
-    private var progressCounter = ProgressCounter()
+protocol TreeBuilderProtocol {
+    func tree(for statistic: [GameType: Int]) -> Image
+    func motivation(for statistic: [GameType: Int]) -> String
+}
+
+final class TreeBuilder: TreeBuilderProtocol {
+    @Dependency(\.progressCounter) var progressCounter
 
     func tree(for statistic: [GameType: Int]) -> Image {
         let percentage = progressCounter.progressStarsPercentage(for: statistic)
@@ -31,5 +36,16 @@ final class TreeBuilder {
         case 0.7...:        return localStr("home.motivation.text.3")
         default:            return localStr("home.motivation.text.1")
         }
+    }
+}
+
+enum TreeBuilderKey: DependencyKey {
+    static var liveValue: TreeBuilderProtocol = TreeBuilder()
+}
+
+extension DependencyValues {
+    var treeBuilder: TreeBuilderProtocol {
+        get { self[TreeBuilderKey.self] }
+        set { self[TreeBuilderKey.self] = newValue }
     }
 }

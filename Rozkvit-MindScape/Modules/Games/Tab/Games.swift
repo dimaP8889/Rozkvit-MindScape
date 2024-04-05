@@ -49,6 +49,7 @@ struct Games {
 
     @Dependency(\.appData) var appData
     @Dependency(\.database) var database
+    @Dependency(\.gameBuilder) var gameBuilder
 
     var body: some Reducer<State, Action> {
         Reduce { state, action in
@@ -109,8 +110,7 @@ struct Games {
 // MARK: - Middlewares
 extension Games {
     func createGame(with type: GameType) -> GameEnvironment {
-        let builder = GameBuilder()
-        return builder.createGame(for: type)
+        gameBuilder.createGame(for: type)
     }
 
     func submitGameResult(game: GameType, result: Int) {

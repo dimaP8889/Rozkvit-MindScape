@@ -8,7 +8,7 @@
 import ComposableArchitecture
 
 final class GamesTabData {
-    private var availabilityChecker = AvailabilityChecker()
+    @Dependency(\.availabilityChecker) var availabilityChecker
     private var gameStatistic: [GameType: Int]
 
     init(gameStatistic: [GameType : Int]) {

@@ -17,8 +17,8 @@ struct RozkvitMindScape: App {
                     RootDomain()
                         ._printChanges()
                 } withDependencies: {
-                    $0.appData = .liveValue
-                    $0.database = .liveValue
+                    $0.appData = AppDataClientKey.liveValue
+                    $0.availabilityChecker = AvailabilityCheckerKey.liveValue
                 }
             )
         }

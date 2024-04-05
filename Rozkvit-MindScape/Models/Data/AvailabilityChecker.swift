@@ -5,12 +5,22 @@
 //  Created by Dmytro Pogrebniak on 27.12.2023.
 //
 
-import Foundation
+import Dependencies
 
-struct AvailabilityChecker: Equatable {
+protocol AvailabilityCheckerProtocol {
     typealias GameAvalability = GameData.AvailabilityState
-    
+
+    func gameAvailability(_ game: GameType, gameStatistic: [GameType: Int]) -> GameAvalability
+}
+
+extension AvailabilityCheckerProtocol {
     func gameAvailability(_ game: GameType, gameStatistic: [GameType: Int] = [:]) -> GameAvalability {
+        gameAvailability(game, gameStatistic: [:])
+    }
+}
+
+final class AvailabilityChecker: AvailabilityCheckerProtocol {
+    func gameAvailability(_ game: GameType, gameStatistic: [GameType : Int]) -> GameAvalability {
         switch game {
         case .pickEmotion:
             return .available
@@ -36,5 +46,16 @@ struct AvailabilityChecker: Equatable {
         case .rationalThinking0:
             return .comingSoon
         }
+    }
+}
+
+enum AvailabilityCheckerKey: DependencyKey {
+    static var liveValue: AvailabilityCheckerProtocol = AvailabilityChecker()
+}
+
+extension DependencyValues {
+    var availabilityChecker: AvailabilityCheckerProtocol {
+        get { self[AvailabilityCheckerKey.self] }
+        set { self[AvailabilityCheckerKey.self] = newValue }
     }
 }

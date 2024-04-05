@@ -8,6 +8,13 @@
 import ComposableArchitecture
 import Combine
 
+extension DependencyValues {
+    var appData: AppDataClient {
+        get { self[AppDataClientKey.self] }
+        set { self[AppDataClientKey.self] = newValue }
+    }
+}
+
 @dynamicMemberLookup
 struct AppDataClient {
     var get: @Sendable () -> AppData
@@ -23,17 +30,15 @@ struct AppDataClient {
     ) -> AsyncStream<Value> {
         self.stream().map { $0[keyPath: keyPath] }.eraseToStream()
     }
-
-//    public func modify(_ operation: (inout AppData) -> Void) async {
-//        var appData = self.get()
-//        operation(&appData)
-//        await self.set(appData)
-//    }
 }
 
-extension AppDataClient: DependencyKey {
+enum AppDataClientKey: DependencyKey {
+    static let liveValue: AppDataClient = AppDataClient.liveValue
+}
+
+extension AppDataClient {
     static var liveValue: AppDataClient {
-        let initialData = AppData.liveValue
+        let initialData = AppData()
         let appData = LockIsolated(initialData)
         let subject = PassthroughSubject<AppData, Never>()
 
@@ -51,33 +56,5 @@ extension AppDataClient: DependencyKey {
                 subject.values.eraseToStream()
             }
         )
-    }
-
-    static var mock: AppDataClient {
-        let initialData = AppData.mock
-        let appData = LockIsolated(initialData)
-        let subject = PassthroughSubject<AppData, Never>()
-
-        return Self(
-            get: {
-                appData.value
-            },
-            addGameStatistic: { stats in
-                appData.withValue {
-                    $0.databaseGameStatistic.append(stats)
-                    subject.send($0)
-                }
-            },
-            stream: {
-                subject.values.eraseToStream()
-            }
-        )
-    }
-}
-
-extension DependencyValues {
-    var appData: AppDataClient {
-        get { self[AppDataClient.self] }
-        set { self[AppDataClient.self] = newValue }
     }
 }

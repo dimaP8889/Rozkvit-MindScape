@@ -72,8 +72,20 @@
 		F1DA74442B2EDCE500A9A7F0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA74422B2EDCE500A9A7F0 /* Profile.swift */; };
 		F1E46E5C2B5500150036DEF2 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5B2B5500150036DEF2 /* Emotion.swift */; };
 		F1E46E5E2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */; };
+		F1E885B92BBFC33D00C53F2D /* GameEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E885B82BBFC33D00C53F2D /* GameEnvironment.swift */; };
+		F1E885BB2BBFC65B00C53F2D /* Rozkvit_GameUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E885BA2BBFC65B00C53F2D /* Rozkvit_GameUnitTests.swift */; };
 		F1FB65F32B90228900296912 /* ProgressCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB65F22B90228900296912 /* ProgressCounter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1E885B32BBFB36400C53F2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F110B74E2B2EC29100FD3B95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F110B7552B2EC29100FD3B95;
+			remoteInfo = "Rozkvit-MindScape";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F10F8FB42B8B51C90062DE05 /* GamesTabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTabData.swift; sourceTree = "<group>"; };
@@ -141,6 +153,9 @@
 		F1DA74422B2EDCE500A9A7F0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F1E46E5B2B5500150036DEF2 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F1E46E5D2B550A450036DEF2 /* GameEntityWrongAnswerDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityWrongAnswerDescription.swift; sourceTree = "<group>"; };
+		F1E885AF2BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rozkvit-MindScapeUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1E885B82BBFC33D00C53F2D /* GameEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEnvironment.swift; sourceTree = "<group>"; };
+		F1E885BA2BBFC65B00C53F2D /* Rozkvit_GameUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rozkvit_GameUnitTests.swift; sourceTree = "<group>"; };
 		F1FB65F22B90228900296912 /* ProgressCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +167,13 @@
 				F10F8FC62B8B6FEC0062DE05 /* SQLite in Frameworks */,
 				F1C41F892B62C19400F40820 /* WrappingHStack in Frameworks */,
 				F110B76B2B2EC88700FD3B95 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1E885AC2BBFB36400C53F2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F110B7582B2EC29100FD3B95 /* Rozkvit-MindScape */,
+				F1E885B02BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests */,
 				F110B7572B2EC29100FD3B95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F110B7562B2EC29100FD3B95 /* Rozkvit-MindScape.app */,
+				F1E885AF2BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +378,7 @@
 			children = (
 				F134F6762B4850BD00E58224 /* GameBuilder.swift */,
 				F17382172B4B953A00B88A06 /* Fabrics */,
+				F1E885B82BBFC33D00C53F2D /* GameEnvironment.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -550,6 +575,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		F1E885B02BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1E885BA2BBFC65B00C53F2D /* Rozkvit_GameUnitTests.swift */,
+			);
+			path = "Rozkvit-MindScapeUnitTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,6 +608,24 @@
 			productReference = F110B7562B2EC29100FD3B95 /* Rozkvit-MindScape.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1E885AE2BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1E885B52BBFB36400C53F2D /* Build configuration list for PBXNativeTarget "Rozkvit-MindScapeUnitTests" */;
+			buildPhases = (
+				F1E885AB2BBFB36400C53F2D /* Sources */,
+				F1E885AC2BBFB36400C53F2D /* Frameworks */,
+				F1E885AD2BBFB36400C53F2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1E885B42BBFB36400C53F2D /* PBXTargetDependency */,
+			);
+			name = "Rozkvit-MindScapeUnitTests";
+			productName = "Rozkvit-MindScapeUnitTests";
+			productReference = F1E885AF2BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -582,11 +633,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F110B7552B2EC29100FD3B95 = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					F1E885AE2BBFB36400C53F2D = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = F110B7552B2EC29100FD3B95;
 					};
 				};
 			};
@@ -609,6 +664,7 @@
 			projectRoot = "";
 			targets = (
 				F110B7552B2EC29100FD3B95 /* Rozkvit-MindScape */,
+				F1E885AE2BBFB36400C53F2D /* Rozkvit-MindScapeUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -626,6 +682,13 @@
 				F18D20762B53DE6400523CFD /* Inter-Regular.ttf in Resources */,
 				F110B75E2B2EC29400FD3B95 /* Assets.xcassets in Resources */,
 				F18D20772B53DE6600523CFD /* Inter-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1E885AD2BBFB36400C53F2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +746,7 @@
 				F10F8FBE2B8B65410062DE05 /* ProfileTabData.swift in Sources */,
 				F13B85A72BA89072006A24C9 /* LocalizedString.swift in Sources */,
 				F110B76D2B2ECC1900FD3B95 /* RootDomain.swift in Sources */,
+				F1E885B92BBFC33D00C53F2D /* GameEnvironment.swift in Sources */,
 				F10F8FBA2B8B633C0062DE05 /* HomeTabData.swift in Sources */,
 				F13780932B35DFA800DF2C8F /* GameProgressView.swift in Sources */,
 				F134F6772B4850BD00E58224 /* GameBuilder.swift in Sources */,
@@ -694,7 +758,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1E885AB2BBFB36400C53F2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1E885BB2BBFC65B00C53F2D /* Rozkvit_GameUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1E885B42BBFB36400C53F2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F110B7552B2EC29100FD3B95 /* Rozkvit-MindScape */;
+			targetProxy = F1E885B32BBFB36400C53F2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F110B7632B2EC29400FD3B95 /* Debug */ = {
@@ -905,6 +985,47 @@
 			};
 			name = Release;
 		};
+		F1E885B62BBFB36400C53F2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 452NG5983H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drillKambojazz.Rozkvit-MindScapeUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rozkvit-MindScape.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rozkvit-MindScape";
+			};
+			name = Debug;
+		};
+		F1E885B72BBFB36400C53F2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 452NG5983H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.drillKambojazz.Rozkvit-MindScapeUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rozkvit-MindScape.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rozkvit-MindScape";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -922,6 +1043,15 @@
 			buildConfigurations = (
 				F110B7662B2EC29400FD3B95 /* Debug */,
 				F110B7672B2EC29400FD3B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1E885B52BBFB36400C53F2D /* Build configuration list for PBXNativeTarget "Rozkvit-MindScapeUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1E885B62BBFB36400C53F2D /* Debug */,
+				F1E885B72BBFB36400C53F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
